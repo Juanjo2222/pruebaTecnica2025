@@ -4,6 +4,8 @@ definePageMeta({
 });
 </script>
 
-<template></template>
+<template>
+  <NuxtLayout :name="$route.meta.layout"/>
+</template>
 
 <style lang="scss" scoped></style>
