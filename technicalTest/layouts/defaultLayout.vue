@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import IconSearch from '@/components/icons/searchIcon.vue';
-import IconOptions from '@/components/icons/optionsIcon.vue';
-import IconNotification from '@/components/icons/notificationIcon.vue';
-import IconProfile from '@/components/icons/profileIcon.vue';
-import IconTwitchLogo from '@/components/icons/twitchLogoIcon.vue';
+import IconSearch from '@/components/icons/SearchIcon.vue';
+import IconOptions from '@/components/icons/OptionsIcon.vue';
+import IconNotification from '@/components/icons/NotificationIcon.vue';
+import IconProfile from '@/components/icons/ProfileIcon.vue';
+import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
 </script>
 
 <template>
   <nav class="top-bar">
-    <div class="top-bar__left-part">
+    <section class="top-bar__left-part">
       <button class="top-bar__left-part--logo">
         <IconTwitchLogo/>
       </button>
@@ -16,8 +16,8 @@ import IconTwitchLogo from '@/components/icons/twitchLogoIcon.vue';
       <button class="top-bar__left-part--more">
         <IconOptions/>
       </button>
-    </div>
-    <div class="top-bar__search">
+    </section>
+    <section class="top-bar__search">
       <input
         class="top-bar__search--input"
         type="text"
@@ -26,8 +26,8 @@ import IconTwitchLogo from '@/components/icons/twitchLogoIcon.vue';
       <button class="top-bar__search--button">
         <IconSearch/>
       </button>
-    </div>
-    <div class="top-bar__right-part">
+    </section>
+    <section class="top-bar__right-part">
       <button class="top-bar__right-part--notification">
         <span class="notification-text">63</span>
         <IconNotification/>
@@ -37,7 +37,7 @@ import IconTwitchLogo from '@/components/icons/twitchLogoIcon.vue';
       <button class="top-bar__right-part--profile">
         <IconProfile/>
       </button>
-    </div>
+    </section>
   </nav>
 </template>
 

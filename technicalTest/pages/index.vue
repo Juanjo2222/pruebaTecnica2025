@@ -1,11 +1,17 @@
 <script>
 definePageMeta({
-  layout: "default-layout",
+  defaultLayout: "default-layout",
+  channelLayout: "channel-layout",
 });
 </script>
 
 <template>
-  <NuxtLayout :name="$route.meta.layout"/>
+  <div class="container">
+    <NuxtLayout :name="$route.meta.defaultLayout"/>
+    <NuxtLayout :name="$route.meta.channelLayout"/>
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped lang="scss">
+
+</style>
