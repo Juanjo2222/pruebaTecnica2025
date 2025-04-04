@@ -7,8 +7,10 @@ import RecomChannComponent from '@/components/layouts/RecomChannComponent.vue';
 <template>
   <div class="layout">
     <NavComponent/>
-    <RecomChannComponent/>
-    <slot/>
+    <div class="container">
+      <RecomChannComponent class="sidebar"/>
+      <slot/>
+    </div>
   </div>
 </template>
 
@@ -16,4 +18,11 @@ import RecomChannComponent from '@/components/layouts/RecomChannComponent.vue';
   .layout{
     margin-left:0rem;
   }
+
+  .container{
+    display: flex;
+  }
+  /*.sidebar{
+    float: left;
+  }*/
 </style>
