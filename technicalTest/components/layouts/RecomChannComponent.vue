@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import IconCollapseLogo from '@/components/icons/CollapseIcon.vue';
-import StreamerCard from '@/components/StreamerCard.vue';
+import LeftLayoutRow from '~/components/LeftLayoutRow.vue';
 
 const channels = [
   { name: "Streamer1", viewers: "12.3K", avatar: "https://placehold.co/40" },
@@ -17,7 +17,7 @@ const channels = [
         <IconCollapseLogo/>
       </button>
     </section>
-    <StreamerCard 
+    <LeftLayoutRow 
       v-for="channel in channels" 
       :key="channel.name" 
       :name="channel.name" 
@@ -37,12 +37,11 @@ const channels = [
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 0.5rem;
   margin-left: -0.5rem;
-  height: 100vh;
 
   &__front-part {
     display: flex;
+    justify-content: space-between;
 
     &--title {
       font-size: 0.9rem;
