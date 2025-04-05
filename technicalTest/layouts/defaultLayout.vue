@@ -7,13 +7,20 @@ import RecomChannComponent from '@/components/layouts/RecomChannComponent.vue';
 <template>
   <div class="layout">
     <NavComponent/>
-    <RecomChannComponent/>
-    <slot/>
+    <div class="layout__main-part">
+      <RecomChannComponent/>
+      <slot/>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
   .layout{
     margin-left:0rem;
+
+    &__main-part{
+      display: flex;
+    }
   }
+
 </style>
