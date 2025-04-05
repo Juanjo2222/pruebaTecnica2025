@@ -64,10 +64,11 @@ import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
   justify-content: space-between;
   align-items: center;
   margin: -0.5rem;
-  padding: 0.625rem 1.25rem;
+  padding: 0.4rem 1.25rem;
   background-color: #18181b;
   color: white;
-  height: 3rem;
+  width:114.5rem;
+  height: 4rem;
 
   &__left-part {
     display: flex;
@@ -96,6 +97,7 @@ import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
   &__search {
     display:flex;
     gap: 0.1rem;
+    
     &--input {
       padding: 0.5rem;
       border: 0.1rem solid #575353;
