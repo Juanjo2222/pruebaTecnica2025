@@ -1,5 +1,3 @@
-const config = useRuntimeConfig();
-
 class ApiTwitch {
 
     token: string = "";
@@ -9,8 +7,8 @@ class ApiTwitch {
 
     async getToken() {
         const params = new URLSearchParams({
-            client_id: config.public.twitchClient as string,
-            client_secret: config.twitchSecret as string,
+            client_id:'i4f2pvsj5fkpcqm8uwk459su21l4bj',
+            client_secret: 'w2sx4qn36dv6cr6qif23m9psphtvr4',
             grant_type: 'client_credentials'
         });
 
@@ -38,7 +36,7 @@ class ApiTwitch {
         const twitchOptions = {
             method: 'GET',
             headers: {
-                'ClientId: ': config.public.twitchClient as string,
+                'Client-ID':'i4f2pvsj5fkpcqm8uwk459su21l4bj',
                 'Authorization': `Bearer ${this.token}`,
             },
         };
