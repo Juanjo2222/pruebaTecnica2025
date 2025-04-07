@@ -8,10 +8,11 @@ const props = defineProps<{
     title: string;
     category: string;
     thumbnail: string;
-    language: string;
-    drops: string;
+    tags: string[];
+    profileImg:string;
   }[];
 }>();
+
 </script>
 
 <template>
@@ -21,7 +22,7 @@ const props = defineProps<{
       :key="channel.id"
       class="live-channels__card"
     >
-      <img :src="channel.thumbnail" class="live-channels__card--image" />
+      <img :src="channel.thumbnail" class="live-channels__card--image">
       <div class="live-channels__card--content">
         <button class="live-channels__card--content-button">
           <IconTwitchLogo />
@@ -30,9 +31,15 @@ const props = defineProps<{
           <span class="live-channels__card--info-title">{{ channel.title }}</span>
           <span class="live-channels__card--info-name">{{ channel.name }}</span>
           <span class="live-channels__card--info-category">{{ channel.category }}</span>
-          <div class="live-channels__card--info-labels">
-            <span class="live-channels__card--info-labels-language">{{ channel.language }}</span>
-            <span class="live-channels__card--info-labels-drops">{{ channel.drops }}</span>
+
+          <div class="live-channels__card--info-labels-container">
+            <div
+              v-for="(tag, index) in channel.tags"
+              :key="index"
+              class="live-channels__card--info-label"
+            >
+              {{ tag }}
+            </div>
           </div>
         </div>
       </div>
@@ -41,13 +48,13 @@ const props = defineProps<{
 </template>
 
 <style scoped lang="scss">
-
 .live-channels {
   margin-bottom: 2rem;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: row;
   gap: 2.2rem;
+  flex-wrap: wrap;
 
   &__card {
     display: flex;
@@ -100,33 +107,23 @@ const props = defineProps<{
         margin-top: 0.25rem;
       }
 
-      &-labels {
+      &-labels-container {
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap;
         gap: 0.5rem;
         margin-bottom: 0.5rem;
+      }
 
-        &-language {
-          font-size: 0.85rem;
-          font-weight: bold;
-          background-color: #29292e;
-          padding: 0.3rem;
-          border-radius: 1rem;
-          color: #adadb8;
-        }
-
-        &-drops {
-          font-size: 0.85rem;
-          font-weight: bold;
-          background-color: #29292e;
-          padding-left: 0.3rem;
-          border-radius: 1rem;
-          padding: 0.3rem;
-          color: #adadb8;
-        }
+      &-label {
+        font-size: 0.75rem;
+        font-weight: bold;
+        background-color: #29292e;
+        padding: 0.3rem 0.6rem;
+        border-radius: 1rem;
+        color: #adadb8;
+        width: fit-content;
       }
     }
   }
 }
-
 </style>
