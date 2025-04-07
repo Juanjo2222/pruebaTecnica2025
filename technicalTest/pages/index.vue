@@ -9,7 +9,7 @@ definePageMeta({
 
 <template>
   <div class="main">
-    <NuxtLayout :name="$route.meta.defaultLayout">
+    <NuxtLayout name="default-layout">
       <section class="main__live-channels">
         <LiveChannels/>
         <LiveChannels/>
