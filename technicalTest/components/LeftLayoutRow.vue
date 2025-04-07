@@ -1,25 +1,28 @@
 <script setup lang="ts">
-import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
-defineProps<{
-  name: string;
-  viewers: string;
-  avatar: string;
-}>();
+import { ApiTwitch } from '@/api/twitchApi';
+import type { Streamer } from '@/types/streamer';
+
+const api = new ApiTwitch();
+await api.getToken();
+await api.requestApi("https://api.twitch.tv/helix/streams");
+
+const streamers = api.data.slice(0, 10) as Streamer[];
 </script>
 
 <template>
-  <li class="streamer-card">
-    <button class="streamer-card__image">
-      <IconTwitchLogo/>
-    </button>
-    <section class="streamer-card__info">
-      <span class="streamer-card__info--name">{{ name }}</span>
-      <span class="streamer-card__info--channel">channel</span>
-    </section>
-    <div class="streamer-card__live-indicator"/>
-    <span class="streamer-card__viewers">{{ viewers }}</span>
-  </li>
+    <li v-for="(streamer, index) in streamers" :key="index" class="streamer-card">
+      <button class="streamer-card__image">
+        <img :src="streamer.profileImg">
+      </button>
+      <section class="streamer-card__info">
+        <span class="streamer-card__info--name">{{ streamer.user_name }}</span>
+        <span class="streamer-card__info--channel">{{ streamer.game_name }}</span>
+      </section>
+      <div class="streamer-card__live-indicator"/>
+      <span class="streamer-card__viewers">{{ streamer.viewer_count }}</span>
+    </li>
 </template>
+
 
 <style scoped lang="scss">
 .streamer-card {
@@ -50,6 +53,7 @@ defineProps<{
 
     &--name {
       font-weight: bold;
+      
     }
 
     &--channel {

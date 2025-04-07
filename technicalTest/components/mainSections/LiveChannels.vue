@@ -1,12 +1,22 @@
 <script setup lang="ts">
 import IconDownArrow from '@/components/icons/DownArrowIcon.vue';
-import StreamerCard from '@/components//mainSections/liveChannels/StreamerCard.vue';
+import StreamerCard from '@/components/mainSections/liveChannels/StreamerCard.vue'; // Corrige la ruta si es necesario
+import { ApiTwitch } from '@/api/twitchApi';
+import type { Streamer } from '@/types/streamer';
 
-const channels = [
-  { id: 1, name: "Streamer1", title:"title", category: "category", thumbnail: "https://placehold.co/150", language: "español", drops: "drops" },
-  { id: 2, name: "Streamer2", title:"title", category: "category", thumbnail: "https://placehold.co/150", language: "español", drops: "drops" },
-  { id: 3, name: "Streamer3", title:"title", category: "category", thumbnail: "https://placehold.co/150", language: "español", drops: "drops" }
-];
+const api = new ApiTwitch();
+await api.getToken();
+await api.requestApi("https://api.twitch.tv/helix/streams");
+
+const liveChannels = (api.data as Streamer[]).slice(0, 3).map((streamer: Streamer, index: number) => ({
+  id: index + 1, 
+  name: streamer.user_name, 
+  title: streamer.title, 
+  category: streamer.game_name, 
+  thumbnail: streamer.thumbnail_url.replace('{width}x{height}', '200x200'), 
+  tags: streamer.tags
+}));
+
 const blueText = "Live channels";
 </script>
 
@@ -19,7 +29,7 @@ const blueText = "Live channels";
       we think you'll like
     </h2>
 
-    <StreamerCard :channels="channels" />
+    <StreamerCard :channels="liveChannels" />
 
     <div class="live-channels-section__divider">
       <span class="live-channels-section__divider--text">Show more</span>
@@ -66,5 +76,4 @@ const blueText = "Live channels";
     }
   }
 }
-
 </style>
