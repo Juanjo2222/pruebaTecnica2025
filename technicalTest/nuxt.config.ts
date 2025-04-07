@@ -10,6 +10,14 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/scripts',
-    '@nuxt/test-utils'
-  ]
+    '@nuxt/test-utils',
+  ],
+  runtimeConfig: {
+    twitchClient: process.env.TWITCH_CLIENT_ID,
+    twitchSecret: process.env.TWITCH_CLIENT_SECRET,
+    twitchRedirect: process.env.TWITCH_REDIRECT_URI,
+    public: {
+        twitchClient: process.env.TWITCH_CLIENT_ID,
+    },
+},
 })
