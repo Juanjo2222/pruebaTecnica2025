@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -18,6 +19,7 @@ export default defineNuxtConfig({
     twitchRedirect: process.env.TWITCH_REDIRECT_URI,
     public: {
         twitchClient: process.env.TWITCH_CLIENT_ID,
+        twitchSecret: process.env.TWITCH_CLIENT_SECRET,
     },
 },
 })
