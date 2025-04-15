@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { cssImports } from './config/css'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -13,6 +14,7 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/test-utils',
   ],
+  css: cssImports,
   runtimeConfig: {
     twitchClient: process.env.TWITCH_CLIENT_ID,
     twitchSecret: process.env.TWITCH_CLIENT_SECRET,

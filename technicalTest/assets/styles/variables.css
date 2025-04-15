@@ -1,0 +1,23 @@
+:root {
+    --c-black: #000000;
+    --c-white: #ffffff;
+
+    --f-font-extraLight: 'neulis-sans-extra-light';
+    --f-font-light: 'neulis-sans-light';
+    --f-font-regular: 'neulis-sans-regular';
+    --f-font-semiBold: 'neulis-sans-semi-bold';
+    --f-font-bold: 'neulis-sans-bold';
+
+    --s-font-h1: 3rem;
+    --s-font-h2: 3rem;
+    --s-font-h3: 2rem;
+    --s-font-h4: 1.5rem;
+    --s-font-p: 1rem;
+    --s-font-cta: 1rem;
+    --s-font-h1-mobile: 2rem;
+    --s-font-h2-mobile: 2rem;
+    --s-font-h3-mobile: 1.5rem;
+    --s-font-h4-mobile: 1.3125rem;
+
+  }
+  
