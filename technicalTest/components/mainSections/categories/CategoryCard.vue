@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
 import CategoryButtons from './CategoryButtons.vue';
+import { useViewersFormat  } from '@/composables/useViewersFormat';
+
+const { formatViewers } = useViewersFormat();
 
 const props = defineProps<{
   categories: {
     id: number;
     name: string;
-    viewers: string;
+    viewers: number;
     subCategory: string;
     image: string;
   }[];
@@ -23,7 +26,7 @@ const props = defineProps<{
     <img :src="category.image" class="categories__card--image" />
     <div class="categories__card--content">
       <span class="categories__card--content-name">{{ category.name }}</span>
-      <span class="categories__card--content-viewers">{{ category.viewers }} viewers</span>
+      <span class="categories__card--content-viewers">{{ formatViewers(category.viewers) }} viewers</span>
       <span class="categories__card--content-subCategory">{{ category.subCategory }}</span>
     </div>
     </div>
@@ -39,15 +42,15 @@ const props = defineProps<{
   display: flex;
   flex-direction: row;
   gap: 2.2rem;
-  margin-bottom: auto;
+  margin-right:1.5rem;
 
   &__card {
     background-color: #0e0e10;
-    width: 15.6rem;
+    width: 14rem;
     
     &--image {
       width: 100%;
-      height: 18rem;
+      height: 20rem;
     }
 
     &--content {
