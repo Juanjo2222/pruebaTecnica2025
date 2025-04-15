@@ -9,7 +9,7 @@ const props = defineProps<{
     category: string;
     thumbnail: string;
     tags: string[];
-    profileImg:string;
+    profileImg: string;
   }[];
 }>();
 
@@ -24,9 +24,7 @@ const props = defineProps<{
     >
       <img :src="channel.thumbnail" class="live-channels__card--image">
       <div class="live-channels__card--content">
-        <button class="live-channels__card--content-button">
-          <IconTwitchLogo />
-        </button>
+        <img :src="channel.profileImg" class="live-channels__card--content-profile"/>
         <div class="live-channels__card--info">
           <span class="live-channels__card--info-title">{{ channel.title }}</span>
           <span class="live-channels__card--info-name">{{ channel.name }}</span>
@@ -64,9 +62,7 @@ const props = defineProps<{
     width: 31.2rem;
 
     &--image {
-      width: 100%;
       height: 15rem;
-      object-fit: cover;
     }
 
     &--content {
@@ -74,8 +70,8 @@ const props = defineProps<{
       flex-direction: row;
       gap: 0.5rem;
 
-      &-button {
-        width: 2.6rem;
+      &-profile {
+        width: 3.2rem;
         height: 2.6rem;
         border-radius: 50%;
         margin-top: 0.3rem;
@@ -86,7 +82,6 @@ const props = defineProps<{
     &--info {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
       margin-left: 0.3rem;
 
       &-title {
@@ -111,7 +106,7 @@ const props = defineProps<{
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
-        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
       }
 
       &-label {
