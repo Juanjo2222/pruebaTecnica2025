@@ -67,7 +67,7 @@ import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
   padding: 0.4rem 1.25rem;
   background-color: #18181b;
   color: white;
-  width:114.5rem;
+  width:116.6rem;
   height: 4rem;
 
   &__left-part {

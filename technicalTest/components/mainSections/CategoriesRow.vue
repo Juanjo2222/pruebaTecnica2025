@@ -1,13 +1,21 @@
 <script setup lang="ts">
-
+import { ApiTwitch } from '@/api/twitchApi';
 import CategoryCard from '@/components/mainSections/categories/CategoryCard.vue';
 
-const categories = [
-  { id: 1, name: "Category1", viewers:"10K", subCategory: "subCategory", image: "https://placehold.co/150"},
-  { id: 2, name: "Category2", viewers:"25K", subCategory: "subCategory", image: "https://placehold.co/150"},
-  { id: 3, name: "Category3", viewers:"15K", subCategory: "subCategory", image: "https://placehold.co/150"}
-];
+const api = new ApiTwitch();
+await api.getToken();
+await api.requestApi("https://api.twitch.tv/helix/games/top?first=6");
+
+const categories = api.data.map((category: any, index: number) => ({
+  id: index + 1,
+  name: category.name,
+  viewers: category.viewers_count ? formatViewerCount(category.viewers_count) : 'N/A',
+  subCategory: category.name,
+  image: category.box_art_url.replace('{width}x{height}', '200x200')
+}));
+
 const blueText = "Categories";
+
 </script>
 
 <template>
@@ -27,7 +35,6 @@ const blueText = "Categories";
 <style scoped lang="scss">
 .category-section {
   background-color: #0e0e10;
-  margin-right: auto;
 
   &__title {
     font-family: Arial, Helvetica, sans-serif;

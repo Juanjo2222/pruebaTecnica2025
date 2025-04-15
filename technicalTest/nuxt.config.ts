@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     twitchRedirect: process.env.TWITCH_REDIRECT_URI,
     public: {
         twitchClient: process.env.TWITCH_CLIENT_ID,
+        twitchSecret: process.env.TWITCH_CLIENT_SECRET,
     },
 },
 })

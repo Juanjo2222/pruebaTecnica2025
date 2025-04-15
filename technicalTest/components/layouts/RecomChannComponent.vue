@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import IconCollapseLogo from '@/components/icons/CollapseIcon.vue';
-import LeftLayoutRow from '~/components/LeftLayoutRow.vue';
+import LeftLayoutRow from '@/components/LeftLayoutRow.vue';
 
-const channels = [
-  { name: "Streamer1", viewers: "12.3K", avatar: "https://placehold.co/40" },
-  { name: "Streamer2", viewers: "8.5K", avatar: "https://placehold.co/40" },
-  { name: "Streamer3", viewers: "5.2K", avatar: "https://placehold.co/40" }
-];
 </script>
 
 <template>
@@ -17,13 +12,7 @@ const channels = [
         <IconCollapseLogo/>
       </button>
     </section>
-    <LeftLayoutRow 
-      v-for="channel in channels" 
-      :key="channel.name" 
-      :name="channel.name" 
-      :viewers="channel.viewers" 
-      :avatar="channel.avatar" 
-    />
+    <LeftLayoutRow/>
   </aside>
 </template>
 

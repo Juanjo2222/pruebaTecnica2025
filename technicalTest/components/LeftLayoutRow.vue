@@ -1,23 +1,39 @@
 <script setup lang="ts">
-import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
-defineProps<{
-  name: string;
-  viewers: string;
-  avatar: string;
-}>();
+import { ApiTwitch } from '@/api/twitchApi';
+import type { Streamer } from '@/types/streamer';
+import { useViewersFormat  } from '@/composables/useViewersFormat';
+
+const { formatViewers } = useViewersFormat();
+
+const api = new ApiTwitch();
+await api.getToken();
+await api.requestApi("https://api.twitch.tv/helix/streams");
+const streamersRaw = api.data.slice(0, 10) as Streamer[];
+
+const userIds = streamersRaw.map(streamer => streamer.user_id);
+await api.requestApi(`https://api.twitch.tv/helix/users?id=${userIds.join('&id=')}`);
+const usersData = api.data;
+
+const streamers = streamersRaw.map(streamer => {
+  const userInfo = usersData.find((user: any) => user.id === streamer.user_id);
+  return {
+    ...streamer,
+    profileImg: userInfo?.profile_image_url || '',
+  };
+});
+
+
 </script>
 
 <template>
-  <li class="streamer-card">
-    <button class="streamer-card__image">
-      <IconTwitchLogo/>
-    </button>
+  <li v-for="(streamer, index) in streamers" :key="index" class="streamer-card">
+    <img :src="streamer.profileImg" class="streamer-card__image"/>
     <section class="streamer-card__info">
-      <span class="streamer-card__info--name">{{ name }}</span>
-      <span class="streamer-card__info--channel">channel</span>
+      <span class="streamer-card__info--name">{{ streamer.user_name }}</span>
+      <span class="streamer-card__info--channel">{{ streamer.game_name }}</span>
     </section>
     <div class="streamer-card__live-indicator"/>
-    <span class="streamer-card__viewers">{{ viewers }}</span>
+    <span class="streamer-card__viewers">{{ formatViewers(streamer.viewer_count) }}</span>
   </li>
 </template>
 
@@ -35,8 +51,8 @@ defineProps<{
   }
 
   &__image {
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 2.7rem;
+    height: 2.7rem;
     border-radius: 50%;
     border: none;
   }
@@ -46,10 +62,10 @@ defineProps<{
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     font-size: 0.9rem;
-    margin-left: 0.5rem;
 
     &--name {
       font-weight: bold;
+      
     }
 
     &--channel {
@@ -59,7 +75,7 @@ defineProps<{
   }
 
   &__viewers {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #ffffff;
     margin-left:-0.5rem;
   }

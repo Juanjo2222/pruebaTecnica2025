@@ -33,7 +33,7 @@ const buttons = [
   display: flex;
   gap: 1.5rem;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 3rem;
 }
 
 .category-button{
