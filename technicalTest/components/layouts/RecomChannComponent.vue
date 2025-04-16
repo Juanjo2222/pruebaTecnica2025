@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import IconCollapseLogo from '@/components/icons/CollapseIcon.vue';
-import LeftLayoutRow from '@/components/LeftLayoutRow.vue';
+import LeftLayoutRow from '~/components/layouts/LeftLayoutRow.vue';
 
 </script>
 
@@ -19,7 +19,7 @@ import LeftLayoutRow from '@/components/LeftLayoutRow.vue';
 <style scoped lang="scss">
 .sidebar {
   font-family: Arial, Helvetica, sans-serif;
-  width: 17rem;
+  width: 18rem;
   background-color: #0e0e10;
   padding: 1rem;
   color: white;
