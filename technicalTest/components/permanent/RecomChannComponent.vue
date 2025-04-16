@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import IconCollapseLogo from '@/components/icons/CollapseIcon.vue';
-import LeftLayoutRow from '~/components/layouts/LeftLayoutRow.vue';
+import LeftLayoutRow from '@/components/permanent/LeftLayoutRow.vue';
 
 </script>
 
