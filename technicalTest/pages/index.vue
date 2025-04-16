@@ -1,6 +1,5 @@
 <script setup>
 import LiveChannels from '@/components/mainSections/LiveChannels.vue';
-import CategoriesRow from '@/components/mainSections/CategoriesRow.vue';
 
 definePageMeta({
   defaultLayout: "default-layout",
