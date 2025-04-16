@@ -59,7 +59,7 @@ const props = defineProps<{
     flex-direction: column;
     gap: 0.5rem;
     background-color: #0e0e10;
-    width: 31.2rem;
+    width: 30rem;
 
     &--image {
       height: 15rem;
