@@ -6,7 +6,7 @@ import GiftIcon from '@/components/icons/GiftIcon.vue';
 import EmojiIcon from '@/components/icons/EmojiIcon.vue';
 import BitsIcon from '@/components/icons/BitsIcon.vue';
 import ConfigIcon from '@/components/icons/ConfigIcon.vue';
-import texts from '@/assets/texts.json';
+import texts from '@/assets/data/texts.json';
 </script>
 
 <template>

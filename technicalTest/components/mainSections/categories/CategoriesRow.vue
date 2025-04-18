@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ApiTwitch } from '@/api/twitchApi';
 import CategoryCard from '@/components/mainSections/categories/CategoryCard.vue';
-import texts from '@/assets/texts.json';
+import texts from '@/assets/data/texts.json';
 
 const api = new ApiTwitch();
 await api.getToken();

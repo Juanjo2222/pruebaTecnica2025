@@ -3,7 +3,7 @@ import YotubeIcon from '@/components/icons/YotubeIcon.vue'
 import InstragramIcon from '@/components/icons/InstragramIcon.vue'
 import TwitterIcon from '@/components/icons/TwitterIcon.vue'
 import TikTokIcon from '@/components/icons/TikTokIcon.vue'
-import texts from '@/assets/texts.json';
+import texts from '@/assets/data/texts.json';
 </script>
 
 <template>

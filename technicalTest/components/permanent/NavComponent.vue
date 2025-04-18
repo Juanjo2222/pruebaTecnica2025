@@ -4,7 +4,7 @@ import IconOptions from '@/components/icons/OptionsIcon.vue';
 import IconNotification from '@/components/icons/NotificationIcon.vue';
 import IconProfile from '@/components/icons/ProfileIcon.vue';
 import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
-import texts from '@/assets/texts.json';
+import texts from '@/assets/data/texts.json';
 </script>
 
 <template>

@@ -7,7 +7,7 @@ import SuscribeIcon from '@/components/icons/SuscribeIcon'
 import DownArrowIcon from '@/components/icons/DownArrowIcon'
 import RedViewersIcon from '@/components/icons/RedViewersIcon'
 import ShareIcon from '@/components/icons/ShareIcon'
-import texts from '@/assets/texts.json';
+import texts from '@/assets/data/texts.json';
 </script>
 
 <template>

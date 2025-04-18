@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import IconCollapseLogo from '@/components/icons/CollapseIcon.vue';
 import LeftLayoutRow from '@/components/permanent/LeftLayoutRow.vue';
-import texts from '@/assets/texts.json';
+import texts from '@/assets/data/texts.json';
 </script>
 
 <template>
