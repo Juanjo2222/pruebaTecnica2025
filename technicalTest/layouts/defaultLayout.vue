@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import NavComponent from '@/components/layouts/NavComponent.vue';
-import RecomChannComponent from '@/components/layouts/RecomChannComponent.vue';
+import NavComponent from '@/components/permanent/NavComponent.vue';
+import RecomChannComponent from '@/components/permanent/RecomChannComponent.vue';
 
 </script>
 

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
 import CategoryButtons from './CategoryButtons.vue';
 import { useViewersFormat  } from '@/composables/useViewersFormat';
 
@@ -61,25 +60,25 @@ const props = defineProps<{
       gap: 0.7rem;
 
         &-name {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #fff;
+          font-size: 1.1rem;
+          font-weight: bold;
+          color: #fff;
         }
 
         &-viewers {
-            font-size: 0.9rem;
-            color: #9999a3;
+          font-size: 0.9rem;
+          color: #9999a3;
         }
 
         &-subCategory {
-            display: inline-block;
-            font-size: 0.85rem;
-            font-weight: bold;
-            background-color: #29292e;
-            padding: 0.3rem 0.6rem;
-            border-radius: 1rem;
-            color: #adadb8;
-            width: fit-content;
+          display: inline-block;
+          font-size: 0.85rem;
+          font-weight: bold;
+          background-color: #29292e;
+          padding: 0.3rem 0.6rem;
+          border-radius: 1rem;
+          color: #adadb8;
+          width: fit-content;
         }
     }
   }

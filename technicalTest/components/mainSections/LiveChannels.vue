@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import IconDownArrow from '@/components/icons/DownArrowIcon.vue';
 import StreamerCard from '@/components/mainSections/liveChannels/StreamerCard.vue';
-import CategoriesRow from '@/components/mainSections/CategoriesRow.vue';
+import CategoriesRow from '~/components/mainSections/categories/CategoriesRow.vue';
 import { ApiTwitch } from '@/api/twitchApi';
 import type { Streamer } from '@/types/streamer';
 
