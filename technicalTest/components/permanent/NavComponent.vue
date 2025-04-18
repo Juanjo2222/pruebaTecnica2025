@@ -43,20 +43,7 @@ import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
 
 <style scoped lang="scss">
 
-@mixin buttons{
-  background-color: #18181b;
-  border: none;
-  padding: 0.625rem;
-  color: white;
-  border-radius: 0.3125rem;
-  cursor: pointer;
-}
-
-@mixin hover{
-  &:hover {
-    background-color:#77777a;
-  }
-}
+@import '@/assets/styles/mixins.scss';
 
 .top-bar {
 
@@ -65,8 +52,8 @@ import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
   align-items: center;
   margin: -0.5rem;
   padding: 0.4rem 1.25rem;
-  background-color: #18181b;
-  color: white;
+  background-color: var(--c-nav-background-color);
+  color: var(--c-white);
   width:116.6rem;
   height: 4rem;
 
@@ -82,14 +69,14 @@ import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
     }
 
     &--more {
-      @include buttons;
-      @include hover;
+      @include nav-icon-buttons;
+      @include gray-buttons-hover;
       padding: 0.2rem;
     }
 
     &--logo {
-      @include buttons;
-      @include hover;
+      @include nav-icon-buttons;
+      @include gray-buttons-hover;
       padding: 0.2rem;
     }
   }
@@ -100,15 +87,15 @@ import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
     
     &--input {
       padding: 0.5rem;
-      border: 0.1rem solid #575353;
+      border: 0.1rem solid var(--c-border-color);
       border-radius: 0.3125rem;
-      background-color: #18181b;
+      background-color: var(--c-nav-background-color);
       width: 12.5rem;
     }
 
     &--button{
-      @include buttons;
-      @include hover;
+      @include nav-icon-buttons;
+      @include gray-buttons-hover;
       
     }
   }
@@ -118,8 +105,8 @@ import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
     gap: 0.6rem;
 
     &--notification {
-      @include buttons;
-      @include hover;
+      @include nav-icon-buttons;
+      @include gray-buttons-hover;
       font-weight: bold;
       display: flex;
       flex-direction: column;
@@ -138,26 +125,26 @@ import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
     }
 
     &--login {
-      @include buttons;
-      @include hover;
+      @include nav-icon-buttons;
+      @include gray-buttons-hover;
       margin:auto;
       background-color: #2f2f35;
       font-weight: bold;
     }
 
     &--signup {
-      @include buttons;
-      background-color: #199afc;
+      @include nav-icon-buttons;
+      background-color: var(--c-blue-button-and-words);
       font-weight: bold;
       margin:auto;
-      &:hover{
+      &:gray-buttons-hover{
         opacity: 0.8;
       }
     }
 
     &--profile {
-      @include buttons;
-      @include hover;
+      @include nav-icon-buttons;
+      @include gray-buttons-hover;
       margin:auto;
     }
 

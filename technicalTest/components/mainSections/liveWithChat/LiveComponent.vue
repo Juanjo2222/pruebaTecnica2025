@@ -51,13 +51,16 @@ import ShareIcon from '@/components/icons/ShareIcon'
 </template>
 
 <style scoped lang="scss">
+
+@import '@/assets/styles/mixins.scss';
+
 .live {
   display: flex;
   flex-direction: column;
   background-color: var(--c-general-color);
 
   &__video {
-    color: white;
+    color: var(--c-white);
     background-color: gray;
     width: 75rem;
     height: 40rem;
@@ -88,7 +91,7 @@ import ShareIcon from '@/components/icons/ShareIcon'
     &-text {
       border-radius: 0.3rem;
       background-color: red;
-      color: white;
+      color: var(--c-white);
       padding: 0.3rem;
       display: inline-block;
       margin-left: 0.5rem;
@@ -104,7 +107,7 @@ import ShareIcon from '@/components/icons/ShareIcon'
   }
 
   &__streamer-name {
-    color: white;
+    color: var(--c-white);
     font-size: 1rem;
     font-weight: bold;
   }
@@ -120,12 +123,12 @@ import ShareIcon from '@/components/icons/ShareIcon'
       border-radius: 0.4rem;
       cursor: pointer;
       font-size: 0.9rem;
-      color: white;
+      color: var(--c-white);
       height: 2rem;
       display:flex;
 
       &--follow {
-        background-color:#199afc;
+        background-color:var(--c-blue-button-and-words);
       }
 
       &--subscribe {
@@ -147,11 +150,11 @@ import ShareIcon from '@/components/icons/ShareIcon'
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
-    color:white;
+    color:var(--c-white);
   }
 
   &__title {
-    color: white;
+    color: var(--c-white);
     font-size: 1rem;
     font-weight: bold;
   }
@@ -175,13 +178,13 @@ import ShareIcon from '@/components/icons/ShareIcon'
     &--button{
       background-color: var(--c-general-color);
       border: none;
-      color: white;
+      color: var(--c-white);
       border-radius: 0.3125rem;
       cursor: pointer;
       padding: 0.2rem;
 
       &:hover {
-        background-color:#77777a;
+        @include gray-buttons-hover;
       }
     }
 
@@ -199,17 +202,11 @@ import ShareIcon from '@/components/icons/ShareIcon'
   }
 
   &__tags{
-    font-size: 0.75rem;
-    font-weight: bold;
-    background-color: #29292e;
-    padding: 0.3rem 0.6rem;
-    border-radius: 1rem;
-    color: #adadb8;
-    width: fit-content;
+    @include tags;
   }
 
   &__about{
-    color:white;
+    color:var(--c-white);
     font-weight: bold;
     padding-top: 1rem;
     padding-bottom: 1rem;

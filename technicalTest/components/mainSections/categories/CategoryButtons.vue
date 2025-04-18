@@ -29,6 +29,8 @@ const buttons = [
 
 <style scoped lang="scss">
 
+@import '@/assets/styles/mixins.scss';
+
 .category-button-container {
   display: flex;
   gap: 1.5rem;
@@ -37,19 +39,11 @@ const buttons = [
 }
 
 .category-button{
-  background-color: #199afc;
-  border-radius: 0.5rem;
-  border: none;
-  padding-left: 1rem;
-  width: 18rem;
-  height: 2.8rem;
-  cursor: pointer;
-  display:flex;
-  align-items: center;
-  gap: 0.5rem;
+  @include category-buttons;
+  background-color: var(--c-blue-button-and-words);
 
   &__text{
-    color: white;
+    color: var(--c-white);
     font-weight: bold;
     font-size: 1.3rem;
   }

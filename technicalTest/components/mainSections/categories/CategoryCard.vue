@@ -44,7 +44,7 @@ const props = defineProps<{
   margin-right:1.5rem;
 
   &__card {
-    background-color: #0e0e10;
+    background-color: var(--c-general-color);
     width: 14rem;
     
     &--image {
@@ -62,7 +62,7 @@ const props = defineProps<{
         &-name {
           font-size: 1.1rem;
           font-weight: bold;
-          color: #fff;
+          color: var(--c-white);
         }
 
         &-viewers {

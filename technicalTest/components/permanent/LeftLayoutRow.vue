@@ -76,7 +76,7 @@ const streamers = streamersRaw.map(streamer => {
 
   &__viewers {
     font-size: 0.9rem;
-    color: #ffffff;
+    color: var(--c-white);
     margin-left:-0.5rem;
   }
 
