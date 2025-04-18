@@ -6,6 +6,7 @@ import GiftIcon from '@/components/icons/GiftIcon.vue';
 import EmojiIcon from '@/components/icons/EmojiIcon.vue';
 import BitsIcon from '@/components/icons/BitsIcon.vue';
 import ConfigIcon from '@/components/icons/ConfigIcon.vue';
+import texts from '@/assets/texts.json';
 </script>
 
 <template>
@@ -14,7 +15,7 @@ import ConfigIcon from '@/components/icons/ConfigIcon.vue';
       <button class="chat__collapse-icon chat__collapse-icon--flipped">
         <IconCollapseLogo/>
       </button>
-      <span class="chat__title">STREAM CHAT</span>
+      <span class="chat__title">{{ texts.chatTitle }}</span>
       <button class="chat__collapse-icon chat__collapse-icon">
         <CommunityIcon/>
       </button>
@@ -25,14 +26,14 @@ import ConfigIcon from '@/components/icons/ConfigIcon.vue';
       <section class="chat__gifts-title">
         <GiftIcon/>
         <span class="chat__gifts-text">
-          Gift a Sub now to be #1!
+          {{ texts.giftsTitle }}
         </span>
       </section>
       <ArrowIcon class="chat__collapse-icon" />
     </section>
     <div class="chat__divider-two"/>
     <section class="chat__content">
-      <span class="chat__content-title">Welcome to the chat room!</span>
+      <span class="chat__content-title">{{ texts.welcomeChatText }}</span>
       <div class="chat__content-message">
         <input class="chat__content-message--input" type="text" placeholder="Send a message"><EmojiIcon/>
       </div>
@@ -43,7 +44,7 @@ import ConfigIcon from '@/components/icons/ConfigIcon.vue';
         </div>
         <div class="chat__bottom-right">
           <ConfigIcon />
-          <button class="chat__bottom-send">Chat</button>
+          <button class="chat__bottom-send">{{ texts.chatButtonText }}</button>
         </div>
       </div>
     </section>

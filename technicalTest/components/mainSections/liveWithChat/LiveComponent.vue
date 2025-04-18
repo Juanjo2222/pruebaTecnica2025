@@ -7,6 +7,7 @@ import SuscribeIcon from '@/components/icons/SuscribeIcon'
 import DownArrowIcon from '@/components/icons/DownArrowIcon'
 import RedViewersIcon from '@/components/icons/RedViewersIcon'
 import ShareIcon from '@/components/icons/ShareIcon'
+import texts from '@/assets/texts.json';
 </script>
 
 <template>
@@ -23,8 +24,8 @@ import ShareIcon from '@/components/icons/ShareIcon'
       <section class="live__front">
         <span class="live__streamer-name">Streamer</span>
         <section class="live__actions">
-          <button class="live__actions-button live__actions-button--follow"><FollowIcon class="live__icon-button"/>Follow</button>
-          <button class="live__actions-button live__actions-button--subscribe"><SuscribeIcon class="live__icon-button"/>Subscribe<DownArrowIcon class="live__icon-button"/></button>
+          <button class="live__actions-button live__actions-button--follow"><FollowIcon class="live__icon-button"/>{{ texts.followButtonText }}</button>
+          <button class="live__actions-button live__actions-button--subscribe"><SuscribeIcon class="live__icon-button"/>{{ texts.subscribeButtonText }}<DownArrowIcon class="live__icon-button"/></button>
         </section>
       </section>
     <section class="live__middle">

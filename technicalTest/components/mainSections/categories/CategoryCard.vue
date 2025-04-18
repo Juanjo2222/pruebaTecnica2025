@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CategoryButtons from './CategoryButtons.vue';
 import { useViewersFormat  } from '@/composables/useViewersFormat';
+import texts from '@/assets/texts.json';
 
 const { formatViewers } = useViewersFormat();
 
@@ -25,7 +26,7 @@ const props = defineProps<{
     <img :src="category.image" class="categories__card--image" />
     <div class="categories__card--content">
       <span class="categories__card--content-name">{{ category.name }}</span>
-      <span class="categories__card--content-viewers">{{ formatViewers(category.viewers) }} viewers</span>
+      <span class="categories__card--content-viewers">{{ texts.defaultFollowersNumber }} {{ texts.viewers }}</span>
       <span class="categories__card--content-subCategory">{{ category.subCategory }}</span>
     </div>
     </div>
