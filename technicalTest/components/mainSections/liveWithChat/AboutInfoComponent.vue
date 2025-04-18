@@ -23,18 +23,19 @@ import TikTokIcon from '@/components/icons/TikTokIcon.vue'
 
 <style scoped lang="scss">
 
+@import '@/assets/styles/mixins.scss';
+
 .about-info{
   display: flex;
   flex-direction: column;
-  background-color: #18181b;
-  color:white;
+  background-color: var(--c-nav-background-color);
+  color: var(--c-white);
   height: 10rem;
   padding:1.5rem;
   margin-right: 1rem;
   
   &__followers{
-    color:white;
-        
+    
     &--word{
     color:#878790;
   }
@@ -54,7 +55,7 @@ import TikTokIcon from '@/components/icons/TikTokIcon.vue'
     &::after {
       content: '';
       flex: 1;
-      border-top: 0.0625rem solid #444;
+      border-top: 0.0625rem solid var(--c-border-color);
     }
 
   }
@@ -66,17 +67,10 @@ import TikTokIcon from '@/components/icons/TikTokIcon.vue'
 }
 
     &__social-button {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      padding: 0.5rem;
-      background-color: #18181b;
-      color: #a4a4ae;
-      border: none;
-      cursor: pointer;
+      @include social-buttons;
 
       &:hover {
-        background-color: #77777a;
+        @include gray-buttons-hover;
       }
     }
 

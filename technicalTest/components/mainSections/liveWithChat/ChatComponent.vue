@@ -52,8 +52,10 @@ import ConfigIcon from '@/components/icons/ConfigIcon.vue';
 
 <style scoped lang="scss">
 
+@import '@/assets/styles/mixins.scss';
+
 .chat {
-  background-color: #18181b;
+  background-color: var(--c-nav-background-color);
   width: 22rem;
 
   &__front {
@@ -64,11 +66,11 @@ import ConfigIcon from '@/components/icons/ConfigIcon.vue';
 
   &__collapse-icon {
     border: 0;
-    background-color: #18181b;
+    background-color: var(--c-nav-background-color);
     padding: 1rem;
 
     &:hover {
-      background-color: #77777a;
+      @include gray-buttons-hover;
     }
 
     &--flipped {
@@ -77,12 +79,12 @@ import ConfigIcon from '@/components/icons/ConfigIcon.vue';
   }
 
   &__title{
-    color:white;
+    color:var(--c-white);
     padding-top: 1.5rem;
   }
 
   &__divider-one{
-    border-top: 0.0625rem solid #444;
+    border-top: 0.0625rem solid var(--c-border-color);
   }
 
   &__gifts {
@@ -107,7 +109,7 @@ import ConfigIcon from '@/components/icons/ConfigIcon.vue';
   }
 
   &__divider-two{
-    border-top: 0.0625rem solid #444;
+    border-top: 0.0625rem solid var(--c-border-color);
     margin: 1rem 1rem 0 1rem;
   }
 
@@ -123,16 +125,16 @@ import ConfigIcon from '@/components/icons/ConfigIcon.vue';
 
     &-message {
       margin-top: auto;
-      background-color: 18181b;
+      background-color: var(--c-nav-background-color);
       display:flex;
       align-items: center;
 
       &--input {
         width: 18rem;
         padding: 0.6rem;
-        color: white;
+        color: var(--c-white);
         border: none;
-        background-color: #18181b;
+        background-color: var(--c-nav-background-color);
         border: 0.0625rem solid #545457;
         border-radius: 0.4rem;
       }
@@ -166,10 +168,10 @@ import ConfigIcon from '@/components/icons/ConfigIcon.vue';
       }
 
       &-send {
-        background-color: #199afc;
+        background-color: var(--c-blue-button-and-words);
         border: none;
         padding: 0.4rem;
-        color: white;
+        color: var(--c-white);
         border-radius: 0.3125rem;
         cursor: pointer;
       }

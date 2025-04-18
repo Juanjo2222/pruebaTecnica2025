@@ -34,11 +34,11 @@ const blueText = "Categories";
 
 <style scoped lang="scss">
 .category-section {
-  background-color: #0e0e10;
+  background-color: var(--c-general-color);
 
   &__title {
     font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
+    color: var(--c-white);
     margin-top: auto;
     padding-top: 1.2rem;
   }

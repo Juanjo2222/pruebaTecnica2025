@@ -20,9 +20,9 @@ import LeftLayoutRow from '@/components/permanent/LeftLayoutRow.vue';
 .sidebar {
   font-family: Arial, Helvetica, sans-serif;
   width: 18rem;
-  background-color: #0e0e10;
+  background-color: var(--c-general-color);
   padding: 1rem;
-  color: white;
+  color: var(--c-white);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -39,11 +39,11 @@ import LeftLayoutRow from '@/components/permanent/LeftLayoutRow.vue';
 
     &--collapase-button {
       border: 0;
-      background-color: #0e0e10;
+      background-color: var(--c-general-color);
       padding-left: 0.3rem;
       margin-left: 2.1rem;
       &:hover{
-        background-color: #77777a;
+        background-color: var(-c-gray-hover);
       }
     }
 
