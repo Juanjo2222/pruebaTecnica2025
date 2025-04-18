@@ -3,20 +3,21 @@ import YotubeIcon from '@/components/icons/YotubeIcon.vue'
 import InstragramIcon from '@/components/icons/InstragramIcon.vue'
 import TwitterIcon from '@/components/icons/TwitterIcon.vue'
 import TikTokIcon from '@/components/icons/TikTokIcon.vue'
+import texts from '@/assets/texts.json';
 </script>
 
 <template>
   <section class="about-info">
     <span class="about-info__followers">"184M"
-      <span class="about-info__followers--word"> followers</span>
+      <span class="about-info__followers--word">{{ texts.followers }}</span>
     </span>
     <span class="about-info__description">Description</span>
     <div class="about-info__divider"/>
     <section class="about-info__social-buttons">
-      <button class="about-info__social-button"><YotubeIcon/>YouTube</button>
-      <button class="about-info__social-button"><InstragramIcon/>Instagram</button>
-      <button class="about-info__social-button"><TwitterIcon/>Twitter</button>
-      <button class="about-info__social-button"><TikTokIcon/>TikTok</button>
+      <button class="about-info__social-button"><YotubeIcon/>{{ texts.youtube }}</button>
+      <button class="about-info__social-button"><InstragramIcon/>{{ texts.instagram }}</button>
+      <button class="about-info__social-button"><TwitterIcon/>{{ texts.twitter }}</button>
+      <button class="about-info__social-button"><TikTokIcon/>{{ texts.tiktok }}</button>
     </section>
   </section>
 </template>

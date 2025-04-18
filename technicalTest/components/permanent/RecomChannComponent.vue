@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import IconCollapseLogo from '@/components/icons/CollapseIcon.vue';
 import LeftLayoutRow from '@/components/permanent/LeftLayoutRow.vue';
-
+import texts from '@/assets/texts.json';
 </script>
 
 <template>
   <aside class="sidebar">
     <section class="sidebar__front-part">
-      <h2 class="sidebar__front-part--title">RECOMMENDED CHANNELS</h2>
+      <h2 class="sidebar__front-part--title">{{ texts.recommChannels }}</h2>
       <button class="sidebar__front-part--collapase-button">
         <IconCollapseLogo/>
       </button>

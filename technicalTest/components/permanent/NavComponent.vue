@@ -4,6 +4,7 @@ import IconOptions from '@/components/icons/OptionsIcon.vue';
 import IconNotification from '@/components/icons/NotificationIcon.vue';
 import IconProfile from '@/components/icons/ProfileIcon.vue';
 import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
+import texts from '@/assets/texts.json';
 </script>
 
 <template>
@@ -12,7 +13,7 @@ import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
       <button class="top-bar__left-part--logo">
         <IconTwitchLogo/>
       </button>
-      <div class="top-bar__left-part--text">MIDUTCH</div>
+      <div class="top-bar__left-part--text">{{ texts.midutch }}</div>
       <button class="top-bar__left-part--more">
         <IconOptions/>
       </button>
@@ -29,11 +30,11 @@ import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
     </section>
     <section class="top-bar__right-part">
       <button class="top-bar__right-part--notification">
-        <span class="notification-text">63</span>
+        <span class="notification-text">{{ texts.notifNumber }}</span>
         <IconNotification/>
       </button>
-      <button class="top-bar__right-part--login">Log in</button>
-      <button class="top-bar__right-part--signup">Sign up</button>
+      <button class="top-bar__right-part--login">{{ texts.loginButton }}</button>
+      <button class="top-bar__right-part--signup">{{ texts.signUpButton }}</button>
       <button class="top-bar__right-part--profile">
         <IconProfile/>
       </button>

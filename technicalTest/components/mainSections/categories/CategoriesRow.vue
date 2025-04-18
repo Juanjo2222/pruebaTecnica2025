@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ApiTwitch } from '@/api/twitchApi';
 import CategoryCard from '@/components/mainSections/categories/CategoryCard.vue';
+import texts from '@/assets/texts.json';
 
 const api = new ApiTwitch();
 await api.getToken();
@@ -14,17 +15,15 @@ const categories = api.data.map((category: any, index: number) => ({
   image: category.box_art_url.replace('{width}x{height}', '200x200')
 }));
 
-const blueText = "Categories";
-
 </script>
 
 <template>
   <section class="category-section">
     <h2 class="category-section__title">
       <span class="category-section__blue-text">
-        {{ blueText }}
+        {{ texts.categoriesTitleBlue }}
       </span> 
-      we think you'll like
+      {{ texts.titlesWhite }}
     </h2>
 
     <CategoryCard :categories="categories" />
