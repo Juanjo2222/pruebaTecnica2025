@@ -7,6 +7,22 @@ import EmojiIcon from '@/components/icons/EmojiIcon.vue';
 import BitsIcon from '@/components/icons/BitsIcon.vue';
 import ConfigIcon from '@/components/icons/ConfigIcon.vue';
 import texts from '@/assets/data/texts.json';
+import { ApiTwitch } from '@/api/twitchApi';
+import type { Streamer } from '@/types/streamer';
+
+const props = defineProps<{
+  user_login: string
+}>();
+
+const api = new ApiTwitch();
+await api.getToken();
+
+await api.requestApi(`https://api.twitch.tv/helix/streams?user_login=${props.user_login}&fields=user_id`);
+const user_id = (api.data[0] as Streamer).user_id;
+
+await api.requestApi(`https://api.twitch.tv/helix/users?id=${user_id}&fields=profile_image_url`);
+const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
+
 </script>
 
 <template>
@@ -34,13 +50,19 @@ import texts from '@/assets/data/texts.json';
     <div class="chat__divider-two"/>
     <section class="chat__content">
       <span class="chat__content-title">{{ texts.welcomeChatText }}</span>
+      <div class="chat__message">
+        <div class="chat__message-content">
+          <span class="chat__message-user">{{ texts.user1 }}</span>
+          <span class="chat__message-text">{{ texts.user1Message }}</span>
+        </div>
+      </div>
       <div class="chat__content-message">
         <input class="chat__content-message--input" type="text" placeholder="Send a message"><EmojiIcon/>
       </div>
       <div class="chat__bottom">
         <div class="chat__bottom-left">
-          <span class="chat__bottom-bits"><BitsIcon />1</span>
-          <span class="chat__bottom-points"><BitsIcon />0</span>
+          <span class="chat__bottom-bits"><BitsIcon />0</span>
+          <span class="chat__bottom-points"><img :src="profile_image_url" class="chat__bottom--image"/>0</span>
         </div>
         <div class="chat__bottom-right">
           <ConfigIcon />
@@ -144,6 +166,33 @@ import texts from '@/assets/data/texts.json';
 
   }
 
+  &__message {
+    display: flex;
+    margin-top: 1rem;
+    gap: 0.5rem;
+
+    &-content {
+      display: flex;
+      gap: 0.3rem;
+      background-color: var(--c-nav-background-color);
+      width: 19rem;
+      height: 45rem;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      align-items: flex-end
+    }
+
+    &-user {
+      font-weight: bold;
+      color: #9ecbff;
+      font-size: 0.875rem;
+    }
+
+    &-text {
+      color: var(--c-white);
+      font-size: 0.875rem;
+    }
+  }
   
   &__bottom {
       display: flex;
@@ -176,6 +225,14 @@ import texts from '@/assets/data/texts.json';
         border-radius: 0.3125rem;
         cursor: pointer;
       }
+
+      &--image{
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        margin-right: 0.3rem;
+      }
+
     }
 
 }
