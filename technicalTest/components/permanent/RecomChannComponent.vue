@@ -19,7 +19,7 @@ import texts from '@/assets/data/texts.json';
 <style scoped lang="scss">
 .sidebar {
   font-family: Arial, Helvetica, sans-serif;
-  width: 18rem;
+  width: 19.1rem;
   background-color: var(--c-general-color);
   padding: 1rem;
   color: var(--c-white);
