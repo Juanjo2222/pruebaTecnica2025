@@ -18,7 +18,7 @@ const streamers = streamersRaw.map(streamer => {
   const userInfo = usersData.find((user: any) => user.id === streamer.user_id);
   return {
     ...streamer,
-    profileImg: userInfo?.profile_image_url || '',
+    profile_img: userInfo?.profile_image_url || '',
   };
 });
 
@@ -27,7 +27,7 @@ const streamers = streamersRaw.map(streamer => {
 
 <template>
   <li v-for="(streamer, index) in streamers" :key="index" class="streamer-card">
-    <img :src="streamer.profileImg" class="streamer-card__image"/>
+    <img :src="streamer.profile_img" class="streamer-card__image"/>
     <section class="streamer-card__info">
       <span class="streamer-card__info--name">{{ streamer.user_name }}</span>
       <span class="streamer-card__info--channel">{{ streamer.game_name }}</span>

@@ -7,52 +7,97 @@ import SuscribeIcon from '@/components/icons/SuscribeIcon'
 import DownArrowIcon from '@/components/icons/DownArrowIcon'
 import RedViewersIcon from '@/components/icons/RedViewersIcon'
 import ShareIcon from '@/components/icons/ShareIcon'
-import texts from '@/assets/texts.json';
+import { ApiTwitch } from '@/api/twitchApi';
+import texts from '@/assets/data/texts.json';
+import type { Streamer } from '@/types/streamer';
+import { useViewersFormat } from '@/composables/useViewersFormat';
+
+const { formatViewers } = useViewersFormat();
+
+const props = defineProps<{ user_login: string }>();
+
+const api = new ApiTwitch();
+await api.getToken();
+
+await api.requestApi(`https://api.twitch.tv/helix/streams?user_login=${props.user_login}&fields=user_id,user_name,title,thumbnail_url,tags,type,started_at,viewer_count`);
+const user_id = (api.data[0] as Streamer).user_id;
+const user_name = (api.data[0] as Streamer).user_name;
+const title = (api.data[0] as Streamer).title;
+const tags = (api.data[0] as Streamer).tags;
+const game_name = (api.data[0] as Streamer).game_name;
+const thumbnail_url = (api.data[0] as Streamer).thumbnail_url;
+const viewer_count = (api.data[0] as Streamer).viewer_count;
+const thumbnail = thumbnail_url.replace('{width}x{height}', '1280x683');
+
+await api.requestApi(`https://api.twitch.tv/helix/users?id=${user_id}`);
+const description = (api.data[0] as Streamer).description;
+const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
+
+await api.requestApi(`https://api.twitch.tv/helix/channels/followers?broadcaster_id=${user_id}`);
+const totalFollowers = api.total;
 </script>
 
 <template>
   <section class="live">
-  <section class="live__video">
-    <h2>IMAGEN DEL DIRECTO</h2><!--<img :src="channel.thumbnail" class="live-channels__card--image"> LA IMAGEN DEL DIRECTO-->
-  </section>
-  <section class="live__info">
-    <button class="live__profile-button">
-      <IconTwitchLogo />
-      <span class="live__profile-button-text">LIVE</span>
-    </button>
-    <section class="live__info--positions">
-      <section class="live__front">
-        <span class="live__streamer-name">Streamer</span>
-        <section class="live__actions">
-          <button class="live__actions-button live__actions-button--follow"><FollowIcon class="live__icon-button"/>{{ texts.followButtonText }}</button>
-          <button class="live__actions-button live__actions-button--subscribe"><SuscribeIcon class="live__icon-button"/>{{ texts.subscribeButtonText }}<DownArrowIcon class="live__icon-button"/></button>
+    <section class="live__video">
+      <img :src="thumbnail" class="live__video-image" />
+    </section>
+
+    <section class="live__main-info">
+      <div class="live__profile-container">
+        <img :src="profile_image_url" class="live__profile-image" />
+        <span class="live__live-label">{{ texts.live }}</span>
+      </div>
+
+      <section class="live__details">
+        <section class="live__header">
+          <span class="live__streamer-name">{{ user_name }}</span>
+          <section class="live__actions">
+            <button class="live__follow-button">
+              <FollowIcon class="live__icon" />
+              {{ texts.followButtonText }}
+            </button>
+            <button class="live__subscribe-button">
+              <SuscribeIcon class="live__icon" />
+              {{ texts.subscribeButtonText }}
+              <DownArrowIcon class="live__icon" />
+            </button>
+          </section>
+        </section>
+
+        <section class="live__summary">
+          <span class="live__title">{{ title }}</span>
+          <div class="live__right-info">
+            <span class="live__viewers"><RedViewersIcon />{{ formatViewers(viewer_count) }}</span>
+            <span class="live__duration">3:25:00</span>
+            <section class="live__options">
+              <button class="live__options-button"><ShareIcon /></button>
+              <button class="live__options-button"><IconOptions /></button>
+            </section>
+          </div>
+        </section>
+
+        <section class="live__extra">
+          <span class="live__category">{{ game_name }}</span>
+          <div class="live__tags-container">
+            <div
+              v-for="(tag, index) in tags"
+              :key="index"
+              class="live__tag"
+            >
+              {{ tag }}
+            </div>
+          </div>
         </section>
       </section>
-    <section class="live__middle">
-      <span class="live__title">Título</span>
-      <div class="live__right-info">
-        <span class="live__viewers"><RedViewersIcon/>25.000</span>
-        <span class="live__time">3:25:00</span>
-        <section class="live__button-more">
-          <button class="live__button-more--button"><ShareIcon/></button>
-          <button class="live__button-more--button"><IconOptions/></button>
-        </section>
-      </div>
     </section>
-    <section class="live__bottom">
-      <span class="live__category">Categoría</span>
-      <span class="live__tags">tags</span>
-    </section>
-   </section>
-  </section>
-  <span class="live__about">About "streamer"</span>
-  <AboutInfoComponent/>
-</section>
 
+    <span class="live__about">{{ texts.about }} {{ user_name }}</span>
+    <AboutInfoComponent :total="totalFollowers" :description="description" />
+  </section>
 </template>
 
 <style scoped lang="scss">
-
 @import '@/assets/styles/mixins.scss';
 
 .live {
@@ -61,162 +106,186 @@ import texts from '@/assets/texts.json';
   background-color: var(--c-general-color);
 
   &__video {
-    color: var(--c-white);
-    background-color: gray;
     width: 75rem;
     height: 40rem;
+    background-color: gray;
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
-  &__info {
+  &__main-info {
     display: flex;
     margin-top: 1rem;
   }
 
-  &__info--positions {
-    margin-right: 1rem;
-    margin-left: 0.5rem;
-  }
-
-  &__profile-button {
-    border-radius: 50%;
-    border: none;
+  &__profile-container {
     width: 4rem;
     height: 4rem;
-    background-color: rgb(245, 110, 20);
+    border-radius: 50%;
+    border: none;
     margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
 
     &:hover {
       opacity: 0.8;
     }
-
-    &-text {
-      border-radius: 0.3rem;
-      background-color: red;
-      color: var(--c-white);
-      padding: 0.3rem;
-      display: inline-block;
-      margin-left: 0.5rem;
-    }
   }
 
-  &__front {
+  &__profile-image {
+    border-radius: 50%;
+    border: none;
+    object-fit: cover;
+  }
 
+  &__live-label {
+
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: red;
+    color: var(--c-white);
+    padding-left: 0.3rem;
+    border-radius: 0.3rem;
+    margin-left: 0.7rem;
+    margin-top: -0.6rem;
+    width: 2rem;
+  }
+
+  &__details {
     display: flex;
     flex-direction: column;
-    flex-direction: row;
-    gap: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+    width: 100%;
+
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
   }
 
   &__streamer-name {
     color: var(--c-white);
-    font-size: 1rem;
     font-weight: bold;
+    font-size: 1rem;
   }
 
   &__actions {
     display: flex;
     gap: 1rem;
-    margin-left: 52rem;
+  }
 
-    &-button {
-      padding: 0.5rem;
-      border: none;
-      border-radius: 0.4rem;
-      cursor: pointer;
-      font-size: 0.9rem;
-      color: var(--c-white);
-      height: 2rem;
-      display:flex;
+  &__follow-button,
+  &__subscribe-button {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--c-white);
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    height: 2rem;
 
-      &--follow {
-        background-color:var(--c-blue-button-and-words);
-      }
-
-      &--subscribe {
-        background-color: #2f2f35;
-        .icon{
-          padding-right:0.2rem;
-        }
-      }
-
-      &:hover {
-        opacity: 0.85;
-      }
+    &:hover {
+      opacity: 0.85;
     }
   }
 
-  &__middle {
-    margin-top: 1rem;
-    margin-left: 0.3rem;
+  &__follow-button {
+    background-color: var(--c-blue-button-and-words);
+  }
+
+  &__subscribe-button {
+    background-color: #2f2f35;
+    height: 2.2rem;
+  }
+
+  &__icon {
+    padding-right: 0.3rem;
+  }
+
+  &__summary {
     display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    color:var(--c-white);
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    color: var(--c-white);
   }
 
   &__title {
-    color: var(--c-white);
-    font-size: 1rem;
     font-weight: bold;
+    font-size: 1rem;
   }
 
   &__right-info {
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    margin-left: auto;
   }
 
-  &__viewers{
-    display:flex;
+  &__viewers {
     color: #ff8280;
+    display: flex;
+    align-items: center;
   }
 
-  &__button-more{
+  &__duration {
+    font-size: 0.875rem;
+    color: var(--c-white);
+  }
 
-    display:flex;
+  &__options {
+    display: flex;
+    gap: 0.3rem;
+  }
 
-    &--button{
-      background-color: var(--c-general-color);
-      border: none;
-      color: var(--c-white);
-      border-radius: 0.3125rem;
-      cursor: pointer;
-      padding: 0.2rem;
+  &__options-button {
+    background-color: var(--c-general-color);
+    border: none;
+    color: var(--c-white);
+    border-radius: 0.3125rem;
+    padding: 0.2rem;
+    cursor: pointer;
 
-      &:hover {
-        @include gray-buttons-hover;
-      }
+    &:hover {
+      @include gray-buttons-hover;
     }
-
   }
 
-  &__bottom {
-    display:flex;
+  &__extra {
+    display: flex;
     flex-direction: column;
+    margin-top: 0.5rem;
   }
 
-  &__category{
-    color:#1788de;
-    padding: 0.4rem;
+  &__category {
+    color: #1788de;
     font-size: 1rem;
+    padding: 0.4rem 0;
   }
 
-  &__tags{
+  &__tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__tag {
     @include tags;
   }
 
-  &__about{
-    color:var(--c-white);
+  &__about {
+    color: var(--c-white);
     font-weight: bold;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
   }
-
-  &__icon-button {
-    padding-right: 0.3rem;
-  }
-
 }
-
 </style>

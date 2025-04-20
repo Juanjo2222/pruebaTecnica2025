@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import IconCollapseLogo from '@/components/icons/CollapseIcon.vue';
 import LeftLayoutRow from '@/components/permanent/LeftLayoutRow.vue';
-import texts from '@/assets/texts.json';
+import texts from '@/assets/data/texts.json';
 </script>
 
 <template>
@@ -19,7 +19,7 @@ import texts from '@/assets/texts.json';
 <style scoped lang="scss">
 .sidebar {
   font-family: Arial, Helvetica, sans-serif;
-  width: 18rem;
+  width: 19.1rem;
   background-color: var(--c-general-color);
   padding: 1rem;
   color: var(--c-white);

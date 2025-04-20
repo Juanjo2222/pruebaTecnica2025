@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CategoryButtons from './CategoryButtons.vue';
 import { useViewersFormat  } from '@/composables/useViewersFormat';
-import texts from '@/assets/texts.json';
+import texts from '@/assets/data/texts.json';
 
 const { formatViewers } = useViewersFormat();
 

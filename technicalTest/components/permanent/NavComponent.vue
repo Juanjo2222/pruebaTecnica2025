@@ -4,7 +4,7 @@ import IconOptions from '@/components/icons/OptionsIcon.vue';
 import IconNotification from '@/components/icons/NotificationIcon.vue';
 import IconProfile from '@/components/icons/ProfileIcon.vue';
 import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
-import texts from '@/assets/texts.json';
+import texts from '@/assets/data/texts.json';
 </script>
 
 <template>
@@ -55,7 +55,7 @@ import texts from '@/assets/texts.json';
   padding: 0.4rem 1.25rem;
   background-color: var(--c-nav-background-color);
   color: var(--c-white);
-  width:116.6rem;
+  width: 116.6rem;
   height: 4rem;
 
   &__left-part {

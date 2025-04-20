@@ -2,6 +2,7 @@ class ApiTwitch {
 
     token: string = "";
     data: Array<unknown> = []
+    total: number = 0;
 
     constructor() {}
 
@@ -53,6 +54,7 @@ class ApiTwitch {
 
             const data = await response.json();
             this.data = data.data as T[];
+            this.total = data.total;
         } catch (error) {
             console.error('Error in:', error);
         }

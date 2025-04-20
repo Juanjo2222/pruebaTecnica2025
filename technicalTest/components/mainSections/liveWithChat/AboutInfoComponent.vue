@@ -3,15 +3,25 @@ import YotubeIcon from '@/components/icons/YotubeIcon.vue'
 import InstragramIcon from '@/components/icons/InstragramIcon.vue'
 import TwitterIcon from '@/components/icons/TwitterIcon.vue'
 import TikTokIcon from '@/components/icons/TikTokIcon.vue'
-import texts from '@/assets/texts.json';
+import texts from '@/assets/data/texts.json';
+import { useViewersFormat  } from '@/composables/useViewersFormat';
+
+const { formatViewers } = useViewersFormat();
+
+const props = defineProps<{
+  total: number
+  description: string
+}>();
+
+
 </script>
 
 <template>
   <section class="about-info">
-    <span class="about-info__followers">"184M"
+    <span class="about-info__followers">{{ formatViewers(props.total) }}
       <span class="about-info__followers--word">{{ texts.followers }}</span>
     </span>
-    <span class="about-info__description">Description</span>
+    <span class="about-info__description">{{ props.description }}</span>
     <div class="about-info__divider"/>
     <section class="about-info__social-buttons">
       <button class="about-info__social-button"><YotubeIcon/>{{ texts.youtube }}</button>
@@ -31,6 +41,7 @@ import texts from '@/assets/texts.json';
   flex-direction: column;
   background-color: var(--c-nav-background-color);
   color: var(--c-white);
+  width: 72rem;
   height: 10rem;
   padding:1.5rem;
   margin-right: 1rem;

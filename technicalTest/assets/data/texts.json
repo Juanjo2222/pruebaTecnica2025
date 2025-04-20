@@ -20,6 +20,9 @@
   "midutch": "MIDUTCH",
   "notifNumber": "63",
   "loginButton": "Log in",
-  "signUpButton": "Sign up"
-  
+  "signUpButton": "Sign up",
+  "live": "LIVE",
+  "about": "About",
+  "user1": "User1",
+  "user1Message": "Hola k tal"
 }  
