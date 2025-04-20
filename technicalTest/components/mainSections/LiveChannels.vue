@@ -2,6 +2,7 @@
 import IconDownArrow from '@/components/icons/DownArrowIcon.vue';
 import StreamerCard from '@/components/mainSections/liveChannels/StreamerCard.vue';
 import CategoriesRow from '~/components/mainSections/categories/CategoriesRow.vue';
+import texts from '@/assets/data/texts.json';
 import { ApiTwitch } from '@/api/twitchApi';
 import type { Streamer } from '@/types/streamer';
 
@@ -18,13 +19,10 @@ const usersData = api.data;
 const allStreamers = streamersRaw.map((streamer, index) => {
   const userInfo = usersData.find(user => user.id === streamer.user_id);
   return {
+    ...streamer,
     id: index + 1,
-    name: streamer.user_name,
-    title: streamer.title,
-    category: streamer.game_name,
-    thumbnail: streamer.thumbnail_url.replace('{width}x{height}', '500x500'),
-    tags: streamer.tags,
-    profileImg: userInfo?.profile_image_url || ''
+    profile_image_url: userInfo?.profile_image_url || '',
+    thumbnail_url: streamer.thumbnail_url.replace('{width}x{height}', '500x500'),
   };
 });
 
@@ -38,44 +36,47 @@ const streamerRows = Array.from({ length: numRows }, (_, i) =>
 const topRows = streamerRows.slice(0, 2);
 const bottomRows = streamerRows.slice(2);
 
-const blueText = "Live channels";
 </script>
 
 
 <template>
   <section class="live-channels-section">
-    <h2 class="live-channels-section__title">
-      <span class="live-channels-section__blue-text">{{ blueText }}</span>
-      we think you'll like
-    </h2>
-
     <div v-for="(row, index) in topRows" :key="'top-' + index" class="live-channels-section__row">
+      <h2 class="live-channels-section__title">
+        <span class="live-channels-section__blue-text">{{ texts.liveChannelsTitleBlue }}</span>
+        {{ texts.titlesWhite }}
+      </h2>
       <StreamerCard :channels="row" />
+      <div class="live-channels-section__divider">
+        <span class="live-channels-section__divider--text">{{ texts.showMore }}</span>
+        <IconDownArrow class="arrow-icon" />
+      </div>
     </div>
-
     <CategoriesRow />
-
     <div v-for="(row, index) in bottomRows" :key="'bottom-' + index" class="live-channels-section__row">
+      <h2 class="live-channels-section__title">
+        <span class="live-channels-section__blue-text">{{ texts.liveChannelsTitleBlue }}</span>
+        {{ texts.titlesWhite }}
+      </h2>
       <StreamerCard :channels="row" />
-    </div>
-
-    <div class="live-channels-section__divider">
-      <span class="live-channels-section__divider--text">Show more</span>
-      <IconDownArrow class="arrow-icon" />
+      <div class="live-channels-section__divider">
+        <span class="live-channels-section__divider--text">{{ texts.showMore }}</span>
+        <IconDownArrow class="arrow-icon" />
+      </div>
     </div>
   </section>
 </template>
 
 <style scoped lang="scss">
 .live-channels-section {
-  background-color: #0e0e10;
+  background-color: var(--c-general-color);
+  height: 100%;
 
   &__title {
     font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
+    color: var(--c-white);
     padding-top: 1.2rem;
     margin-top: 0;
-
   }
 
   &__blue-text {
@@ -89,7 +90,7 @@ const blueText = "Live channels";
   &__divider {
     display: flex;
     align-items: center;
-    color: #199afc;
+    color: var(--c-blue-button-and-words);
     font-weight: bold;
 
     &::before,
@@ -97,7 +98,7 @@ const blueText = "Live channels";
       content: '';
       flex: 1;
       margin-left: 1rem;
-      border-top: 0.0625rem solid #444;
+      border-top: 0.0625rem solid var(--c-border-color);
     }
 
     &--text {
