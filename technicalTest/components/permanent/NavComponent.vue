@@ -55,7 +55,7 @@ import texts from '@/assets/data/texts.json';
   padding: 0.4rem 1.25rem;
   background-color: var(--c-nav-background-color);
   color: var(--c-white);
-  width:116.6rem;
+  width: 116.6rem;
   height: 4rem;
 
   &__left-part {
