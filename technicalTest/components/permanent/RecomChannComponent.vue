@@ -19,29 +19,29 @@ import texts from '@/assets/data/texts.json';
 <style scoped lang="scss">
 .sidebar {
   font-family: Arial, Helvetica, sans-serif;
-  width: 19.1rem;
+  width: 19.1em;
   background-color: var(--c-general-color);
-  padding: 1rem;
+  padding: 1em;
   color: var(--c-white);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-left: -0.5rem;
+  gap: 1em;
+  margin-left: -0.5em;
 
   &__front-part {
     display: flex;
     justify-content: space-between;
 
     &--title {
-      font-size: 0.9rem;
+      font-size: 0.9em;
       font-weight: bold;
     }
 
     &--collapase-button {
       border: 0;
       background-color: var(--c-general-color);
-      padding-left: 0.3rem;
-      margin-left: 2.1rem;
+      padding-left: 0.3em;
+      margin-left: 2.1em;
       &:hover{
         background-color: var(-c-gray-hover);
       }

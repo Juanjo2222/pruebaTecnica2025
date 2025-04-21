@@ -106,8 +106,8 @@ const totalFollowers = api.total;
   background-color: var(--c-general-color);
 
   &__video {
-    width: 75rem;
-    height: 40rem;
+    width: 75em;
+    height: 40em;
     background-color: gray;
 
     &-image {
@@ -119,15 +119,15 @@ const totalFollowers = api.total;
 
   &__main-info {
     display: flex;
-    margin-top: 1rem;
+    margin-top: 1em;
   }
 
   &__profile-container {
-    width: 4rem;
-    height: 4rem;
+    width: 4em;
+    height: 4em;
     border-radius: 50%;
     border: none;
-    margin-top: 1rem;
+    margin-top: 1em;
     display: flex;
     flex-direction: column;
 
@@ -144,22 +144,21 @@ const totalFollowers = api.total;
 
   &__live-label {
 
-    font-size: 0.8rem;
+    font-size: 0.8em;
     font-weight: bold;
     background-color: red;
     color: var(--c-white);
-    padding-left: 0.3rem;
-    border-radius: 0.3rem;
-    margin-left: 0.7rem;
-    margin-top: -0.6rem;
-    width: 2rem;
+    padding-left: 0.3em;
+    border-radius: 0.3em;
+    margin-left: 0.7em;
+    width: 2em;
   }
 
   &__details {
     display: flex;
     flex-direction: column;
-    margin-left: 0.5rem;
-    margin-right: 1rem;
+    margin-left: 0.5em;
+    margin-right: 1em;
     width: 100%;
 
   }
@@ -168,31 +167,31 @@ const totalFollowers = api.total;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 1em;
   }
 
   &__streamer-name {
     color: var(--c-white);
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   &__actions {
     display: flex;
-    gap: 1rem;
+    gap: 1em;
   }
 
   &__follow-button,
   &__subscribe-button {
     display: flex;
     align-items: center;
-    padding: 0.5rem;
-    font-size: 0.9rem;
+    padding: 0.5em;
+    font-size: 0.9em;
     color: var(--c-white);
     border: none;
-    border-radius: 0.4rem;
+    border-radius: 0.4em;
     cursor: pointer;
-    height: 2rem;
+    height: 2em;
 
     &:hover {
       opacity: 0.85;
@@ -205,29 +204,29 @@ const totalFollowers = api.total;
 
   &__subscribe-button {
     background-color: #2f2f35;
-    height: 2.2rem;
+    height: 2.2em;
   }
 
   &__icon {
-    padding-right: 0.3rem;
+    padding-right: 0.3em;
   }
 
   &__summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 0.5rem;
+    margin-top: 0.5em;
     color: var(--c-white);
   }
 
   &__title {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   &__right-info {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.5em;
     align-items: center;
   }
 
@@ -238,21 +237,21 @@ const totalFollowers = api.total;
   }
 
   &__duration {
-    font-size: 0.875rem;
+    font-size: 0.875em;
     color: var(--c-white);
   }
 
   &__options {
     display: flex;
-    gap: 0.3rem;
+    gap: 0.3em;
   }
 
   &__options-button {
     background-color: var(--c-general-color);
     border: none;
     color: var(--c-white);
-    border-radius: 0.3125rem;
-    padding: 0.2rem;
+    border-radius: 0.3125em;
+    padding: 0.2em;
     cursor: pointer;
 
     &:hover {
@@ -263,19 +262,19 @@ const totalFollowers = api.total;
   &__extra {
     display: flex;
     flex-direction: column;
-    margin-top: 0.5rem;
+    margin-top: 0.5em;
   }
 
   &__category {
     color: #1788de;
-    font-size: 1rem;
-    padding: 0.4rem 0;
+    font-size: 1em;
+    padding: 0.4em 0;
   }
 
   &__tags-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.5em;
   }
 
   &__tag {
@@ -285,7 +284,7 @@ const totalFollowers = api.total;
   &__about {
     color: var(--c-white);
     font-weight: bold;
-    padding: 1rem 0;
+    padding: 1em 0;
   }
 }
 </style>

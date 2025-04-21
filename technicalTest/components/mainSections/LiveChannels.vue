@@ -75,7 +75,7 @@ const bottomRows = streamerRows.slice(2);
   &__title {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--c-white);
-    padding-top: 1.2rem;
+    padding-top: 1.2em;
     margin-top: 0;
   }
 
@@ -84,7 +84,7 @@ const bottomRows = streamerRows.slice(2);
   }
 
   &__row {
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
   }
 
   &__divider {
@@ -97,14 +97,14 @@ const bottomRows = streamerRows.slice(2);
     &::after {
       content: '';
       flex: 1;
-      margin-left: 1rem;
-      border-top: 0.0625rem solid var(--c-border-color);
+      margin-left: 1em;
+      border-top: 0.0625em solid var(--c-border-color);
     }
 
     &--text {
       font-family: Arial, Helvetica, sans-serif;
-      padding: 0.625rem;
-      font-size: 0.875rem;
+      padding: 0.625em;
+      font-size: 0.875em;
       cursor: pointer;
     }
   }

@@ -79,7 +79,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
 
 .chat {
   background-color: var(--c-nav-background-color);
-  width: 22rem;
+  width: 22em;
 
   &__front {
     display:flex;
@@ -90,7 +90,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
   &__collapse-icon {
     border: 0;
     background-color: var(--c-nav-background-color);
-    padding: 1rem;
+    padding: 1em;
 
     &:hover {
       @include gray-buttons-hover;
@@ -103,44 +103,44 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
 
   &__title{
     color:var(--c-white);
-    padding-top: 1.5rem;
+    padding-top: 1.5em;
   }
 
   &__divider-one{
-    border-top: 0.0625rem solid var(--c-border-color);
+    border-top: 0.0625em solid var(--c-border-color);
   }
 
   &__gifts {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 0.5rem;
+    margin-top: 0.5em;
 
     &-title{
       display: flex;
       align-items: center;
-      gap:0.4rem;
+      gap:0.4em;
     }
 
     &-text {
       color: #198ae0;
-      padding-top: 0.7rem;
+      padding-top: 0.7em;
       font-weight: bold;
       display: flex;
-      gap: 0.5rem;
+      gap: 0.5em;
     }
   }
 
   &__divider-two{
-    border-top: 0.0625rem solid var(--c-border-color);
-    margin: 1rem 1rem 0 1rem;
+    border-top: 0.0625em solid var(--c-border-color);
+    margin: 1em 1em 0 1em;
   }
 
   &__content{
     display:flex;
     flex-direction: column;
-    padding: 1rem;
-    height: 55rem;
+    padding: 1em;
+    height: 55em;
 
     &-title{
       color: #9a9aa5;
@@ -153,13 +153,13 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       align-items: center;
 
       &--input {
-        width: 18rem;
-        padding: 0.6rem;
+        width: 18em;
+        padding: 0.6em;
         color: var(--c-white);
         border: none;
         background-color: var(--c-nav-background-color);
-        border: 0.0625rem solid #545457;
-        border-radius: 0.4rem;
+        border: 0.0625em solid #545457;
+        border-radius: 0.4em;
       }
 
     }
@@ -168,29 +168,29 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
 
   &__message {
     display: flex;
-    margin-top: 1rem;
-    gap: 0.5rem;
+    margin-top: 1em;
+    gap: 0.5em;
 
     &-content {
       display: flex;
-      gap: 0.3rem;
+      gap: 0.3em;
       background-color: var(--c-nav-background-color);
-      width: 19rem;
-      height: 45rem;
-      padding: 0.5rem;
-      border-radius: 0.5rem;
+      width: 19em;
+      height: 45em;
+      padding: 0.5em;
+      border-radius: 0.5em;
       align-items: flex-end
     }
 
     &-user {
       font-weight: bold;
       color: #9ecbff;
-      font-size: 0.875rem;
+      font-size: 0.875em;
     }
 
     &-text {
       color: var(--c-white);
-      font-size: 0.875rem;
+      font-size: 0.875em;
     }
   }
   
@@ -198,17 +198,17 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 1rem;
+      margin-top: 1em;
 
       &-left {
         display: flex;
-        gap: 0.5rem;
+        gap: 0.5em;
         color: #9b9ba4;
       }
 
       &-right {
         display: flex;
-        gap: 0.5rem;
+        gap: 0.5em;
       }
 
       &-bits,
@@ -220,17 +220,17 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       &-send {
         background-color: var(--c-blue-button-and-words);
         border: none;
-        padding: 0.4rem;
+        padding: 0.4em;
         color: var(--c-white);
-        border-radius: 0.3125rem;
+        border-radius: 0.3125em;
         cursor: pointer;
       }
 
       &--image{
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.5em;
+        height: 1.5em;
         border-radius: 50%;
-        margin-right: 0.3rem;
+        margin-right: 0.3em;
       }
 
     }

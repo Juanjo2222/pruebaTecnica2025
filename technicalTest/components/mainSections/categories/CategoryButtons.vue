@@ -33,19 +33,20 @@ const buttons = [
 
 .category-button-container {
   display: flex;
-  gap: 1.5rem;
-  padding-top: 1rem;
-  padding-bottom: 3rem;
+  gap: 1.5em;
+  padding-top: 1em;
+  padding-bottom: 3em;
 }
 
 .category-button{
   @include category-buttons;
   background-color: var(--c-blue-button-and-words);
+  width: 21.5em;
 
   &__text{
     color: var(--c-white);
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1.3em;
   }
   
   &__icon{
