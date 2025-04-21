@@ -45,7 +45,7 @@ const buttons = [
   width: 21.5em;
 
   &__text{
-    color: var(--c-white);
+    color: black;
     font-weight: bold;
     font-size: 1.3em;
   }

@@ -90,7 +90,7 @@ import texts from '@/assets/data/texts.json';
       padding: 0.5em;
       border: 0.1em solid var(--c-border-color);
       border-radius: 0.3125em;
-      background-color: var(--c-nav-background-color);
+      background-color: #81e4e4;
       width: 12.5em;
     }
 
@@ -118,6 +118,7 @@ import texts from '@/assets/data/texts.json';
         border-radius: 2em;
         margin-left: 0.2em;
         background-color: red;
+        color: black;
         padding-top: 0.2em;
         padding-bottom: 0.2em;
         padding-left: 0.5em;
@@ -138,6 +139,7 @@ import texts from '@/assets/data/texts.json';
       background-color: var(--c-blue-button-and-words);
       font-weight: bold;
       margin:auto;
+      color: black;
       &:gray-buttons-hover{
         opacity: 0.8;
       }
