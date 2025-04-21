@@ -41,11 +41,11 @@ const totalFollowers = api.total;
   <section class="live">
     <title>{{ texts.pageTitle }} - {{ user_name }}</title>
     <section class="live__video">
-      <img :src="thumbnail" class="live__video-image" />
+      <img :src="thumbnail" class="live__video-image" alt="Thumbnail image"/>
     </section>
     <section class="live__main-info">
       <div class="live__profile-container">
-        <img :src="profile_image_url" class="live__profile-image" />
+        <img :src="profile_image_url" class="live__profile-image" alt="Channel profile image"/>
         <span class="live__live-label">{{ texts.live }}</span>
       </div>
       <section class="live__details">

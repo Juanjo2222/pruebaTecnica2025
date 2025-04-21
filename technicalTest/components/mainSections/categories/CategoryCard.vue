@@ -23,7 +23,7 @@ const props = defineProps<{
       :key="category.id"
       class="categories__card"
     >
-    <img :src="category.image" class="categories__card--image" />
+    <img :src="category.image" class="categories__card--image" alt="Category image"/>
     <div class="categories__card--content">
       <span class="categories__card--content-name">{{ category.name }}</span>
       <span class="categories__card--content-viewers">{{ texts.defaultFollowersNumber }} {{ texts.viewers }}</span>

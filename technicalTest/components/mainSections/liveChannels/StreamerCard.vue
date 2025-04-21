@@ -16,10 +16,10 @@ const props = defineProps<{
       class="live-channels__card"
     >
       <NuxtLink :to="`/${channel.user_login}`">
-        <img :src="channel.thumbnail_url" class="live-channels__card--image" />
+        <img :src="channel.thumbnail_url" class="live-channels__card--image" alt="Thumbnail image"/>
       </NuxtLink>
       <div class="live-channels__card--content">
-        <img :src="channel.profile_image_url" class="live-channels__card--content-profile"/>
+        <img :src="channel.profile_image_url" class="live-channels__card--content-profile" alt="Channel profile image"/>
         <div class="live-channels__card--info">
           <span class="live-channels__card--info-title">{{ channel.title }}</span>
           <span class="live-channels__card--info-name">{{ channel.user_name }}</span>

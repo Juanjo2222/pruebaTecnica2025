@@ -27,7 +27,7 @@ const streamers = streamersRaw.map(streamer => {
 
 <template>
   <li v-for="(streamer, index) in streamers" :key="index" class="streamer-card">
-    <img :src="streamer.profile_img" class="streamer-card__image"/>
+    <img :src="streamer.profile_img" class="streamer-card__image" alt="Channel profile image"/>
     <section class="streamer-card__info">
       <span class="streamer-card__info--name">{{ streamer.user_name }}</span>
       <span class="streamer-card__info--channel">{{ streamer.game_name }}</span>

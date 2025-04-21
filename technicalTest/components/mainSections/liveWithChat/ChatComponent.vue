@@ -62,7 +62,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       <div class="chat__bottom">
         <div class="chat__bottom-left">
           <span class="chat__bottom-bits"><BitsIcon />0</span>
-          <span class="chat__bottom-points"><img :src="profile_image_url" class="chat__bottom--image"/>0</span>
+          <span class="chat__bottom-points"><img :src="profile_image_url" class="chat__bottom--image" alt="Channel profile image"/>0</span>
         </div>
         <div class="chat__bottom-right">
           <ConfigIcon />
