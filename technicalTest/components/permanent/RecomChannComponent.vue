@@ -8,7 +8,7 @@ import texts from '@/assets/data/texts.json';
   <aside class="sidebar">
     <section class="sidebar__front-part">
       <h2 class="sidebar__front-part--title">{{ texts.recommChannels }}</h2>
-      <button class="sidebar__front-part--collapase-button">
+      <button class="sidebar__front-part--collapase-button" aria-label="Show recommended channels">
         <IconCollapseLogo/>
       </button>
     </section>

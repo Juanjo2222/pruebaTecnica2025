@@ -52,11 +52,11 @@ const totalFollowers = api.total;
         <section class="live__header">
           <span class="live__streamer-name">{{ user_name }}</span>
           <section class="live__actions">
-            <button class="live__follow-button">
+            <button class="live__follow-button" aria-label="Button to follow this streamer">
               <FollowIcon class="live__icon" />
               {{ texts.followButtonText }}
             </button>
-            <button class="live__subscribe-button">
+            <button class="live__subscribe-button" aria-label="Button to suscribe to this streamer channel">
               <SuscribeIcon class="live__icon" />
               {{ texts.subscribeButtonText }}
               <DownArrowIcon class="live__icon" />
@@ -69,8 +69,8 @@ const totalFollowers = api.total;
             <span class="live__viewers"><RedViewersIcon />{{ formatViewers(viewer_count) }}</span>
             <span class="live__duration">3:25:00</span>
             <section class="live__options">
-              <button class="live__options-button"><ShareIcon /></button>
-              <button class="live__options-button"><IconOptions /></button>
+              <button class="live__options-button" aria-label="Button for share this live"><ShareIcon /></button>
+              <button class="live__options-button" aria-label="Button for report this live"><IconOptions /></button>
             </section>
           </div>
         </section>

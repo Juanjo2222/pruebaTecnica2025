@@ -24,10 +24,10 @@ const props = defineProps<{
     <span class="about-info__description">{{ props.description }}</span>
     <div class="about-info__divider"/>
     <section class="about-info__social-buttons">
-      <button class="about-info__social-button"><YotubeIcon/>{{ texts.youtube }}</button>
-      <button class="about-info__social-button"><InstragramIcon/>{{ texts.instagram }}</button>
-      <button class="about-info__social-button"><TwitterIcon/>{{ texts.twitter }}</button>
-      <button class="about-info__social-button"><TikTokIcon/>{{ texts.tiktok }}</button>
+      <button class="about-info__social-button" aria-label="Go to youtube channel"><YotubeIcon/>{{ texts.youtube }}</button>
+      <button class="about-info__social-button" aria-label="Go to this channel instagram account"><InstragramIcon/>{{ texts.instagram }}</button>
+      <button class="about-info__social-button" aria-label="Go to this channel twitter account"><TwitterIcon/>{{ texts.twitter }}</button>
+      <button class="about-info__social-button" aria-label="Go to this channel tiktok account"><TikTokIcon/>{{ texts.tiktok }}</button>
     </section>
   </section>
 </template>

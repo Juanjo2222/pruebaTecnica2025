@@ -10,11 +10,11 @@ import texts from '@/assets/data/texts.json';
 <template>
   <nav class="top-bar">
     <section class="top-bar__left-part">
-      <button class="top-bar__left-part--logo">
+      <button class="top-bar__left-part--logo" aria-label="Go to principal page">
         <IconTwitchLogo/>
       </button>
       <div class="top-bar__left-part--text">{{ texts.midutch }}</div>
-      <button class="top-bar__left-part--more">
+      <button class="top-bar__left-part--more" aria-label="Show more options">
         <IconOptions/>
       </button>
     </section>
@@ -24,18 +24,18 @@ import texts from '@/assets/data/texts.json';
         type="text"
         placeholder="Search"
       >
-      <button class="top-bar__search--button">
+      <button class="top-bar__search--button" aria-label="Look for a streamer or live">
         <IconSearch/>
       </button>
     </section>
     <section class="top-bar__right-part">
-      <button class="top-bar__right-part--notification">
+      <button class="top-bar__right-part--notification" aria-label="Notifications">
         <span class="notification-text">{{ texts.notifNumber }}</span>
         <IconNotification/>
       </button>
-      <button class="top-bar__right-part--login">{{ texts.loginButton }}</button>
-      <button class="top-bar__right-part--signup">{{ texts.signUpButton }}</button>
-      <button class="top-bar__right-part--profile">
+      <button class="top-bar__right-part--login" aria-label="Button to login">{{ texts.loginButton }}</button>
+      <button class="top-bar__right-part--signup" aria-label="Button to sign up">{{ texts.signUpButton }}</button>
+      <button class="top-bar__right-part--profile" aria-label="Show your account">
         <IconProfile/>
       </button>
     </section>

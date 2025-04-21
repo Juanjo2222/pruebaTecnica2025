@@ -28,11 +28,11 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
 <template>
   <section class="chat">
     <section class="chat__front">
-      <button class="chat__collapse-icon chat__collapse-icon--flipped">
+      <button class="chat__collapse-icon chat__collapse-icon--flipped" aria-label="Show this live chat">
         <IconCollapseLogo/>
       </button>
       <span class="chat__title">{{ texts.chatTitle }}</span>
-      <button class="chat__collapse-icon chat__collapse-icon">
+      <button class="chat__collapse-icon chat__collapse-icon" aria-label="Show this live community">
         <CommunityIcon/>
       </button>
     </section>
@@ -66,7 +66,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
         </div>
         <div class="chat__bottom-right">
           <ConfigIcon />
-          <button class="chat__bottom-send">{{ texts.chatButtonText }}</button>
+          <button class="chat__bottom-send" aria-label="Send a message">{{ texts.chatButtonText }}</button>
         </div>
       </div>
     </section>

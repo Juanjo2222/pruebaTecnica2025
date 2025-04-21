@@ -19,6 +19,7 @@ const buttons = [
       <button
         v-for="(button, index) in buttons"
         :key="index"
+        aria-label="Go to streams about this category"
         class="category-button"
       >
         <span class="category-button__text">{{ button.label }}</span>
