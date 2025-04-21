@@ -39,16 +39,15 @@ const totalFollowers = api.total;
 
 <template>
   <section class="live">
+    <title>{{ texts.pageTitle }} - {{ user_name }}</title>
     <section class="live__video">
       <img :src="thumbnail" class="live__video-image" />
     </section>
-
     <section class="live__main-info">
       <div class="live__profile-container">
         <img :src="profile_image_url" class="live__profile-image" />
         <span class="live__live-label">{{ texts.live }}</span>
       </div>
-
       <section class="live__details">
         <section class="live__header">
           <span class="live__streamer-name">{{ user_name }}</span>
@@ -64,7 +63,6 @@ const totalFollowers = api.total;
             </button>
           </section>
         </section>
-
         <section class="live__summary">
           <span class="live__title">{{ title }}</span>
           <div class="live__right-info">
@@ -76,7 +74,6 @@ const totalFollowers = api.total;
             </section>
           </div>
         </section>
-
         <section class="live__extra">
           <span class="live__category">{{ game_name }}</span>
           <div class="live__tags-container">
@@ -91,7 +88,6 @@ const totalFollowers = api.total;
         </section>
       </section>
     </section>
-
     <span class="live__about">{{ texts.about }} {{ user_name }}</span>
     <AboutInfoComponent :total="totalFollowers" :description="description" />
   </section>
