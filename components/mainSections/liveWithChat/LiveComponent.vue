@@ -146,8 +146,9 @@ const totalFollowers = api.total;
     color: var(--c-white);
     padding-left: 0.3em;
     border-radius: 0.3em;
-    margin-left: 0.7em;
-    width: 2em;
+    margin-left: 0.8em;
+    margin-top: -0.5rem;
+    width: 2.5em;
   }
 
   &__details {
