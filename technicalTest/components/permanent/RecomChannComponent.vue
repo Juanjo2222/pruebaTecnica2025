@@ -6,13 +6,13 @@ import texts from '@/assets/data/texts.json';
 
 <template>
   <aside class="sidebar">
-    <section class="sidebar__front-part">
-      <h2 class="sidebar__front-part--title">{{ texts.recommChannels }}</h2>
-      <button class="sidebar__front-part--collapase-button" aria-label="Show recommended channels">
-        <IconCollapseLogo/>
+    <section class="sidebar__header">
+      <h2 class="sidebar__title">{{ texts.recommChannels }}</h2>
+      <button class="sidebar__collapse-button" aria-label="Show recommended channels">
+        <IconCollapseLogo />
       </button>
     </section>
-    <LeftLayoutRow/>
+    <LeftLayoutRow />
   </aside>
 </template>
 
@@ -28,27 +28,27 @@ import texts from '@/assets/data/texts.json';
   gap: 1em;
   margin-left: -0.5em;
 
-  &__front-part {
+  &__header {
     display: flex;
     justify-content: space-between;
-
-    &--title {
-      font-size: 0.9em;
-      font-weight: bold;
-    }
-
-    &--collapase-button {
-      border: 0;
-      background-color: var(--c-general-color);
-      padding-left: 0.3em;
-      margin-left: 2.1em;
-      &:hover{
-        background-color: var(-c-gray-hover);
-      }
-    }
-
+    align-items: center;
   }
 
-}
+  &__title {
+    font-size: 0.9em;
+    font-weight: bold;
+  }
 
+  &__collapse-button {
+    border: 0;
+    background-color: var(--c-general-color);
+    padding-left: 0.3em;
+    margin-left: 2.1em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--c-gray-hover);
+    }
+  }
+}
 </style>

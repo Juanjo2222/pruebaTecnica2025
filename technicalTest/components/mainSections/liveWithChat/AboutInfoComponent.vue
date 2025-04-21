@@ -19,11 +19,11 @@ const props = defineProps<{
 <template>
   <section class="about-info">
     <span class="about-info__followers">{{ formatViewers(props.total) }}
-      <span class="about-info__followers--word">{{ texts.followers }}</span>
+      <span class="about-info__followers-word">{{ texts.followers }}</span>
     </span>
     <span class="about-info__description">{{ props.description }}</span>
     <div class="about-info__divider"/>
-    <section class="about-info__social-buttons">
+    <section class="about-info__socials">
       <button class="about-info__social-button" aria-label="Go to youtube channel"><YotubeIcon/>{{ texts.youtube }}</button>
       <button class="about-info__social-button" aria-label="Go to this channel instagram account"><InstragramIcon/>{{ texts.instagram }}</button>
       <button class="about-info__social-button" aria-label="Go to this channel twitter account"><TwitterIcon/>{{ texts.twitter }}</button>
@@ -36,7 +36,7 @@ const props = defineProps<{
 
 @import '@/assets/styles/mixins.scss';
 
-.about-info{
+.about-info {
   display: flex;
   flex-direction: column;
   background-color: var(--c-nav-background-color);
@@ -45,23 +45,21 @@ const props = defineProps<{
   height: 10em;
   padding: 1.5em;
   margin-right: 1em;
-  
-  &__followers{
-    
-    &--word{
-    color:#878790;
+
+  &__followers {
+    &-word {
+      color: #878790;
+    }
   }
 
+  &__description {
+    margin-top: 1em;
   }
 
-  &__description{
-    margin-top:1em;
-  }
-
-  &__divider{
+  &__divider {
     display: flex;
     align-items: center;
-    margin-top:1em;
+    margin-top: 1em;
 
     &::before,
     &::after {
@@ -69,23 +67,21 @@ const props = defineProps<{
       flex: 1;
       border-top: 0.0625em solid var(--c-border-color);
     }
-
   }
 
-  &__social-buttons {
-  display: flex;
-  flex-direction: row;
-  margin-top: 1em;
-}
+  &__socials {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+  }
 
-    &__social-button {
-      @include social-buttons;
+  &__social-button {
+    @include social-buttons;
 
-      &:hover {
-        @include gray-buttons-hover;
-      }
+    &:hover {
+      @include gray-buttons-hover;
     }
-
+  }
 }
 
 </style>

@@ -38,7 +38,6 @@ const bottomRows = streamerRows.slice(2);
 
 </script>
 
-
 <template>
   <section class="live-channels-section">
     <div v-for="(row, index) in topRows" :key="'top-' + index" class="live-channels-section__row">
@@ -48,7 +47,7 @@ const bottomRows = streamerRows.slice(2);
       </h2>
       <StreamerCard :channels="row" />
       <div class="live-channels-section__divider">
-        <span class="live-channels-section__divider--text">{{ texts.showMore }}</span>
+        <span class="live-channels-section__divider-text">{{ texts.showMore }}</span>
         <IconDownArrow class="arrow-icon" />
       </div>
     </div>
@@ -60,7 +59,7 @@ const bottomRows = streamerRows.slice(2);
       </h2>
       <StreamerCard :channels="row" />
       <div class="live-channels-section__divider">
-        <span class="live-channels-section__divider--text">{{ texts.showMore }}</span>
+        <span class="live-channels-section__divider-text">{{ texts.showMore }}</span>
         <IconDownArrow class="arrow-icon" />
       </div>
     </div>
@@ -100,13 +99,13 @@ const bottomRows = streamerRows.slice(2);
       margin-left: 1em;
       border-top: 0.0625em solid var(--c-border-color);
     }
+  }
 
-    &--text {
-      font-family: Arial, Helvetica, sans-serif;
-      padding: 0.625em;
-      font-size: 0.875em;
-      cursor: pointer;
-    }
+  &__divider-text {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.625em;
+    font-size: 0.875em;
+    cursor: pointer;
   }
 }
 </style>
