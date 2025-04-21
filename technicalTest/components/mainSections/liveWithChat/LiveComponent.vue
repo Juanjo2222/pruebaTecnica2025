@@ -104,7 +104,7 @@ const totalFollowers = api.total;
   &__video {
     width: 75em;
     height: 40em;
-    background-color: gray;
+    background-color: var(--c-general-color);
 
     &-image {
       width: 100%;

@@ -86,7 +86,7 @@ import texts from '@/assets/data/texts.json';
     padding: 0.5em;
     border: 0.1em solid var(--c-border-color);
     border-radius: 0.3125em;
-    background-color: #81e4e4;
+    background-color: #abc1c7;
     width: 12.5em;
   }
 
