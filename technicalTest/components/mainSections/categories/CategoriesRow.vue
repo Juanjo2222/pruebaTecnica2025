@@ -39,7 +39,7 @@ const categories = api.data.map((category: any, index: number) => ({
     font-family: Arial, Helvetica, sans-serif;
     color: var(--c-white);
     margin-top: auto;
-    padding-top: 1.2rem;
+    padding-top: 1.2em;
   }
 
   &__blue-text {

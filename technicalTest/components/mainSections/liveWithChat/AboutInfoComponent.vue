@@ -41,10 +41,10 @@ const props = defineProps<{
   flex-direction: column;
   background-color: var(--c-nav-background-color);
   color: var(--c-white);
-  width: 72rem;
-  height: 10rem;
-  padding:1.5rem;
-  margin-right: 1rem;
+  width: 72em;
+  height: 10em;
+  padding: 1.5em;
+  margin-right: 1em;
   
   &__followers{
     
@@ -55,19 +55,19 @@ const props = defineProps<{
   }
 
   &__description{
-    margin-top:1rem;
+    margin-top:1em;
   }
 
   &__divider{
     display: flex;
     align-items: center;
-    margin-top:1rem;
+    margin-top:1em;
 
     &::before,
     &::after {
       content: '';
       flex: 1;
-      border-top: 0.0625rem solid var(--c-border-color);
+      border-top: 0.0625em solid var(--c-border-color);
     }
 
   }
@@ -75,7 +75,7 @@ const props = defineProps<{
   &__social-buttons {
   display: flex;
   flex-direction: row;
-  margin-top: 1rem;
+  margin-top: 1em;
 }
 
     &__social-button {

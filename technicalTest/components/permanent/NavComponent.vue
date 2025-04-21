@@ -51,47 +51,47 @@ import texts from '@/assets/data/texts.json';
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: -0.5rem;
-  padding: 0.4rem 1.25rem;
+  margin: -0.5em;
+  padding: 0.4em 1.25em;
   background-color: var(--c-nav-background-color);
   color: var(--c-white);
-  width: 116.6rem;
-  height: 4rem;
+  width: 116.6em;
+  height: 4em;
 
   &__left-part {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.5em;
 
     &--text {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
+      font-size: 1em;
       font-weight: bold;
     }
 
     &--more {
       @include nav-icon-buttons;
       @include gray-buttons-hover;
-      padding: 0.2rem;
+      padding: 0.2em;
     }
 
     &--logo {
       @include nav-icon-buttons;
       @include gray-buttons-hover;
-      padding: 0.2rem;
+      padding: 0.2em;
     }
   }
 
   &__search {
     display:flex;
-    gap: 0.1rem;
+    gap: 0.1em;
     
     &--input {
-      padding: 0.5rem;
-      border: 0.1rem solid var(--c-border-color);
-      border-radius: 0.3125rem;
+      padding: 0.5em;
+      border: 0.1em solid var(--c-border-color);
+      border-radius: 0.3125em;
       background-color: var(--c-nav-background-color);
-      width: 12.5rem;
+      width: 12.5em;
     }
 
     &--button{
@@ -103,7 +103,7 @@ import texts from '@/assets/data/texts.json';
 
   &__right-part {
     display: flex;
-    gap: 0.6rem;
+    gap: 0.6em;
 
     &--notification {
       @include nav-icon-buttons;
@@ -115,13 +115,13 @@ import texts from '@/assets/data/texts.json';
       justify-content: flex-start;
 
       .notification-text {
-        border-radius: 2rem;
-        margin-left: 0.2rem;
+        border-radius: 2em;
+        margin-left: 0.2em;
         background-color: red;
-        padding-top: 0.2rem;
-        padding-bottom: 0.2rem;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
       }
     }
 

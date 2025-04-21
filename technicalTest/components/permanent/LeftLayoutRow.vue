@@ -42,17 +42,17 @@ const streamers = streamersRaw.map(streamer => {
   display: flex;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  gap: 0.8rem;
-  padding: 0.5rem;
-  border-radius: 0.3125rem;
+  gap: 0.8em;
+  padding: 0.5em;
+  border-radius: 0.3125em;
 
   &:hover {
     background: #23232a;
   }
 
   &__image {
-    width: 2.7rem;
-    height: 2.7rem;
+    width: 2.7em;
+    height: 2.7em;
     border-radius: 50%;
     border: none;
   }
@@ -61,7 +61,7 @@ const streamers = streamersRaw.map(streamer => {
     
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    font-size: 0.9rem;
+    font-size: 0.9em;
 
     &--name {
       font-weight: bold;
@@ -75,14 +75,14 @@ const streamers = streamersRaw.map(streamer => {
   }
 
   &__viewers {
-    font-size: 0.9rem;
+    font-size: 0.9em;
     color: var(--c-white);
-    margin-left:-0.5rem;
+    margin-left:-0.5em;
   }
 
   &__live-indicator {
-    width: 0.625rem;
-    height: 0.625rem;
+    width: 0.625em;
+    height: 0.625em;
     background: red;
     border-radius: 50%;
     margin-left: auto;
