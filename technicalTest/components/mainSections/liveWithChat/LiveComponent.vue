@@ -39,44 +39,41 @@ const totalFollowers = api.total;
 
 <template>
   <section class="live">
+    <title>{{ texts.pageTitle }} - {{ user_name }}</title>
     <section class="live__video">
-      <img :src="thumbnail" class="live__video-image" />
+      <img :src="thumbnail" class="live__video-image" alt="Thumbnail image"/>
     </section>
-
     <section class="live__main-info">
       <div class="live__profile-container">
-        <img :src="profile_image_url" class="live__profile-image" />
+        <img :src="profile_image_url" class="live__profile-image" alt="Channel profile image"/>
         <span class="live__live-label">{{ texts.live }}</span>
       </div>
-
       <section class="live__details">
         <section class="live__header">
           <span class="live__streamer-name">{{ user_name }}</span>
           <section class="live__actions">
-            <button class="live__follow-button">
+            <button class="live__follow-button" aria-label="Button to follow this streamer">
               <FollowIcon class="live__icon" />
               {{ texts.followButtonText }}
             </button>
-            <button class="live__subscribe-button">
+            <button class="live__subscribe-button" aria-label="Button to suscribe to this streamer channel">
               <SuscribeIcon class="live__icon" />
               {{ texts.subscribeButtonText }}
               <DownArrowIcon class="live__icon" />
             </button>
           </section>
         </section>
-
         <section class="live__summary">
           <span class="live__title">{{ title }}</span>
           <div class="live__right-info">
             <span class="live__viewers"><RedViewersIcon />{{ formatViewers(viewer_count) }}</span>
             <span class="live__duration">3:25:00</span>
             <section class="live__options">
-              <button class="live__options-button"><ShareIcon /></button>
-              <button class="live__options-button"><IconOptions /></button>
+              <button class="live__options-button" aria-label="Button for share this live"><ShareIcon /></button>
+              <button class="live__options-button" aria-label="Button for report this live"><IconOptions /></button>
             </section>
           </div>
         </section>
-
         <section class="live__extra">
           <span class="live__category">{{ game_name }}</span>
           <div class="live__tags-container">
@@ -91,7 +88,6 @@ const totalFollowers = api.total;
         </section>
       </section>
     </section>
-
     <span class="live__about">{{ texts.about }} {{ user_name }}</span>
     <AboutInfoComponent :total="totalFollowers" :description="description" />
   </section>
@@ -108,7 +104,7 @@ const totalFollowers = api.total;
   &__video {
     width: 75em;
     height: 40em;
-    background-color: gray;
+    background-color: var(--c-general-color);
 
     &-image {
       width: 100%;

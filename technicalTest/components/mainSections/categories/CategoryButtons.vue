@@ -15,17 +15,18 @@ const buttons = [
 </script>
 
 <template>
-    <div class="category-button-container">
-      <button
-        v-for="(button, index) in buttons"
-        :key="index"
-        class="category-button"
-      >
-        <span class="category-button__text">{{ button.label }}</span>
-        <component :is="button.icon" class="category-button__icon" />
-      </button>
-    </div>
-  </template>
+  <div class="category-button-container">
+    <button
+      v-for="(button, index) in buttons"
+      :key="index"
+      aria-label="Go to streams about this category"
+      class="category-button"
+    >
+      <span class="category-button__text">{{ button.label }}</span>
+      <component :is="button.icon" class="category-button__icon" />
+    </button>
+  </div>
+</template>
 
 <style scoped lang="scss">
 
@@ -38,25 +39,24 @@ const buttons = [
   padding-bottom: 3em;
 }
 
-.category-button{
+.category-button {
   @include category-buttons;
   background-color: var(--c-blue-button-and-words);
   width: 21.5em;
 
-  &__text{
-    color: var(--c-white);
+  &__text {
+    color: black;
     font-weight: bold;
     font-size: 1.3em;
   }
-  
-  &__icon{
+
+  &__icon {
     margin-left: auto;
   }
 
-  &:hover{
+  &:hover {
     opacity: 0.8;
   }
-
 }
 
 </style>

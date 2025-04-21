@@ -16,20 +16,20 @@ const props = defineProps<{
       class="live-channels__card"
     >
       <NuxtLink :to="`/${channel.user_login}`">
-        <img :src="channel.thumbnail_url" class="live-channels__card--image" />
+        <img :src="channel.thumbnail_url" class="live-channels__card-image" alt="Thumbnail image"/>
       </NuxtLink>
-      <div class="live-channels__card--content">
-        <img :src="channel.profile_image_url" class="live-channels__card--content-profile"/>
-        <div class="live-channels__card--info">
-          <span class="live-channels__card--info-title">{{ channel.title }}</span>
-          <span class="live-channels__card--info-name">{{ channel.user_name }}</span>
-          <span class="live-channels__card--info-category">{{ channel.game_name }}</span>
+      <div class="live-channels__card-content">
+        <img :src="channel.profile_image_url" class="live-channels__card-content-profile" alt="Channel profile image"/>
+        <div class="live-channels__card-info">
+          <span class="live-channels__card-info-title">{{ channel.title }}</span>
+          <span class="live-channels__card-info-name">{{ channel.user_name }}</span>
+          <span class="live-channels__card-info-category">{{ channel.game_name }}</span>
 
-          <div class="live-channels__card--info-labels-container">
+          <div class="live-channels__card-info-labels-container">
             <div
               v-for="(tag, index) in channel.tags"
               :key="index"
-              class="live-channels__card--info-tags"
+              class="live-channels__card-info-tags"
             >
               {{ tag }}
             </div>
@@ -60,12 +60,12 @@ const props = defineProps<{
     width: 29em;
     margin-right: 1em;
 
-    &--image {
+    &-image {
       height: 15em;
       width: 100%;
     }
 
-    &--content {
+    &-content {
       display: flex;
       flex-direction: row;
       gap: 0.5em;
@@ -79,7 +79,7 @@ const props = defineProps<{
       }
     }
 
-    &--info {
+    &-info {
       display: flex;
       flex-direction: column;
       margin-left: 0.3em;
@@ -115,4 +115,5 @@ const props = defineProps<{
     }
   }
 }
+
 </style>
