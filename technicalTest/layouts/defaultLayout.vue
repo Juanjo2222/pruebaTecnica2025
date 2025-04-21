@@ -16,7 +16,7 @@ import RecomChannComponent from '@/components/permanent/RecomChannComponent.vue'
 
 <style scoped lang="scss">
   .layout{
-    margin-left:0rem;
+    margin-left:0em;
 
     &__main-part{
       display: flex;
