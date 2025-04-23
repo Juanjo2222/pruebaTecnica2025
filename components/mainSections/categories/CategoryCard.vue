@@ -27,7 +27,7 @@ const props = defineProps<{
     <div class="categories__card-content">
       <span class="categories__card-content-name">{{ category.name }}</span>
       <span class="categories__card-content-viewers">{{ texts.defaultFollowersNumber }} {{ texts.viewers }}</span>
-      <span class="categories__card-content-subCategory">{{ category.subCategory }}</span>
+      <span class="categories__card-content-subCategory">irl</span>
     </div>
     </div>
   </section>
@@ -36,21 +36,24 @@ const props = defineProps<{
 
 <style scoped lang="scss">
 
+@import '@/assets/styles/mixins.scss';
+
 .categories {
   margin-bottom: 2em;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: row;
-  gap: 2.2em;
-  margin-right: 1.5em;
+  justify-content: space-between;
+  gap: 0.625em;
 
   &__card {
     background-color: var(--c-general-color);
-    width: 14em;
+    width: 11.3544em;
+    height: 20.213em;
     
     &-image {
-      width: 100%;
-      height: 20em;
+      width: 11.3544em;
+      height: 15.1387em;
     }
 
     &-content {
@@ -61,20 +64,22 @@ const props = defineProps<{
       gap: 0.7em;
 
       &-name {
-        font-size: 1.1em;
-        font-weight: bold;
+        font-size: 0.875em;
+        font-weight: 700;
         color: var(--c-white);
+        @include text-ellipsis;
       }
 
       &-viewers {
-        font-size: 0.9em;
+        font-size: 0.8125em;
+        font-weight: 400;
         color: #9999a3;
       }
 
       &-subCategory {
         display: inline-block;
-        font-size: 0.85em;
-        font-weight: bold;
+        font-size: 0.75em;
+        font-weight: 600;
         background-color: #29292e;
         padding: 0.3em 0.6em;
         border-radius: 1em;

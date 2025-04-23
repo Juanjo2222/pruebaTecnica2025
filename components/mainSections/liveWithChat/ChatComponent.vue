@@ -33,7 +33,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       </button>
       <span class="chat__title">{{ texts.chatTitle }}</span>
       <button class="chat__collapse-icon chat__collapse-icon" aria-label="Show this live community">
-        <CommunityIcon/>
+        <CommunityIcon class="chat__comunity-icon"/>
       </button>
     </section>
     <div class="chat__divider-one"/>
@@ -84,26 +84,35 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
   &__front {
     display:flex;
     flex-direction: row;
-    justify-content: space-between
+    justify-content: space-between;
+    height: 3em;
   }
 
   &__collapse-icon {
     border: 0;
     background-color: var(--c-nav-background-color);
-    padding: 1em;
 
     &:hover {
       @include gray-buttons-hover;
     }
 
     &--flipped {
-      transform: scaleX(-1);
+      transform: scaleX(-1);    
+      padding-top: 0.5em;
+      padding-right: 1em;
+
     }
+  }
+
+  &__comunity-icon{
+    margin: 0.5em;
   }
 
   &__title{
     color:var(--c-white);
-    padding-top: 1.5em;
+    margin-top: 1.2em;
+    font-size: 0.8125em;
+    font-weight: 600;
   }
 
   &__divider-one{
@@ -119,12 +128,13 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     &-title{
       display: flex;
       align-items: center;
-      gap:0.4em;
+      gap:0.7em;
     }
 
     &-text {
+      font-size: 0.8125em;
       color: #198ae0;
-      padding-top: 0.7em;
+      padding-top: 0.3em;
       font-weight: bold;
       display: flex;
       gap: 0.5em;
@@ -140,9 +150,10 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     display:flex;
     flex-direction: column;
     padding: 1em;
-    height: 55em;
 
     &-title{
+      font-size: 0.8125em;
+      font-weight: 400;
       color: #9a9aa5;
     }
 
@@ -151,6 +162,10 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       background-color: var(--c-nav-background-color);
       display:flex;
       align-items: center;
+      margin-top: 1em;
+      border: 0.0625em solid #545457;
+      border-radius: 0.375em;
+      padding: 0.1em;
 
       &--input {
         width: 18em;
@@ -158,8 +173,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
         color: var(--c-white);
         border: none;
         background-color: var(--c-nav-background-color);
-        border: 0.0625em solid #545457;
-        border-radius: 0.4em;
+        
       }
 
     }
@@ -168,7 +182,6 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
 
   &__message {
     display: flex;
-    margin-top: 1em;
     gap: 0.5em;
 
     &-content {
@@ -176,21 +189,24 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       gap: 0.3em;
       background-color: var(--c-nav-background-color);
       width: 19em;
-      height: 45em;
+      height: 38em;
       padding: 0.5em;
       border-radius: 0.5em;
-      align-items: flex-end
+      align-items: flex-end;
+      
     }
 
     &-user {
       font-weight: bold;
       color: #9ecbff;
-      font-size: 0.875em;
+      font-size: 0.9em;
+      font-weight: 700;
     }
 
     &-text {
       color: var(--c-white);
-      font-size: 0.875em;
+      font-size: 0.9em;
+      font-weight: 400;
     }
   }
   
@@ -198,7 +214,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 1em;
+      margin-top: 0.4em;
 
       &-left {
         display: flex;

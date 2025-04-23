@@ -41,18 +41,23 @@ const props = defineProps<{
   flex-direction: column;
   background-color: var(--c-nav-background-color);
   color: var(--c-white);
-  width: 72em;
-  height: 10em;
+  width: 51.625em;
   padding: 1.5em;
   margin-right: 1em;
 
   &__followers {
+    font-size: 0.875em;
+    font-weight: 600;
+
     &-word {
+      font-weight: 400;
       color: #878790;
     }
   }
 
   &__description {
+    font-size: 0.875em;
+    font-weight: 400;
     margin-top: 1em;
   }
 
@@ -73,6 +78,8 @@ const props = defineProps<{
     display: flex;
     flex-direction: row;
     margin-top: 1em;
+    font-size: 0.8125em;
+    font-weight: 600;
   }
 
   &__social-button {

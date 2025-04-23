@@ -24,7 +24,7 @@ import texts from '@/assets/data/texts.json';
         class="top-bar__search-input"
         type="text"
         placeholder="Search"
-      />
+      >
       <button class="top-bar__search-button" aria-label="Look for a streamer or live">
         <IconSearch />
       </button>
@@ -32,7 +32,6 @@ import texts from '@/assets/data/texts.json';
 
     <section class="top-bar__right">
       <button class="top-bar__notification" aria-label="Notifications">
-        <span class="top-bar__notification-text">{{ texts.notifNumber }}</span>
         <IconNotification />
       </button>
       <button class="top-bar__login" aria-label="Button to login">{{ texts.loginButton }}</button>
@@ -51,12 +50,10 @@ import texts from '@/assets/data/texts.json';
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: -0.5em;
-  padding: 0.4em 1.25em;
+  padding: 0.1325em 1.25em 0.1325em 1.25em;
   background-color: var(--c-nav-background-color);
   color: var(--c-white);
-  width: 116.6em;
-  height: 4em;
+  height: 3.125em;
 
   &__left {
     display: flex;
@@ -66,7 +63,6 @@ import texts from '@/assets/data/texts.json';
 
   &__title {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
     font-weight: bold;
   }
 
@@ -74,30 +70,39 @@ import texts from '@/assets/data/texts.json';
   &__more {
     @include nav-icon-buttons;
     @include gray-buttons-hover;
-    padding: 0.2em;
+    padding: 0.1em;
   }
 
   &__search {
     display: flex;
-    gap: 0.1em;
+    gap: 0em;
+    height: 2.5em;
   }
 
   &__search-input {
-    padding: 0.5em;
+    margin-top: 0.2em;
+    font-size: 0.875em;
     border: 0.1em solid var(--c-border-color);
-    border-radius: 0.3125em;
+    padding: 1em;
+    border-top-left-radius: 0.375em;
+    border-bottom-left-radius: 0.375em;
     background-color: #abc1c7;
-    width: 12.5em;
+    width: 24.375em;
   }
 
   &__search-button {
-    @include nav-icon-buttons;
-    @include gray-buttons-hover;
+    border-top-right-radius: 0.375em;
+    border-bottom-right-radius: 0.375em;
+    margin-top: 0.2em;
+    padding-right: 0.1em;
+    padding-left: 0.2em;
+    background-color: #53535F61;
   }
 
   &__right {
     display: flex;
     gap: 0.6em;
+    height: 2.5em;
   }
 
   &__notification {
@@ -121,6 +126,7 @@ import texts from '@/assets/data/texts.json';
   &__login {
     @include nav-icon-buttons;
     @include gray-buttons-hover;
+    font-size: 0.8125em;
     margin: auto;
     background-color: #2f2f35;
     font-weight: bold;
@@ -129,6 +135,7 @@ import texts from '@/assets/data/texts.json';
   &__signup {
     @include nav-icon-buttons;
     background-color: var(--c-blue-button-and-words);
+    font-size: 0.8125em;
     font-weight: bold;
     margin: auto;
     color: black;
@@ -141,6 +148,7 @@ import texts from '@/assets/data/texts.json';
   &__profile {
     @include nav-icon-buttons;
     @include gray-buttons-hover;
+    padding: 0.3125em;
     margin: auto;
   }
 }
