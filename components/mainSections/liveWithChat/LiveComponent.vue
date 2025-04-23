@@ -66,7 +66,7 @@ const totalFollowers = api.total;
         <section class="live__summary">
           <span class="live__title">{{ title }}</span>
           <div class="live__right-info">
-            <span class="live__viewers"><RedViewersIcon />{{ viewer_count }}</span>
+            <span class="live__viewers"><RedViewersIcon />{{ viewer_count.toLocaleString() }}</span>
             <span class="live__duration">3:25:00</span>
             <section class="live__options">
               <button class="live__options-button" aria-label="Button for share this live"><ShareIcon /></button>
@@ -138,16 +138,15 @@ const totalFollowers = api.total;
   }
 
   &__live-label {
-
-    font-size: 0.8em;
-    font-weight: 600;
+    font-size: 0.8125em;
+    font-weight: var(--fw-big-texts);
     background-color: red;
     color: var(--c-white);
-    padding-left: 0.3em;
+    padding: 0.3em;
     border-radius: 0.3em;
     margin-left: 0.8em;
     margin-top: -0.5rem;
-    width: 2.5em;
+    width: 3em;
   }
 
   &__details {
@@ -197,7 +196,7 @@ const totalFollowers = api.total;
   &__follow-button {
     background-color: var(--c-blue-button-and-words);
     font-size: var(--fs-small-texts);
-    font-weight: 600;
+    font-weight: var(--fw-small-texts);
     padding-top: 1.2em;
     padding-bottom: 1.2em;
     padding-right: 0.7em;
@@ -207,7 +206,7 @@ const totalFollowers = api.total;
   &__subscribe-button {
     background-color: #2f2f35;
     font-size: var(--fs-small-texts);
-    font-weight: 600;
+    font-weight: var(--fw-small-texts);
     padding-top: 1.2em;
     padding-bottom: 1.2em;
     padding-right: 0.7em;

@@ -162,7 +162,6 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
 
     &-title{
       font-size: var(--fs-small-texts);
-      font-weight: var(--fw-small-texts);
       color: #9a9aa5;
     }
 
@@ -198,7 +197,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       gap: 0.3em;
       background-color: var(--c-nav-background-color);
       width: 19em;
-      height: 38em;
+      height: 37em;
       padding: 0.5em;
       border-radius: 0.5em;
       align-items: flex-end;
@@ -215,7 +214,6 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     &-text {
       color: var(--c-white);
       font-size: 0.9em;
-      font-weight: var(--fw-small-texts);
     }
   }
   

@@ -50,14 +50,12 @@ const props = defineProps<{
     font-weight: 600;
 
     &-word {
-      font-weight: var(--fw-small-texts);
       color: #878790;
     }
   }
 
   &__description {
     font-size: var(--fs-big-texts);
-    font-weight: var(--fw-small-texts);
     margin-top: 1em;
   }
 

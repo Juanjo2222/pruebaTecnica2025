@@ -72,14 +72,13 @@ const props = defineProps<{
 
       &-viewers {
         font-size: var(--fs-small-texts);
-        font-weight: var(--fw-small-texts);
         color: #9999a3;
       }
 
       &-subCategory {
         display: inline-block;
         font-size: 0.75em;
-        font-weight: 600;
+        font-weight: var(--fw-big-text);
         background-color: #29292e;
         padding: 0.3em 0.6em;
         border-radius: 1em;

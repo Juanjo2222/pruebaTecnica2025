@@ -77,7 +77,6 @@ const streamers = streamersRaw.map(streamer => {
 
   &__channel {
     font-size: var(--fs-small-texts);
-    font-weight: var(--fw-small-texts);
     color: #adadb8;
   }
 

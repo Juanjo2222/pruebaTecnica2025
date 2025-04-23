@@ -96,14 +96,12 @@ const props = defineProps<{
 
       &-name {
         font-size: var(--fs-small-texts);
-        font-weight: var(--fw-small-texts);
         color: #9999a3;
         margin-top: 0.5em;
       }
 
       &-category {
         font-size: var(--fs-small-texts);
-        font-weight: var(--fw-small-texts);
         color: #b3b3b3;
         margin-top: 0.25em;
       }
