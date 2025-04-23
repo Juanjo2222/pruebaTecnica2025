@@ -34,10 +34,12 @@ const streamers = streamersRaw.map(streamer => {
       <span class="streamer-card__name">{{ streamer.user_name }}</span>
       <span class="streamer-card__channel">{{ streamer.game_name }}</span>
     </section>
-    <div class="streamer-card__live-indicator" aria-hidden="true" />
-    <span class="streamer-card__viewers" :aria-label="`${formatViewers(streamer.viewer_count)} viewers`">
-      {{ formatViewers(streamer.viewer_count) }}
-    </span>
+    <div class="streamer-card__status">
+      <div class="streamer-card__live-indicator" aria-hidden="true" />
+      <span class="streamer-card__viewers" :aria-label="`${formatViewers(streamer.viewer_count)} viewers`">
+        {{ formatViewers(streamer.viewer_count) }}
+      </span>
+    </div>
   </li>
 </template>
 
@@ -45,14 +47,13 @@ const streamers = streamersRaw.map(streamer => {
 .streamer-card {
   display: flex;
   align-items: center;
-  gap: 0.8em;
-  padding: 0.5em;
+  justify-content: space-between;
+  gap: 0.4em;
+  margin-bottom: 1em;
   border-radius: 0.3125em;
   font-family: Arial, Helvetica, sans-serif;
-
-  &:hover {
-    background-color: #23232a;
-  }
+  width: 16.25em;
+  height: 2.5em;
 
   &__image {
     width: 2.7em;
@@ -66,28 +67,36 @@ const streamers = streamersRaw.map(streamer => {
     grid-template-rows: repeat(2, auto);
     gap: 0.2em;
     font-size: 0.9em;
+    width: 8.75em;
   }
 
   &__name {
-    font-weight: bold;
+    font-size: var(--fs-big-texts);
+    font-weight: 600;
   }
 
   &__channel {
+    font-size: var(--fs-small-texts);
     color: #adadb8;
   }
 
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+  }
+
   &__viewers {
-    font-size: 0.9em;
+    font-size: var(--fs-small-texts);
     color: var(--c-white);
-    margin-left: -0.5em;
   }
 
   &__live-indicator {
-    width: 0.625em;
-    height: 0.625em;
+    width: 0.5em;
+    height: 0.5em;
     background-color: red;
     border-radius: 50%;
-    margin-left: auto;
   }
+  
 }
 </style>

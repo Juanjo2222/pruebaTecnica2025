@@ -54,7 +54,7 @@ const totalFollowers = api.total;
           <section class="live__actions">
             <button class="live__follow-button" aria-label="Button to follow this streamer">
               <FollowIcon class="live__icon" />
-              {{ texts.followButtonText }}
+              <span class="live__button-text">{{ texts.followButtonText }}</span>
             </button>
             <button class="live__subscribe-button" aria-label="Button to suscribe to this streamer channel">
               <SuscribeIcon class="live__icon" />
@@ -66,7 +66,7 @@ const totalFollowers = api.total;
         <section class="live__summary">
           <span class="live__title">{{ title }}</span>
           <div class="live__right-info">
-            <span class="live__viewers"><RedViewersIcon />{{ formatViewers(viewer_count) }}</span>
+            <span class="live__viewers"><RedViewersIcon />{{ viewer_count.toLocaleString() }}</span>
             <span class="live__duration">3:25:00</span>
             <section class="live__options">
               <button class="live__options-button" aria-label="Button for share this live"><ShareIcon /></button>
@@ -100,14 +100,13 @@ const totalFollowers = api.total;
   display: flex;
   flex-direction: column;
   background-color: var(--c-general-color);
-
+  
   &__video {
-    width: 75em;
-    height: 40em;
+    width: 54em;
     background-color: var(--c-general-color);
 
     &-image {
-      width: 100%;
+      width: 55.2em;
       height: 100%;
       object-fit: cover;
     }
@@ -126,10 +125,6 @@ const totalFollowers = api.total;
     margin-top: 1em;
     display: flex;
     flex-direction: column;
-
-    &:hover {
-      opacity: 0.8;
-    }
   }
 
   &__profile-image {
@@ -139,16 +134,15 @@ const totalFollowers = api.total;
   }
 
   &__live-label {
-
-    font-size: 0.8em;
-    font-weight: bold;
+    font-size: 0.8125em;
+    font-weight: var(--fw-big-texts);
     background-color: red;
     color: var(--c-white);
-    padding-left: 0.3em;
+    padding: 0.3em;
     border-radius: 0.3em;
     margin-left: 0.8em;
     margin-top: -0.5rem;
-    width: 2.5em;
+    width: 3em;
   }
 
   &__details {
@@ -164,7 +158,7 @@ const totalFollowers = api.total;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1em;
+    margin-top: 0.5em;
   }
 
   &__streamer-name {
@@ -197,15 +191,31 @@ const totalFollowers = api.total;
 
   &__follow-button {
     background-color: var(--c-blue-button-and-words);
+    font-size: var(--fs-small-texts);
+    font-weight: var(--fw-small-texts);
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    padding-right: 0.7em;
+    border-radius: 0.25em;
   }
 
   &__subscribe-button {
     background-color: #2f2f35;
-    height: 2.2em;
+    font-size: var(--fs-small-texts);
+    font-weight: var(--fw-small-texts);
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    padding-right: 0.7em;
+    border-radius: 0.25em;
   }
 
   &__icon {
-    padding-right: 0.3em;
+    padding-right: 0.2em;
+    padding-left: 0.3em;
+  }
+
+  &__button-text{
+    padding-bottom: 0.2em;
   }
 
   &__summary {
@@ -217,8 +227,8 @@ const totalFollowers = api.total;
   }
 
   &__title {
-    font-weight: bold;
-    font-size: 1em;
+    font-size: var(--fs-big-texts);
+    font-weight: 600;
   }
 
   &__right-info {
@@ -231,10 +241,11 @@ const totalFollowers = api.total;
     color: #ff8280;
     display: flex;
     align-items: center;
+    font-size: var(--fs-small-texts);
   }
 
   &__duration {
-    font-size: 0.875em;
+    font-size: var(--fs-small-texts);
     color: var(--c-white);
   }
 
@@ -264,7 +275,7 @@ const totalFollowers = api.total;
 
   &__category {
     color: #1788de;
-    font-size: 1em;
+    font-size: var(--fs-big-texts);
     padding: 0.4em 0;
   }
 
@@ -280,7 +291,8 @@ const totalFollowers = api.total;
 
   &__about {
     color: var(--c-white);
-    font-weight: bold;
+    font-size: 1.125em;
+    font-weight: 600;
     padding: 1em 0;
   }
 }

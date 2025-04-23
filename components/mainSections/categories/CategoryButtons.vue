@@ -34,15 +34,18 @@ const buttons = [
 
 .category-button-container {
   display: flex;
+  justify-content: space-between;
   gap: 1.5em;
   padding-top: 1em;
-  padding-bottom: 3em;
+  padding-bottom: 1.5em;
 }
 
 .category-button {
   @include category-buttons;
   background-color: var(--c-blue-button-and-words);
   width: 21.5em;
+  margin-right: 0.4em;
+  margin-left: 0.4em;
 
   &__text {
     color: black;

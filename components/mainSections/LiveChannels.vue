@@ -48,7 +48,7 @@ const bottomRows = streamerRows.slice(2);
       <StreamerCard :channels="row" />
       <div class="live-channels-section__divider">
         <span class="live-channels-section__divider-text">{{ texts.showMore }}</span>
-        <IconDownArrow class="arrow-icon" />
+        <IconDownArrow class="live-channels-section__arrow-icon" />
       </div>
     </div>
     <CategoriesRow />
@@ -60,52 +60,53 @@ const bottomRows = streamerRows.slice(2);
       <StreamerCard :channels="row" />
       <div class="live-channels-section__divider">
         <span class="live-channels-section__divider-text">{{ texts.showMore }}</span>
-        <IconDownArrow class="arrow-icon" />
+        <IconDownArrow class="live-channels-section__arrow-icon" />
       </div>
     </div>
   </section>
 </template>
 
 <style scoped lang="scss">
+
 .live-channels-section {
   background-color: var(--c-general-color);
   height: 100%;
+  width: 76.25em;
 
   &__title {
-    font-family: Arial, Helvetica, sans-serif;
     color: var(--c-white);
-    padding-top: 1.2em;
-    margin-top: 0;
+    padding-top: 0.7em;
+    padding-bottom: 0.6em;
   }
 
   &__blue-text {
     color: #1889df;
   }
 
-  &__row {
-    margin-bottom: 2em;
-  }
-
   &__divider {
     display: flex;
     align-items: center;
     color: var(--c-blue-button-and-words);
-    font-weight: bold;
-
+    
+    
     &::before,
     &::after {
       content: '';
       flex: 1;
-      margin-left: 1em;
       border-top: 0.0625em solid var(--c-border-color);
     }
   }
 
   &__divider-text {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0.625em;
-    font-size: 0.875em;
+    padding-left: 1.8em;
+    padding-right: 0.5em;
+    font-size: var(--fs-small-texts);
+    font-weight: 600;
     cursor: pointer;
+  }
+
+  &__arrow-icon{
+    margin-right: 1em;
   }
 }
 </style>

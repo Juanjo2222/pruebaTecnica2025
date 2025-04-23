@@ -12,31 +12,29 @@ import texts from '@/assets/data/texts.json';
         <IconCollapseLogo />
       </button>
     </section>
-    <LeftLayoutRow />
+    <LeftLayoutRow/>
   </aside>
 </template>
 
 <style scoped lang="scss">
 .sidebar {
-  font-family: Arial, Helvetica, sans-serif;
-  width: 19.1em;
   background-color: var(--c-general-color);
   padding: 1em;
   color: var(--c-white);
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  margin-left: -0.5em;
+  width: 20em;
+  padding-left: 1.5em;
 
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.625em;
   }
 
   &__title {
-    font-size: 0.9em;
-    font-weight: bold;
+    font-size: var(--fs-small-texts);
   }
 
   &__collapse-button {
@@ -44,11 +42,7 @@ import texts from '@/assets/data/texts.json';
     background-color: var(--c-general-color);
     padding-left: 0.3em;
     margin-left: 2.1em;
-    cursor: pointer;
-
-    &:hover {
-      background-color: var(--c-gray-hover);
-    }
   }
+
 }
 </style>

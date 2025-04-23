@@ -32,20 +32,20 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
         <IconCollapseLogo/>
       </button>
       <span class="chat__title">{{ texts.chatTitle }}</span>
-      <button class="chat__collapse-icon chat__collapse-icon" aria-label="Show this live community">
-        <CommunityIcon/>
+      <button class="chat__community-icon" aria-label="Show this live community">
+        <CommunityIcon class="chat__comunity-icon"/>
       </button>
     </section>
     <div class="chat__divider-one"/>
     <section class="chat__gifts">
-      <ArrowIcon class="chat__collapse-icon chat__collapse-icon--flipped" />
+      <ArrowIcon class="chat__arrow-icon chat__arrow-icon--flipped" />
       <section class="chat__gifts-title">
         <GiftIcon/>
         <span class="chat__gifts-text">
           {{ texts.giftsTitle }}
         </span>
       </section>
-      <ArrowIcon class="chat__collapse-icon" />
+      <ArrowIcon class="chat__arrow-icon" />
     </section>
     <div class="chat__divider-two"/>
     <section class="chat__content">
@@ -84,26 +84,44 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
   &__front {
     display:flex;
     flex-direction: row;
-    justify-content: space-between
+    justify-content: space-between;
+    height: 3em;
+    padding-right: 0.5em;
   }
 
   &__collapse-icon {
-    border: 0;
     background-color: var(--c-nav-background-color);
     padding: 1em;
 
-    &:hover {
-      @include gray-buttons-hover;
+
+    &--flipped {
+      transform: scaleX(-1);    
+  
     }
+  }
+
+  &__community-icon {
+    background-color: var(--c-nav-background-color);
+    padding-right: 0.5em;
+  }
+
+  &__arrow-icon {
+    background-color: var(--c-nav-background-color);
+    margin-right: 0.3em;
+
 
     &--flipped {
       transform: scaleX(-1);
+      margin-left: 0.5em;
     }
+    
   }
 
   &__title{
     color:var(--c-white);
-    padding-top: 1.5em;
+    margin-top: 1.2em;
+    font-size: var(--fs-small-texts);
+    font-weight: 600;
   }
 
   &__divider-one{
@@ -119,12 +137,13 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     &-title{
       display: flex;
       align-items: center;
-      gap:0.4em;
+      gap:0.7em;
     }
 
     &-text {
+      font-size: var(--fs-small-texts);
       color: #198ae0;
-      padding-top: 0.7em;
+      padding-top: 0.3em;
       font-weight: bold;
       display: flex;
       gap: 0.5em;
@@ -140,9 +159,9 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     display:flex;
     flex-direction: column;
     padding: 1em;
-    height: 55em;
 
     &-title{
+      font-size: var(--fs-small-texts);
       color: #9a9aa5;
     }
 
@@ -151,6 +170,10 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       background-color: var(--c-nav-background-color);
       display:flex;
       align-items: center;
+      margin-top: 1em;
+      border: 0.0625em solid #545457;
+      border-radius: 0.375em;
+      padding: 0.1em;
 
       &--input {
         width: 18em;
@@ -158,8 +181,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
         color: var(--c-white);
         border: none;
         background-color: var(--c-nav-background-color);
-        border: 0.0625em solid #545457;
-        border-radius: 0.4em;
+        
       }
 
     }
@@ -168,7 +190,6 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
 
   &__message {
     display: flex;
-    margin-top: 1em;
     gap: 0.5em;
 
     &-content {
@@ -176,64 +197,66 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       gap: 0.3em;
       background-color: var(--c-nav-background-color);
       width: 19em;
-      height: 45em;
+      height: 37em;
       padding: 0.5em;
       border-radius: 0.5em;
-      align-items: flex-end
+      align-items: flex-end;
+      
     }
 
     &-user {
       font-weight: bold;
       color: #9ecbff;
-      font-size: 0.875em;
+      font-size: 0.9em;
+      font-weight: 700;
     }
 
     &-text {
       color: var(--c-white);
-      font-size: 0.875em;
+      font-size: 0.9em;
     }
   }
   
   &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.4em;
+
+    &-left {
+      display: flex;
+      gap: 0.5em;
+      color: #9b9ba4;
+    }
+
+    &-right {
+      display: flex;
+      gap: 0.5em;
+    }
+
+    &-bits,
+    &-points {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-top: 1em;
-
-      &-left {
-        display: flex;
-        gap: 0.5em;
-        color: #9b9ba4;
-      }
-
-      &-right {
-        display: flex;
-        gap: 0.5em;
-      }
-
-      &-bits,
-      &-points {
-        display: flex;
-        align-items: center;
-      }
-
-      &-send {
-        background-color: var(--c-blue-button-and-words);
-        border: none;
-        padding: 0.4em;
-        color: var(--c-white);
-        border-radius: 0.3125em;
-        cursor: pointer;
-      }
-
-      &--image{
-        width: 1.5em;
-        height: 1.5em;
-        border-radius: 50%;
-        margin-right: 0.3em;
-      }
-
     }
+
+    &-send {
+      background-color: var(--c-blue-button-and-words);
+      border: none;
+      padding: 0.4em;
+      color: var(--c-white);
+      border-radius: 0.3125em;
+  
+    }
+
+    &--image{
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      margin-right: 0.3em;
+    }
+
+  }
 
 }
 

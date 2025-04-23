@@ -24,17 +24,19 @@ import texts from '@/assets/data/texts.json';
         class="top-bar__search-input"
         type="text"
         placeholder="Search"
-      />
+      >
       <button class="top-bar__search-button" aria-label="Look for a streamer or live">
         <IconSearch />
       </button>
     </section>
 
     <section class="top-bar__right">
-      <button class="top-bar__notification" aria-label="Notifications">
+      <div class="top-bar__notification-wrapper">
+        <button class="top-bar__notification" aria-label="Notifications">
+          <IconNotification />
+        </button>
         <span class="top-bar__notification-text">{{ texts.notifNumber }}</span>
-        <IconNotification />
-      </button>
+      </div>
       <button class="top-bar__login" aria-label="Button to login">{{ texts.loginButton }}</button>
       <button class="top-bar__signup" aria-label="Button to sign up">{{ texts.signUpButton }}</button>
       <button class="top-bar__profile" aria-label="Show your account">
@@ -51,12 +53,10 @@ import texts from '@/assets/data/texts.json';
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: -0.5em;
-  padding: 0.4em 1.25em;
+  padding: 0.1325em 1.25em 0.1325em 1.25em;
   background-color: var(--c-nav-background-color);
   color: var(--c-white);
-  width: 116.6em;
-  height: 4em;
+  height: 3.125em;
 
   &__left {
     display: flex;
@@ -66,81 +66,90 @@ import texts from '@/assets/data/texts.json';
 
   &__title {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
     font-weight: bold;
   }
 
   &__logo,
   &__more {
     @include nav-icon-buttons;
-    @include gray-buttons-hover;
-    padding: 0.2em;
+    padding: 0.1em;
   }
 
   &__search {
     display: flex;
-    gap: 0.1em;
+    gap: 0em;
+    height: 2.5em;
   }
 
   &__search-input {
-    padding: 0.5em;
+    margin-top: 0.2em;
+    font-size: var(--fs-big-texts);
     border: 0.1em solid var(--c-border-color);
-    border-radius: 0.3125em;
+    padding: 1em;
+    border-top-left-radius: 0.375em;
+    border-bottom-left-radius: 0.375em;
     background-color: #abc1c7;
-    width: 12.5em;
+    width: 24.375em;
   }
 
   &__search-button {
-    @include nav-icon-buttons;
-    @include gray-buttons-hover;
+    border-top-right-radius: 0.375em;
+    border-bottom-right-radius: 0.375em;
+    margin-top: 0.2em;
+    padding-right: 0.1em;
+    padding-left: 0.2em;
+    background-color: #53535F61;
   }
 
   &__right {
     display: flex;
     gap: 0.6em;
+    height: 2.5em;
+  }
+
+  &__notification-wrapper {
+    position: relative;
+    margin-top: 0.6em;
   }
 
   &__notification {
     @include nav-icon-buttons;
-    @include gray-buttons-hover;
     font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: flex-start;
+    padding: 0.2em;
+  }
 
-    &-text {
-      border-radius: 2em;
-      margin-left: 0.2em;
-      background-color: red;
-      color: black;
-      padding: 0.2em 0.5em;
-    }
+  &__notification-text {
+    position: absolute;
+    top: -0.7em;
+    right: -0.4em;
+    border-radius: 562.5em;
+    background-color: red;
+    color: white;
+    font-size: 0.7em;
+    padding: 0.2em 0.45em;
+    font-size: 0.75em;
+    line-height: 1;
   }
 
   &__login {
     @include nav-icon-buttons;
-    @include gray-buttons-hover;
+    font-size: var(--fs-small-texts);
     margin: auto;
     background-color: #2f2f35;
-    font-weight: bold;
   }
 
   &__signup {
     @include nav-icon-buttons;
     background-color: var(--c-blue-button-and-words);
-    font-weight: bold;
+    font-size: var(--fs-small-texts);
+    font-weight: var(--fw-big-texts);
     margin: auto;
     color: black;
-
-    &:hover {
-      opacity: 0.8;
-    }
   }
 
   &__profile {
     @include nav-icon-buttons;
-    @include gray-buttons-hover;
+    padding: 0.3125em;
     margin: auto;
   }
 }

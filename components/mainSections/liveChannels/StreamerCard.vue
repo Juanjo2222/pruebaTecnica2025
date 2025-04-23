@@ -49,20 +49,21 @@ const props = defineProps<{
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: row;
-  gap: 2.2em;
+  gap: 2.3125em;
   flex-wrap: wrap;
+  margin-bottom: 4em;
 
   &__card {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
     background-color: var(--c-general-color);
-    width: 29em;
-    margin-right: 1em;
+    width: 23.875em;
+    height: 19.1903em;
 
     &-image {
-      height: 15em;
-      width: 100%;
+      height: 13.1512em;
+      width: 23.875em;
     }
 
     &-content {
@@ -71,8 +72,8 @@ const props = defineProps<{
       gap: 0.5em;
 
       &-profile {
-        width: 3.2em;
-        height: 2.6em;
+        width: 2.6875em;
+        height: 2.6875em;
         border-radius: 50%;
         margin-top: 0.3em;
         border: none;
@@ -82,22 +83,25 @@ const props = defineProps<{
     &-info {
       display: flex;
       flex-direction: column;
-      margin-left: 0.3em;
+      gap: 0.3125em;
+      @include text-ellipsis;
 
       &-title {
-        font-size: 1.1em;
+        font-size: var(--fs-big-texts);
+        font-weight: 600;
         color: var(--c-white);
         margin-top: 0.5em;
+        @include text-ellipsis;
       }
 
       &-name {
-        font-size: 0.85em;
+        font-size: var(--fs-small-texts);
         color: #9999a3;
         margin-top: 0.5em;
       }
 
       &-category {
-        font-size: 0.85em;
+        font-size: var(--fs-small-texts);
         color: #b3b3b3;
         margin-top: 0.25em;
       }
