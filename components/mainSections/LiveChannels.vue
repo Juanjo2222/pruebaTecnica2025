@@ -100,7 +100,7 @@ const bottomRows = streamerRows.slice(2);
   &__divider-text {
     padding-left: 1.8em;
     padding-right: 0.5em;
-    font-size: 0.8125em;
+    font-size: var(--fs-small-texts);
     font-weight: 600;
     cursor: pointer;
   }

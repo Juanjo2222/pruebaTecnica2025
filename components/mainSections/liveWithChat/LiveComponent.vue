@@ -196,7 +196,7 @@ const totalFollowers = api.total;
 
   &__follow-button {
     background-color: var(--c-blue-button-and-words);
-    font-size: 0.8125em;
+    font-size: var(--fs-small-texts);
     font-weight: 600;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
@@ -206,7 +206,7 @@ const totalFollowers = api.total;
 
   &__subscribe-button {
     background-color: #2f2f35;
-    font-size: 0.8125em;
+    font-size: var(--fs-small-texts);
     font-weight: 600;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
@@ -232,7 +232,7 @@ const totalFollowers = api.total;
   }
 
   &__title {
-    font-size: 0.875em;
+    font-size: var(--fs-big-texts);
     font-weight: 600;
   }
 
@@ -246,11 +246,11 @@ const totalFollowers = api.total;
     color: #ff8280;
     display: flex;
     align-items: center;
-    font-size: 0.8125em;
+    font-size: var(--fs-small-texts);
   }
 
   &__duration {
-    font-size: 0.8125em;
+    font-size: var(--fs-small-texts);
     color: var(--c-white);
   }
 
@@ -280,7 +280,7 @@ const totalFollowers = api.total;
 
   &__category {
     color: #1788de;
-    font-size: 0.875em;
+    font-size: var(--fs-big-texts);
     padding: 0.4em 0;
   }
 

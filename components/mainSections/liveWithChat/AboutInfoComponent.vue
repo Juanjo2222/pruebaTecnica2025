@@ -46,18 +46,18 @@ const props = defineProps<{
   margin-right: 1em;
 
   &__followers {
-    font-size: 0.875em;
+    font-size: var(--fs-big-texts);
     font-weight: 600;
 
     &-word {
-      font-weight: 400;
+      font-weight: var(--fw-small-texts);
       color: #878790;
     }
   }
 
   &__description {
-    font-size: 0.875em;
-    font-weight: 400;
+    font-size: var(--fs-big-texts);
+    font-weight: var(--fw-small-texts);
     margin-top: 1em;
   }
 
@@ -78,7 +78,7 @@ const props = defineProps<{
     display: flex;
     flex-direction: row;
     margin-top: 1em;
-    font-size: 0.8125em;
+    font-size: var(--fs-small-texts);
     font-weight: 600;
   }
 

@@ -81,7 +81,7 @@ import texts from '@/assets/data/texts.json';
 
   &__search-input {
     margin-top: 0.2em;
-    font-size: 0.875em;
+    font-size: var(--fs-big-texts);
     border: 0.1em solid var(--c-border-color);
     padding: 1em;
     border-top-left-radius: 0.375em;
@@ -126,7 +126,7 @@ import texts from '@/assets/data/texts.json';
   &__login {
     @include nav-icon-buttons;
     @include gray-buttons-hover;
-    font-size: 0.8125em;
+    font-size: var(--fs-small-texts);
     margin: auto;
     background-color: #2f2f35;
     font-weight: bold;
@@ -135,7 +135,7 @@ import texts from '@/assets/data/texts.json';
   &__signup {
     @include nav-icon-buttons;
     background-color: var(--c-blue-button-and-words);
-    font-size: 0.8125em;
+    font-size: var(--fs-small-texts);
     font-weight: bold;
     margin: auto;
     color: black;

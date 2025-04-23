@@ -87,7 +87,7 @@ const props = defineProps<{
       @include text-ellipsis;
 
       &-title {
-        font-size: 0.875em;
+        font-size: var(--fs-big-texts);
         font-weight: 600;
         color: var(--c-white);
         margin-top: 0.5em;
@@ -95,15 +95,15 @@ const props = defineProps<{
       }
 
       &-name {
-        font-size: 0.8125em;
-        font-weight: 400;
+        font-size: var(--fs-small-texts);
+        font-weight: var(--fw-small-texts);
         color: #9999a3;
         margin-top: 0.5em;
       }
 
       &-category {
-        font-size: 0.8125em;
-        font-weight: 400;
+        font-size: var(--fs-small-texts);
+        font-weight: var(--fw-small-texts);
         color: #b3b3b3;
         margin-top: 0.25em;
       }

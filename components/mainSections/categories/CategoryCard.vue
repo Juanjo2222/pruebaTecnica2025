@@ -64,15 +64,15 @@ const props = defineProps<{
       gap: 0.7em;
 
       &-name {
-        font-size: 0.875em;
+        font-size: var(--fs-big-texts);
         font-weight: 700;
         color: var(--c-white);
         @include text-ellipsis;
       }
 
       &-viewers {
-        font-size: 0.8125em;
-        font-weight: 400;
+        font-size: var(--fs-small-texts);
+        font-weight: var(--fw-small-texts);
         color: #9999a3;
       }
 

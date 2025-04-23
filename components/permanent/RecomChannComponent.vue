@@ -34,7 +34,7 @@ import texts from '@/assets/data/texts.json';
   }
 
   &__title {
-    font-size: 0.8125em;
+    font-size: var(--fs-small-texts);
   }
 
   &__collapse-button {
