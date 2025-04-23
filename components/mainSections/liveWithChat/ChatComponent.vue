@@ -32,20 +32,20 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
         <IconCollapseLogo/>
       </button>
       <span class="chat__title">{{ texts.chatTitle }}</span>
-      <button class="chat__collapse-icon chat__collapse-icon" aria-label="Show this live community">
+      <button class="chat__community-icon" aria-label="Show this live community">
         <CommunityIcon class="chat__comunity-icon"/>
       </button>
     </section>
     <div class="chat__divider-one"/>
     <section class="chat__gifts">
-      <ArrowIcon class="chat__collapse-icon chat__collapse-icon--flipped" />
+      <ArrowIcon class="chat__arrow-icon chat__arrow-icon--flipped" />
       <section class="chat__gifts-title">
         <GiftIcon/>
         <span class="chat__gifts-text">
           {{ texts.giftsTitle }}
         </span>
       </section>
-      <ArrowIcon class="chat__collapse-icon" />
+      <ArrowIcon class="chat__arrow-icon" />
     </section>
     <div class="chat__divider-two"/>
     <section class="chat__content">
@@ -79,39 +79,48 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
 
 .chat {
   background-color: var(--c-nav-background-color);
-  width: 22em;
+  width: 20em;
 
   &__front {
     display:flex;
     flex-direction: row;
     justify-content: space-between;
     height: 3em;
+    padding-right: 0.5em;
   }
 
   &__collapse-icon {
-    border: 0;
     background-color: var(--c-nav-background-color);
-
-    &:hover {
-      @include gray-buttons-hover;
-    }
+    padding: 1em;
+    cursor: pointer;
 
     &--flipped {
       transform: scaleX(-1);    
-      padding-top: 0.5em;
-      padding-right: 1em;
-
+      cursor: pointer;
     }
   }
 
-  &__comunity-icon{
-    margin: 0.5em;
+  &__community-icon {
+    background-color: var(--c-nav-background-color);
+    cursor: pointer;
+  }
+
+  &__arrow-icon {
+    background-color: var(--c-nav-background-color);
+    margin-right: 0.3em;
+    cursor: pointer;
+
+    &--flipped {
+      transform: scaleX(-1);
+      margin-left: 0.5em;
+    }
+    
   }
 
   &__title{
     color:var(--c-white);
     margin-top: 1.2em;
-    font-size: 0.8125em;
+    font-size: var(--fs-small-texts);
     font-weight: 600;
   }
 
@@ -132,7 +141,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     }
 
     &-text {
-      font-size: 0.8125em;
+      font-size: var(--fs-small-texts);
       color: #198ae0;
       padding-top: 0.3em;
       font-weight: bold;
@@ -152,8 +161,8 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     padding: 1em;
 
     &-title{
-      font-size: 0.8125em;
-      font-weight: 400;
+      font-size: var(--fs-small-texts);
+      font-weight: var(--fw-small-texts);
       color: #9a9aa5;
     }
 
@@ -206,50 +215,50 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     &-text {
       color: var(--c-white);
       font-size: 0.9em;
-      font-weight: 400;
+      font-weight: var(--fw-small-texts);
     }
   }
   
   &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.4em;
+
+    &-left {
+      display: flex;
+      gap: 0.5em;
+      color: #9b9ba4;
+    }
+
+    &-right {
+      display: flex;
+      gap: 0.5em;
+    }
+
+    &-bits,
+    &-points {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-top: 0.4em;
-
-      &-left {
-        display: flex;
-        gap: 0.5em;
-        color: #9b9ba4;
-      }
-
-      &-right {
-        display: flex;
-        gap: 0.5em;
-      }
-
-      &-bits,
-      &-points {
-        display: flex;
-        align-items: center;
-      }
-
-      &-send {
-        background-color: var(--c-blue-button-and-words);
-        border: none;
-        padding: 0.4em;
-        color: var(--c-white);
-        border-radius: 0.3125em;
-        cursor: pointer;
-      }
-
-      &--image{
-        width: 1.5em;
-        height: 1.5em;
-        border-radius: 50%;
-        margin-right: 0.3em;
-      }
-
     }
+
+    &-send {
+      background-color: var(--c-blue-button-and-words);
+      border: none;
+      padding: 0.4em;
+      color: var(--c-white);
+      border-radius: 0.3125em;
+      cursor: pointer;
+    }
+
+    &--image{
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      margin-right: 0.3em;
+    }
+
+  }
 
 }
 
