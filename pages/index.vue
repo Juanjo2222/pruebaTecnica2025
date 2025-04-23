@@ -17,3 +17,13 @@ definePageMeta({
     </NuxtLayout>
   </div>
 </template>
+
+<style scoped lang="scss">
+  .main{
+    background-color: var(--c-general-color);
+    
+    &__live-channels{
+      padding-right: 1.25em;
+    }
+  }
+</style>
