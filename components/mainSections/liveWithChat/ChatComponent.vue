@@ -79,7 +79,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
 
 .chat {
   background-color: var(--c-nav-background-color);
-  width: 20em;
+  width: 22em;
 
   &__front {
     display:flex;
@@ -92,23 +92,23 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
   &__collapse-icon {
     background-color: var(--c-nav-background-color);
     padding: 1em;
-    cursor: pointer;
+
 
     &--flipped {
       transform: scaleX(-1);    
-      cursor: pointer;
+  
     }
   }
 
   &__community-icon {
     background-color: var(--c-nav-background-color);
-    cursor: pointer;
+    padding-right: 0.5em;
   }
 
   &__arrow-icon {
     background-color: var(--c-nav-background-color);
     margin-right: 0.3em;
-    cursor: pointer;
+
 
     &--flipped {
       transform: scaleX(-1);
@@ -246,7 +246,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       padding: 0.4em;
       color: var(--c-white);
       border-radius: 0.3125em;
-      cursor: pointer;
+  
     }
 
     &--image{

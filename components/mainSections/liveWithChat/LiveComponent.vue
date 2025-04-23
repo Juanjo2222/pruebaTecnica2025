@@ -100,13 +100,13 @@ const totalFollowers = api.total;
   display: flex;
   flex-direction: column;
   background-color: var(--c-general-color);
-
+  
   &__video {
     width: 54em;
     background-color: var(--c-general-color);
 
     &-image {
-      width: 100%;
+      width: 55.2em;
       height: 100%;
       object-fit: cover;
     }
@@ -125,10 +125,6 @@ const totalFollowers = api.total;
     margin-top: 1em;
     display: flex;
     flex-direction: column;
-
-    &:hover {
-      opacity: 0.8;
-    }
   }
 
   &__profile-image {

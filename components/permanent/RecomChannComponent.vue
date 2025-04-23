@@ -42,11 +42,6 @@ import texts from '@/assets/data/texts.json';
     background-color: var(--c-general-color);
     padding-left: 0.3em;
     margin-left: 2.1em;
-    cursor: pointer;
-
-    &:hover {
-      background-color: var(--c-gray-hover);
-    }
   }
 
 }

@@ -31,9 +31,12 @@ import texts from '@/assets/data/texts.json';
     </section>
 
     <section class="top-bar__right">
-      <button class="top-bar__notification" aria-label="Notifications">
-        <IconNotification />
-      </button>
+      <div class="top-bar__notification-wrapper">
+        <button class="top-bar__notification" aria-label="Notifications">
+          <IconNotification />
+        </button>
+        <span class="top-bar__notification-text">{{ texts.notifNumber }}</span>
+      </div>
       <button class="top-bar__login" aria-label="Button to login">{{ texts.loginButton }}</button>
       <button class="top-bar__signup" aria-label="Button to sign up">{{ texts.signUpButton }}</button>
       <button class="top-bar__profile" aria-label="Show your account">
@@ -69,7 +72,6 @@ import texts from '@/assets/data/texts.json';
   &__logo,
   &__more {
     @include nav-icon-buttons;
-    @include gray-buttons-hover;
     padding: 0.1em;
   }
 
@@ -105,49 +107,48 @@ import texts from '@/assets/data/texts.json';
     height: 2.5em;
   }
 
+  &__notification-wrapper {
+    position: relative;
+    margin-top: 0.6em;
+  }
+
   &__notification {
     @include nav-icon-buttons;
-    @include gray-buttons-hover;
     font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: flex-start;
+    padding: 0.2em;
+  }
 
-    &-text {
-      border-radius: 2em;
-      margin-left: 0.2em;
-      background-color: red;
-      color: black;
-      padding: 0.2em 0.5em;
-    }
+  &__notification-text {
+    position: absolute;
+    top: -0.7em;
+    right: -0.4em;
+    border-radius: 562.5em;
+    background-color: red;
+    color: white;
+    font-size: 0.7em;
+    padding: 0.2em 0.45em;
+    font-size: 0.75em;
+    line-height: 1;
   }
 
   &__login {
     @include nav-icon-buttons;
-    @include gray-buttons-hover;
     font-size: var(--fs-small-texts);
     margin: auto;
     background-color: #2f2f35;
-    font-weight: bold;
   }
 
   &__signup {
     @include nav-icon-buttons;
     background-color: var(--c-blue-button-and-words);
     font-size: var(--fs-small-texts);
-    font-weight: bold;
+    font-weight: var(--fw-big-texts);
     margin: auto;
     color: black;
-
-    &:hover {
-      opacity: 0.8;
-    }
   }
 
   &__profile {
     @include nav-icon-buttons;
-    @include gray-buttons-hover;
     padding: 0.3125em;
     margin: auto;
   }

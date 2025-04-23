@@ -41,9 +41,9 @@ const props = defineProps<{
   flex-direction: column;
   background-color: var(--c-nav-background-color);
   color: var(--c-white);
-  width: 51.625em;
-  padding: 1.5em;
+  width: fit-content;
   margin-right: 1em;
+  padding: 1.5em;
 
   &__followers {
     font-size: var(--fs-big-texts);
