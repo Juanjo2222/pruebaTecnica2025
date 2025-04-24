@@ -22,13 +22,21 @@ import RecomChannComponent from '@/components/permanent/RecomChannComponent.vue'
     }
   }
 
-
 @media (max-width: 45.8125em) {
   .layout{  
     &__main-part{
       display: flex;
       flex-direction: column;
       height: 10em;
+    }
+  }
+}
+
+@media (min-width: 126.5625em) {
+  .layout{  
+    &__main-part{
+      display: flex;
+      gap:30em;
     }
   }
 }

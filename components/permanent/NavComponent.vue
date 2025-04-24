@@ -155,29 +155,23 @@ import texts from '@/assets/data/texts.json';
   }
 
   @media (max-width: 43.9375em) {
-    &__login,
-    &__signup,
-    &__profile,
-    &__notification,
-    &__notification-text,
-    &__search {
-      display: none;
+    &__search-input {
+      width: 20em;
     }
   }
 
   @media (max-width: 48.25em) {
-  &__login {
-    font-size: 0.7em;
-    background-color: #2f2f35;
-  }
+    &__login {
+      font-size: 0.7em;
+      background-color: #2f2f35;
+    }
 
-  &__signup {
-    background-color: var(--c-blue-button-and-words);
-
-    font-size: 0.7em;
-    color: black;
+    &__signup {
+      background-color: var(--c-blue-button-and-words);
+      font-size: 0.7em;
+      color: black;
+    }
   }
-}
 
 }
 

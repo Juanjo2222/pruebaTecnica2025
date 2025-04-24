@@ -102,7 +102,7 @@ const streamers = streamersRaw.map(streamer => {
 @media (max-width: 45.8125em) {
   .streamer-card{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 

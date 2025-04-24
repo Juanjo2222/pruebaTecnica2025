@@ -27,7 +27,7 @@ const allStreamers = streamersRaw.map((streamer, index) => {
 });
 
 const numRows = 4;
-const perRow = 4;
+const perRow = 3;
 
 const streamerRows = Array.from({ length: numRows }, (_, i) =>
   allStreamers.slice(i * perRow, (i + 1) * perRow)
@@ -162,6 +162,10 @@ const bottomRows = streamerRows.slice(2);
 
 /* LG: Desktop grande (1025px en adelante) */
 @media (max-width: 95.625em) {
+
+}
+
+@media (max-width: 93.25em) {
   .live-channels-section {
     width: 100%;
 
