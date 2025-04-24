@@ -25,7 +25,7 @@ const props = defineProps<{
           <span class="live-channels__card-info-name">{{ channel.user_name }}</span>
           <span class="live-channels__card-info-category">{{ channel.game_name }}</span>
 
-          <div class="live-channels__card-info-labels-container">
+          <div class="live-channels__card-info-tags-container">
             <div
               v-for="(tag, index) in channel.tags"
               :key="index"
@@ -45,14 +45,14 @@ const props = defineProps<{
 @import '@/assets/styles/mixins.scss';
 
 .live-channels {
-  margin-bottom: 2em;
+
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: row;
   gap: 2.3125em;
   flex-wrap: wrap;
   margin-bottom: 4em;
-
+  
   &__card {
     display: flex;
     flex-direction: column;
@@ -60,10 +60,14 @@ const props = defineProps<{
     background-color: var(--c-general-color);
     width: 23.875em;
     height: 19.1903em;
+    padding-right: 1em;
+    margin-top: 1.7em;
 
     &-image {
       height: 13.1512em;
       width: 23.875em;
+      padding-right: 1em;
+      
     }
 
     &-content {
@@ -83,6 +87,7 @@ const props = defineProps<{
     &-info {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       gap: 0.3125em;
       @include text-ellipsis;
 
@@ -106,7 +111,7 @@ const props = defineProps<{
         margin-top: 0.25em;
       }
 
-      &-labels-container {
+      &-tags-container {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5em;
@@ -118,6 +123,12 @@ const props = defineProps<{
       }
     }
   }
+
 }
 
+@media (max-width: 95.625em) {
+  .live-channels {
+    justify-content: center;
+  }
+}
 </style>

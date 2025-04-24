@@ -106,7 +106,7 @@ const totalFollowers = api.total;
     background-color: var(--c-general-color);
 
     &-image {
-      width: 55.2em;
+      width: 54em;
       height: 100%;
       object-fit: cover;
     }

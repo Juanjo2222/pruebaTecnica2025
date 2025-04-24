@@ -46,15 +46,16 @@ const subCategories = ['IRL', 'Gaming', 'Music', 'Art', 'Cooking', 'Tech'];
   margin-bottom: 2em;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 0.625em;
+  flex-wrap: wrap;
+  gap: 1em;
+
 
   &__card {
     background-color: var(--c-general-color);
     width: 11.3544em;
     height: 20.213em;
-    
+    margin-top: 1em;
+
     &-image {
       width: 11.3544em;
       height: 15.1387em;
@@ -90,6 +91,21 @@ const subCategories = ['IRL', 'Gaming', 'Music', 'Art', 'Cooking', 'Tech'];
         width: fit-content;
       }
     }
+  }
+}
+
+@media (max-width: 36em) {
+  .categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 95.625em) {
+
+  .categories {
+    justify-content: center
   }
 }
 

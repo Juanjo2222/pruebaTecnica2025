@@ -57,6 +57,7 @@ import texts from '@/assets/data/texts.json';
   background-color: var(--c-nav-background-color);
   color: var(--c-white);
   height: 3.125em;
+  width: auto;
 
   &__left {
     display: flex;
@@ -152,5 +153,32 @@ import texts from '@/assets/data/texts.json';
     padding: 0.3125em;
     margin: auto;
   }
+
+  @media (max-width: 43.9375em) {
+    &__login,
+    &__signup,
+    &__profile,
+    &__notification,
+    &__notification-text,
+    &__search {
+      display: none;
+    }
+  }
+
+  @media (max-width: 48.25em) {
+  &__login {
+    font-size: 0.7em;
+    background-color: #2f2f35;
+  }
+
+  &__signup {
+    background-color: var(--c-blue-button-and-words);
+
+    font-size: 0.7em;
+    color: black;
+  }
 }
+
+}
+
 </style>
