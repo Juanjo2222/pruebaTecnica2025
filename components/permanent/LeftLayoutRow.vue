@@ -56,14 +56,12 @@ const streamers = streamersRaw.map(streamer => {
   border-radius: 0.3125em;
   font-family: Arial, Helvetica, sans-serif;
   height: 2.5em;
-
   &__image {
     width: 2.7em;
     height: 2.7em;
     border-radius: 50%;
     object-fit: cover;
   }
-
   &__info {
     display: grid;
     grid-template-rows: repeat(2, auto);
@@ -71,28 +69,23 @@ const streamers = streamersRaw.map(streamer => {
     font-size: 0.9em;
     width: 8.75em;
   }
-
   &__name {
     font-size: var(--fs-big-texts);
     font-weight: 600;
   }
-
   &__channel {
     font-size: var(--fs-small-texts);
     color: #adadb8;
   }
-
   &__status {
     display: flex;
     align-items: center;
     gap: 0.4em;
   }
-
   &__viewers {
     font-size: var(--fs-small-texts);
     color: var(--c-white);
   }
-
   &__live-indicator {
     width: 0.5em;
     height: 0.5em;
@@ -100,6 +93,5 @@ const streamers = streamersRaw.map(streamer => {
     border-radius: 50%;
   }
 }
-
 @include left-layout-row-responsive;
 </style>

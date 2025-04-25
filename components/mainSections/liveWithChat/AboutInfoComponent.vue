@@ -13,7 +13,6 @@ const props = defineProps<{
   description: string
 }>();
 
-
 </script>
 
 <template>
@@ -44,7 +43,6 @@ const props = defineProps<{
   color: var(--c-white);
   margin-right: 1em;
   padding: 1.5em;
-
   &__followers {
     font-size: var(--fs-big-texts);
     font-weight: 600;
@@ -53,17 +51,14 @@ const props = defineProps<{
       color: #878790;
     }
   }
-
   &__description {
     font-size: var(--fs-big-texts);
     margin-top: 1em;
   }
-
   &__divider {
     display: flex;
     align-items: center;
     margin-top: 1em;
-
     &::before,
     &::after {
       content: '';
@@ -71,7 +66,6 @@ const props = defineProps<{
       border-top: 0.0625em solid var(--c-border-color);
     }
   }
-
   &__socials {
     display: flex;
     flex-direction: row;
@@ -81,11 +75,8 @@ const props = defineProps<{
     overflow-x: auto;
     max-width: 100%;
   }
-
   &__social-button {
     @include social-buttons;
   }
-
 }
-
 </style>

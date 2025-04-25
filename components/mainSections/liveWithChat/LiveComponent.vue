@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
 import IconOptions from '@/components/icons/OptionsIcon.vue';
-import AboutInfoComponent from '@/components/mainSections/liveWithChat/AboutInfoComponent.vue'
-import FollowIcon from '@/components/icons/FollowIcon'
-import SuscribeIcon from '@/components/icons/SuscribeIcon'
-import DownArrowIcon from '@/components/icons/DownArrowIcon'
-import RedViewersIcon from '@/components/icons/RedViewersIcon'
-import ShareIcon from '@/components/icons/ShareIcon'
+import AboutInfoComponent from '@/components/mainSections/liveWithChat/AboutInfoComponent.vue';
+import FollowIcon from '@/components/icons/FollowIcon';
+import SuscribeIcon from '@/components/icons/SuscribeIcon';
+import DownArrowIcon from '@/components/icons/DownArrowIcon';
+import RedViewersIcon from '@/components/icons/RedViewersIcon';
+import ShareIcon from '@/components/icons/ShareIcon';
 import { ApiTwitch } from '@/api/twitchApi';
 import texts from '@/assets/data/texts.json';
 import type { Streamer } from '@/types/streamer';
@@ -95,28 +94,23 @@ const totalFollowers = api.total;
 
 <style scoped lang="scss">
 @import '@/assets/styles/mixins.scss';
-
 .live {
   display: flex;
   flex-direction: column;
   background-color: var(--c-general-color);
-  
   &__video {
     width: 100%;
     background-color: var(--c-general-color);
-
     &-image {
       width: 54em;
       height: 100%;
       object-fit: cover;
     }
   }
-
   &__main-info {
     display: flex;
     margin-top: 1em;
   }
-
   &__profile-container {
     width: 4em;
     height: 4em;
@@ -126,13 +120,11 @@ const totalFollowers = api.total;
     display: flex;
     flex-direction: column;
   }
-
   &__profile-image {
     border-radius: 50%;
     border: none;
     object-fit: cover;
   }
-
   &__live-label {
     font-size: 0.8125em;
     font-weight: var(--fw-big-texts);
@@ -144,34 +136,27 @@ const totalFollowers = api.total;
     margin-top: -0.5rem;
     width: 3em;
   }
-
   &__details {
     display: flex;
     flex-direction: column;
     margin-left: 0.5em;
     margin-right: 1em;
-
-
   }
-
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 0.5em;
   }
-
   &__streamer-name {
     color: var(--c-white);
     font-weight: bold;
     font-size: 1em;
   }
-
   &__actions {
     display: flex;
     gap: 1em;
   }
-
   &__follow-button,
   &__subscribe-button {
     display: flex;
@@ -188,7 +173,6 @@ const totalFollowers = api.total;
       opacity: 0.85;
     }
   }
-
   &__follow-button {
     background-color: var(--c-blue-button-and-words);
     font-size: var(--fs-small-texts);
@@ -198,7 +182,6 @@ const totalFollowers = api.total;
     padding-right: 0.7em;
     border-radius: 0.25em;
   }
-
   &__subscribe-button {
     background-color: #2f2f35;
     font-size: var(--fs-small-texts);
@@ -208,16 +191,13 @@ const totalFollowers = api.total;
     padding-right: 0.7em;
     border-radius: 0.25em;
   }
-
   &__icon {
     padding-right: 0.2em;
     padding-left: 0.3em;
   }
-
   &__button-text{
     padding-bottom: 0.2em;
   }
-
   &__summary {
     display: flex;
     justify-content: space-between;
@@ -225,35 +205,29 @@ const totalFollowers = api.total;
     margin-top: 0.5em;
     color: var(--c-white);
   }
-
   &__title {
     font-size: var(--fs-big-texts);
     font-weight: 600;
   }
-
   &__right-info {
     display: flex;
     gap: 0.5em;
     align-items: center;
   }
-
   &__viewers {
     color: #ff8280;
     display: flex;
     align-items: center;
     font-size: var(--fs-small-texts);
   }
-
   &__duration {
     font-size: var(--fs-small-texts);
     color: var(--c-white);
   }
-
   &__options {
     display: flex;
     gap: 0.3em;
   }
-
   &__options-button {
     background-color: var(--c-general-color);
     border: none;
@@ -266,37 +240,30 @@ const totalFollowers = api.total;
       @include gray-buttons-hover;
     }
   }
-
   &__extra {
     display: flex;
     flex-direction: column;
     margin-top: 0.5em;
   }
-
   &__category {
     color: #1788de;
     font-size: var(--fs-big-texts);
     padding: 0.4em 0;
   }
-
   &__tags-container {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5em;
   }
-
   &__tag {
     @include tags;
   }
-
   &__about {
     color: var(--c-white);
     font-size: 1.125em;
     font-weight: 600;
     padding: 1em 0;
   }
-
   @include live-component-responsive;
 }
-
 </style>

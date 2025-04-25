@@ -80,7 +80,6 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
 .chat {
   background-color: var(--c-nav-background-color);
   height: 100%;
-
   &__front {
     display:flex;
     flex-direction: row;
@@ -88,58 +87,44 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     height: 3em;
     padding-right: 0.5em;
   }
-
   &__collapse-icon {
     background-color: var(--c-nav-background-color);
     padding: 1em;
-
-
     &--flipped {
-      transform: scaleX(-1);    
-  
+      transform: scaleX(-1);
     }
   }
-
   &__community-icon {
     background-color: var(--c-nav-background-color);
     padding-right: 0.5em;
   }
-
   &__arrow-icon {
     background-color: var(--c-nav-background-color);
     margin-right: 0.3em;
-
-
     &--flipped {
       transform: scaleX(-1);
       margin-left: 0.5em;
     }
-    
   }
-
   &__title{
     color:var(--c-white);
     margin-top: 1.2em;
     font-size: var(--fs-small-texts);
     font-weight: 600;
   }
-
   &__divider-one{
     border-top: 0.0625em solid var(--c-border-color);
   }
-
   &__gifts {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 0.5em;
-
     &-title{
       display: flex;
       align-items: center;
       gap:0.7em;
     }
-
     &-text {
       font-size: var(--fs-small-texts);
       color: #198ae0;
@@ -149,22 +134,18 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       gap: 0.5em;
     }
   }
-
   &__divider-two{
     border-top: 0.0625em solid var(--c-border-color);
     margin: 1em 1em 0 1em;
   }
-
   &__content{
     display:flex;
     flex-direction: column;
     padding: 1em;
-    
     &-title{
       font-size: var(--fs-small-texts);
       color: #9a9aa5;
     }
-
     &-message {
       margin-top: auto;
       background-color: var(--c-nav-background-color);
@@ -174,20 +155,15 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       border: 0.0625em solid #545457;
       border-radius: 0.375em;
       padding: 0.1em;
-
       &--input {
         width: 100%;
         padding: 0.6em;
         color: var(--c-white);
         border: none;
         background-color: var(--c-nav-background-color);
-        
       }
-
     }
-
   }
-
   &__message {
     display: flex;
     gap: 0.5em;
@@ -195,7 +171,6 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     overflow-y: auto;
     max-height: 90vh;
     margin-top: 1em;
-
     &-content {
       display: flex;
       gap: 0.3em;
@@ -206,20 +181,17 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       align-items: flex-end;
       
     }
-
     &-user {
       font-weight: bold;
       color: #9ecbff;
       font-size: 0.9em;
       font-weight: 700;
     }
-
     &-text {
       color: var(--c-white);
       font-size: 0.9em;
     }
   }
-  
   &__bottom {
     display: flex;
     align-items: center;
@@ -227,24 +199,20 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     margin-top: 0.8em;
     overflow-x: auto;
     max-width: 100%;
-
     &-left {
       display: flex;
       gap: 0.5em;
       color: #9b9ba4;
     }
-
     &-right {
       display: flex;
       gap: 0.5em;
     }
-
     &-bits,
     &-points {
       display: flex;
       align-items: center;
     }
-
     &-send {
       background-color: var(--c-blue-button-and-words);
       border: none;
@@ -253,18 +221,13 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       border-radius: 0.3125em;
   
     }
-
     &--image{
       width: 1.5em;
       height: 1.5em;
       border-radius: 50%;
       margin-right: 0.3em;
     }
-
   }
-
   @include chat-component-responsive;
-
 }
-
 </style>

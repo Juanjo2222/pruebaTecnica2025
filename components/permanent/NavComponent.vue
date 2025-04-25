@@ -149,15 +149,11 @@ import texts from '@/assets/data/texts.json';
     margin: auto;
     color: black;
   }
-
   &__profile {
     @include nav-icon-buttons;
     padding: 0.3125em;
     margin: auto;
   }
-
   @include nav-component-responsive;
-
 }
-
 </style>

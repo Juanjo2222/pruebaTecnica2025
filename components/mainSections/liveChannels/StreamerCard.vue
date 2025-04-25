@@ -41,6 +41,7 @@ const props = defineProps<{
 </template>
 
 <style scoped lang="scss">
+
 @import '@/assets/styles/mixins.scss';
 
 .streamer-card {
@@ -50,7 +51,6 @@ const props = defineProps<{
   gap: 2.3125em;
   flex-wrap: wrap;
   margin-bottom: 4em;
-
   &__card {
     display: flex;
     flex-direction: column;
@@ -60,13 +60,11 @@ const props = defineProps<{
     height: 19.1903em;
     padding-right: 1em;
     margin-top: 1.7em;
-
     &-image {
       height: 13.1512em;
       width: 23.875em;
       padding-right: 1em;
     }
-
     &-content {
       display: flex;
       flex-direction: row;
@@ -80,14 +78,12 @@ const props = defineProps<{
         border: none;
       }
     }
-
     &-info {
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 0.3125em;
       @include text-ellipsis;
-
       &-title {
         font-size: var(--fs-big-texts);
         font-weight: 600;
@@ -95,26 +91,22 @@ const props = defineProps<{
         margin-top: 0.5em;
         @include text-ellipsis;
       }
-
       &-name {
         font-size: var(--fs-small-texts);
         color: #9999a3;
         margin-top: 0.5em;
       }
-
       &-category {
         font-size: var(--fs-small-texts);
         color: #b3b3b3;
         margin-top: 0.25em;
       }
-
       &-tags-container {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5em;
         margin-top: 0.5em;
       }
-
       &-tags {
         @include tags;
       }
@@ -122,5 +114,4 @@ const props = defineProps<{
   }
   @include streamer-card-responsive;
 }
-
 </style>

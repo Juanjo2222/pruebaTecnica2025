@@ -39,7 +39,6 @@ const buttons = [
   padding-top: 1em;
   padding-bottom: 1.5em;
 }
-
 .category-button {
   @include category-buttons;
   background-color: var(--c-blue-button-and-words);
@@ -48,18 +47,14 @@ const buttons = [
   justify-content: space-between;
   align-items: center;
   padding: 0.8em 1.2em;
-
   &__text {
     color: black;
     font-weight: bold;
     font-size: 1.3em;
   }
-
   &__icon {
     margin-left: auto;
   }
 }
-
 @include categories-buttons-responsive;
-
 </style>
