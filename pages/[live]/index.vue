@@ -14,15 +14,27 @@ definePageMeta({
   <section class="live-chat-section">
     <NuxtLayout :name="$route.meta.defaultLayout">
       <LiveComponent :user_login="route.params.live"/>
-      <ChatComponent :user_login="route.params.live"/>
+      <div class="live-chat-section__chat">
+        <ChatComponent :user_login="route.params.live"/>
+      </div>
     </NuxtLayout>
   </section>
 </template>
 
 <style scoped lang="scss">
 
-.live-chat-section{
-  display: flex;
-}
+  .live-chat-section{
+    &__chat{
+      display: flex;
+    }
+  }
 
+  @media (max-width: 45.8125em){
+    .live-chat-section{
+      &__chat{
+        display: flex;
+        justify-content: center
+      }
+    }
+  }
 </style>

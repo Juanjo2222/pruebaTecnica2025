@@ -21,6 +21,6 @@ definePageMeta({
 <style scoped lang="scss">
   .main{
     background-color: var(--c-general-color);
-    
+
   }
 </style>
