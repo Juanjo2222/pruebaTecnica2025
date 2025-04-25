@@ -143,6 +143,7 @@ const bottomRows = streamerRows.slice(2);
   .live-channels-section {
     &__row{
       width: 100%;
+      margin-left: 0.5em;
     }
   }
 }
@@ -160,15 +161,11 @@ const bottomRows = streamerRows.slice(2);
   }
 }
 
-/* LG: Desktop grande (1025px en adelante) */
-@media (max-width: 95.625em) {
-
-}
 
 @media (max-width: 93.25em) {
   .live-channels-section {
     width: 100%;
-
+    
     &__title {
       display: flex;
       align-items: center;
@@ -177,4 +174,11 @@ const bottomRows = streamerRows.slice(2);
     }
   }
 }
+
+  @media (min-width: 119.5em){
+    .live-channels-section {
+      margin-left: 25em;
+    }
+  }
+
 </style>

@@ -46,11 +46,13 @@ import texts from '@/assets/data/texts.json';
 }
 
 @media (max-width: 45.8125em) {
-  .sidebar{
-    margin-left: 2em;
+  .sidebar {
     flex-direction: row;
-    justify-content: flex-start;
+    overflow-x: auto;
+    max-width: 100%;
     gap: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 
   }
 }

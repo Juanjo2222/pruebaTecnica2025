@@ -102,7 +102,7 @@ const totalFollowers = api.total;
   background-color: var(--c-general-color);
   
   &__video {
-    width: 54em;
+    width: 100%;
     background-color: var(--c-general-color);
 
     &-image {
@@ -150,7 +150,7 @@ const totalFollowers = api.total;
     flex-direction: column;
     margin-left: 0.5em;
     margin-right: 1em;
-    width: 100%;
+
 
   }
 
@@ -295,5 +295,70 @@ const totalFollowers = api.total;
     font-weight: 600;
     padding: 1em 0;
   }
+
+  @media (max-width: 29.375em){
+   
+    &__details{
+      gap: 0.5em;
+    }
+
+    &__header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5em;
+    }
+    &__summary {
+      width:100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+    }
+  }
+
+  @media (max-width: 123.8124em){
+    width: 54em;
+    margin-left: 8em;
+    
+    &__video {
+      width: 100%;
+      background-color: var(--c-general-color);
+
+      &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  @media (max-width: 101.75em){
+    margin-left: 0.5em;
+    width: 100%;
+    
+    &__video {
+      width: 100%;
+      background-color: var(--c-general-color);
+
+      &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+
+  @media (max-width: 53.4375em){
+    margin-left: 0.5em;
+
+  }
+  
+  @media (min-width: 123.8125em){
+    width: 54em;
+    margin-left: 25em;
+  }
+
 }
+
 </style>
