@@ -27,18 +27,9 @@ import RecomChannComponent from '@/components/permanent/RecomChannComponent.vue'
     &__main-part{
       display: flex;
       flex-direction: column;
-      height: 10em;
     }
   }
 }
 
-@media (min-width: 126.5625em) {
-  .layout{  
-    &__main-part{
-      display: flex;
-      gap:30em;
-    }
-  }
-}
 
 </style>
