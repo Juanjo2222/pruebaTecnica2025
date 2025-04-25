@@ -23,9 +23,8 @@ import texts from '@/assets/data/texts.json';
   color: var(--c-white);
   display: flex;
   flex-direction: column;
-  width: 20em;
   padding-left: 1.5em;
-
+  
   &__header {
     display: flex;
     justify-content: space-between;
@@ -44,5 +43,25 @@ import texts from '@/assets/data/texts.json';
     margin-left: 2.1em;
   }
 
+}
+
+@media (max-width: 45.8125em) {
+  .sidebar {
+    flex-direction: row;
+    overflow-x: auto;
+    max-width: 100%;
+    gap: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+  }
+}
+
+@media (max-width: 68.75em) {
+  .sidebar {
+    &__header{
+      display: none;
+    }
+  }
 }
 </style>

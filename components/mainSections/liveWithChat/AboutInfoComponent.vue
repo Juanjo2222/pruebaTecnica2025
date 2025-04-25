@@ -39,9 +39,9 @@ const props = defineProps<{
 .about-info {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   background-color: var(--c-nav-background-color);
   color: var(--c-white);
-  width: fit-content;
   margin-right: 1em;
   padding: 1.5em;
 
@@ -78,6 +78,8 @@ const props = defineProps<{
     margin-top: 1em;
     font-size: var(--fs-small-texts);
     font-weight: 600;
+    overflow-x: auto;
+    max-width: 100%;
   }
 
   &__social-button {
@@ -87,6 +89,11 @@ const props = defineProps<{
       @include gray-buttons-hover;
     }
   }
+
+  @media (max-width: 23.5em){
+    width: 100%;
+  }
+
 }
 
 </style>

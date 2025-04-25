@@ -53,10 +53,13 @@ import texts from '@/assets/data/texts.json';
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-x: auto;
+  max-width: 100%;
   padding: 0.1325em 1.25em 0.1325em 1.25em;
   background-color: var(--c-nav-background-color);
   color: var(--c-white);
   height: 3.125em;
+  width: auto;
 
   &__left {
     display: flex;
@@ -152,5 +155,17 @@ import texts from '@/assets/data/texts.json';
     padding: 0.3125em;
     margin: auto;
   }
+
+  @media (max-width: 43.9375em) {
+
+    overflow-x: auto;
+    max-width: 100%;
+
+    &__search-input {
+      width: 20em;
+    }
+  }
+
 }
+
 </style>

@@ -51,7 +51,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     <section class="chat__content">
       <span class="chat__content-title">{{ texts.welcomeChatText }}</span>
       <div class="chat__message">
-        <div class="chat__message-content">
+        <div class="chat__message-content" v-for="index in 16" :key="index">
           <span class="chat__message-user">{{ texts.user1 }}</span>
           <span class="chat__message-text">{{ texts.user1Message }}</span>
         </div>
@@ -79,7 +79,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
 
 .chat {
   background-color: var(--c-nav-background-color);
-  width: 22em;
+  height: 100%;
 
   &__front {
     display:flex;
@@ -159,7 +159,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     display:flex;
     flex-direction: column;
     padding: 1em;
-
+    
     &-title{
       font-size: var(--fs-small-texts);
       color: #9a9aa5;
@@ -176,7 +176,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       padding: 0.1em;
 
       &--input {
-        width: 18em;
+        width: 100%;
         padding: 0.6em;
         color: var(--c-white);
         border: none;
@@ -191,13 +191,16 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
   &__message {
     display: flex;
     gap: 0.5em;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 90vh;
+    margin-top: 1em;
 
     &-content {
       display: flex;
       gap: 0.3em;
       background-color: var(--c-nav-background-color);
       width: 19em;
-      height: 37em;
       padding: 0.5em;
       border-radius: 0.5em;
       align-items: flex-end;
@@ -221,7 +224,9 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 0.4em;
+    margin-top: 0.8em;
+    overflow-x: auto;
+    max-width: 100%;
 
     &-left {
       display: flex;
@@ -256,6 +261,11 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
       margin-right: 0.3em;
     }
 
+  }
+
+  @media (max-width: 45.8125em){
+    margin-top: 0.5em;
+    width: 90%;
   }
 
 }

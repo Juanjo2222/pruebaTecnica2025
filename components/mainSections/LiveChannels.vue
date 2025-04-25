@@ -10,7 +10,7 @@ const api = new ApiTwitch();
 await api.getToken();
 
 await api.requestApi("https://api.twitch.tv/helix/streams");
-const streamersRaw = (api.data as Streamer[]).slice(0, 12);
+const streamersRaw = (api.data as Streamer[]).slice(0, 16);
 
 const userIds = streamersRaw.map(s => s.user_id);
 await api.requestApi(`https://api.twitch.tv/helix/users?id=${userIds.join('&id=')}`);
@@ -75,7 +75,7 @@ const bottomRows = streamerRows.slice(2);
 
   &__title {
     color: var(--c-white);
-    padding-top: 0.7em;
+    padding-top: 0.9em;
     padding-bottom: 0.6em;
   }
 
@@ -87,8 +87,9 @@ const bottomRows = streamerRows.slice(2);
     display: flex;
     align-items: center;
     color: var(--c-blue-button-and-words);
-    
-    
+    margin-bottom: 1em;
+    margin-top: 5em;
+
     &::before,
     &::after {
       content: '';
@@ -105,8 +106,79 @@ const bottomRows = streamerRows.slice(2);
     cursor: pointer;
   }
 
-  &__arrow-icon{
+  &__arrow-icon {
     margin-right: 1em;
   }
 }
+
+/* XS: Móviles (0 - 480px) */
+@media (max-width: 30em) {
+  .live-channels-section {
+    width: 100%;
+    padding: 0 0.5em;
+
+    &__title {
+      font-size: 1em;
+      text-align: center;
+    }
+
+    &__divider {
+      flex-direction: column;
+      gap: 0.5em;
+      margin: 2em 0;
+    }
+
+    &__divider-text {
+      font-size: 0.85em;
+      padding: 0;
+    }
+
+    &__arrow-icon {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 43.9375em) {
+  .live-channels-section {
+    &__row{
+      width: 100%;
+      margin-left: 0.5em;
+    }
+  }
+}
+
+@media (max-width: 45.8125em) {
+  .live-channels-section {
+    width: 100%;
+  }
+}
+
+/* MD: Laptops (769px - 1024px) */
+@media (max-width: 68.6875em) {
+  .live-channels-section {
+    min-width: 18.75em;
+  }
+}
+
+
+@media (max-width: 93.25em) {
+  .live-channels-section {
+    width: 100%;
+    
+    &__title {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+      justify-content: center;
+    }
+  }
+}
+
+  @media (min-width: 119.5em){
+    .live-channels-section {
+      margin-left: 25em;
+    }
+  }
+
 </style>

@@ -52,7 +52,6 @@ const streamers = streamersRaw.map(streamer => {
   margin-bottom: 1em;
   border-radius: 0.3125em;
   font-family: Arial, Helvetica, sans-serif;
-  width: 16.25em;
   height: 2.5em;
 
   &__image {
@@ -99,4 +98,25 @@ const streamers = streamersRaw.map(streamer => {
   }
   
 }
+
+@media (max-width: 45.8125em) {
+  .streamer-card{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 68.75em) {
+
+  .streamer-card__image {
+    width: 3em;
+    height: 3em;
+  }
+
+  .streamer-card__info,
+  .streamer-card__status {
+    display: none;
+  }
+}
+
 </style>

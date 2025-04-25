@@ -34,8 +34,8 @@ const buttons = [
 
 .category-button-container {
   display: flex;
-  justify-content: space-between;
-  gap: 1.5em;
+  flex-wrap: wrap;
+  gap: 1em;
   padding-top: 1em;
   padding-bottom: 1.5em;
 }
@@ -43,9 +43,11 @@ const buttons = [
 .category-button {
   @include category-buttons;
   background-color: var(--c-blue-button-and-words);
-  width: 21.5em;
-  margin-right: 0.4em;
-  margin-left: 0.4em;
+  width: 14em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 1.2em;
 
   &__text {
     color: black;
@@ -56,10 +58,38 @@ const buttons = [
   &__icon {
     margin-left: auto;
   }
+}
 
-  &:hover {
-    opacity: 0.8;
+/* XS - Móviles (0 - 480px) */
+@media (max-width: 30em) {
+  .category-button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8em;
+  }
+
+  .category-button {
+    width: 100%;
+    max-width: 16em;
+
+    &__text {
+      font-size: 1.1em;
+    }
   }
 }
 
+
+/* MD - Laptops (769px - 1024px) */
+@media (max-width: 68.6875em) {
+  .category-button {
+    width: 14.25em;
+    
+  }
+}
+
+@media (max-width: 95.625em) {
+  .category-button-container {
+    justify-content: center;
+  }
+}
 </style>
