@@ -120,11 +120,7 @@ const props = defineProps<{
       }
     }
   }
+  @include streamer-card-responsive;
 }
 
-@media (max-width: 95.625em) {
-  .streamer-card {
-    justify-content: center;
-  }
-}
 </style>

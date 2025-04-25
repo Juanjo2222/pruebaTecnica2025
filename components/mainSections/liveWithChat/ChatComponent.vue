@@ -263,10 +263,7 @@ const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
 
   }
 
-  @media (max-width: 45.8125em){
-    margin-top: 0.5em;
-    width: 90%;
-  }
+  @include chat-component-responsive;
 
 }
 

@@ -84,14 +84,6 @@ const props = defineProps<{
 
   &__social-button {
     @include social-buttons;
-
-    &:hover {
-      @include gray-buttons-hover;
-    }
-  }
-
-  @media (max-width: 23.5em){
-    width: 100%;
   }
 
 }

@@ -92,21 +92,8 @@ const subCategories = ['IRL', 'Gaming', 'Music', 'Art', 'Cooking', 'Tech'];
       }
     }
   }
-}
 
-@media (max-width: 36em) {
-  .categories {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 95.625em) {
-
-  .categories {
-    justify-content: center
-  }
+  @include category-card-responsive;
 }
 
 </style>

@@ -44,6 +44,9 @@ const streamers = streamersRaw.map(streamer => {
 </template>
 
 <style scoped lang="scss">
+
+@import '@/assets/styles/mixins.scss';
+
 .left-layout-row {
   display: flex;
   align-items: center;
@@ -98,23 +101,5 @@ const streamers = streamersRaw.map(streamer => {
   }
 }
 
-@media (max-width: 45.8125em) {
-  .left-layout-row {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 68.75em) {
-  .left-layout-row__image {
-    width: 3em;
-    height: 3em;
-  }
-
-  .left-layout-row__info,
-  .left-layout-row__status {
-    display: none;
-  }
-}
-
+@include left-layout-row-responsive;
 </style>

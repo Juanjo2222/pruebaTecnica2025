@@ -60,36 +60,6 @@ const buttons = [
   }
 }
 
-/* XS - Móviles (0 - 480px) */
-@media (max-width: 30em) {
-  .category-button-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8em;
-  }
+@include categories-buttons-responsive;
 
-  .category-button {
-    width: 100%;
-    max-width: 16em;
-
-    &__text {
-      font-size: 1.1em;
-    }
-  }
-}
-
-
-/* MD - Laptops (769px - 1024px) */
-@media (max-width: 68.6875em) {
-  .category-button {
-    width: 14.25em;
-    
-  }
-}
-
-@media (max-width: 95.625em) {
-  .category-button-container {
-    justify-content: center;
-  }
-}
 </style>
