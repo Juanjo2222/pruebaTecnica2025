@@ -9,27 +9,27 @@ const props = defineProps<{
 </script>
 
 <template>
-  <section class="live-channels">
+  <section class="streamer-card">
     <div
       v-for="channel in channels"
       :key="channel.id"
-      class="live-channels__card"
+      class="streamer-card__card"
     >
       <NuxtLink :to="`/${channel.user_login}`">
-        <img :src="channel.thumbnail_url" class="live-channels__card-image" alt="Thumbnail image"/>
+        <img :src="channel.thumbnail_url" class="streamer-card__card-image" alt="Thumbnail image"/>
       </NuxtLink>
-      <div class="live-channels__card-content">
-        <img :src="channel.profile_image_url" class="live-channels__card-content-profile" alt="Channel profile image"/>
-        <div class="live-channels__card-info">
-          <span class="live-channels__card-info-title">{{ channel.title }}</span>
-          <span class="live-channels__card-info-name">{{ channel.user_name }}</span>
-          <span class="live-channels__card-info-category">{{ channel.game_name }}</span>
+      <div class="streamer-card__card-content">
+        <img :src="channel.profile_image_url" class="streamer-card__card-content-profile" alt="Channel profile image"/>
+        <div class="streamer-card__card-info">
+          <span class="streamer-card__card-info-title">{{ channel.title }}</span>
+          <span class="streamer-card__card-info-name">{{ channel.user_name }}</span>
+          <span class="streamer-card__card-info-category">{{ channel.game_name }}</span>
 
-          <div class="live-channels__card-info-tags-container">
+          <div class="streamer-card__card-info-tags-container">
             <div
               v-for="(tag, index) in channel.tags"
               :key="index"
-              class="live-channels__card-info-tags"
+              class="streamer-card__card-info-tags"
             >
               {{ tag }}
             </div>
@@ -41,18 +41,16 @@ const props = defineProps<{
 </template>
 
 <style scoped lang="scss">
-
 @import '@/assets/styles/mixins.scss';
 
-.live-channels {
-
+.streamer-card {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: row;
   gap: 2.3125em;
   flex-wrap: wrap;
   margin-bottom: 4em;
-  
+
   &__card {
     display: flex;
     flex-direction: column;
@@ -67,7 +65,6 @@ const props = defineProps<{
       height: 13.1512em;
       width: 23.875em;
       padding-right: 1em;
-      
     }
 
     &-content {
@@ -123,11 +120,10 @@ const props = defineProps<{
       }
     }
   }
-
 }
 
 @media (max-width: 95.625em) {
-  .live-channels {
+  .streamer-card {
     justify-content: center;
   }
 }

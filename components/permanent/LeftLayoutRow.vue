@@ -24,19 +24,19 @@ const streamers = streamersRaw.map(streamer => {
 </script>
 
 <template>
-  <li v-for="(streamer, index) in streamers" :key="index" class="streamer-card">
+  <li v-for="(streamer, index) in streamers" :key="index" class="left-layout-row">
     <img
       :src="streamer.profile_img"
-      class="streamer-card__image"
+      class="left-layout-row__image"
       :alt="`${streamer.user_name}'s profile picture`"
     />
-    <section class="streamer-card__info">
-      <span class="streamer-card__name">{{ streamer.user_name }}</span>
-      <span class="streamer-card__channel">{{ streamer.game_name }}</span>
+    <section class="left-layout-row__info">
+      <span class="left-layout-row__name">{{ streamer.user_name }}</span>
+      <span class="left-layout-row__channel">{{ streamer.game_name }}</span>
     </section>
-    <div class="streamer-card__status">
-      <div class="streamer-card__live-indicator" aria-hidden="true" />
-      <span class="streamer-card__viewers" :aria-label="`${formatViewers(streamer.viewer_count)} viewers`">
+    <div class="left-layout-row__status">
+      <div class="left-layout-row__live-indicator" aria-hidden="true" />
+      <span class="left-layout-row__viewers" :aria-label="`${formatViewers(streamer.viewer_count)} viewers`">
         {{ formatViewers(streamer.viewer_count) }}
       </span>
     </div>
@@ -44,7 +44,7 @@ const streamers = streamersRaw.map(streamer => {
 </template>
 
 <style scoped lang="scss">
-.streamer-card {
+.left-layout-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -96,25 +96,23 @@ const streamers = streamersRaw.map(streamer => {
     background-color: red;
     border-radius: 50%;
   }
-  
 }
 
 @media (max-width: 45.8125em) {
-  .streamer-card{
+  .left-layout-row {
     display: flex;
     flex-direction: column;
   }
 }
 
 @media (max-width: 68.75em) {
-
-  .streamer-card__image {
+  .left-layout-row__image {
     width: 3em;
     height: 3em;
   }
 
-  .streamer-card__info,
-  .streamer-card__status {
+  .left-layout-row__info,
+  .left-layout-row__status {
     display: none;
   }
 }
