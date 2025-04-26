@@ -67,6 +67,9 @@ const bottomRows = streamerRows.slice(2);
 </template>
 
 <style scoped lang="scss">
+
+@import '@/assets/styles/mixins.scss';
+
 .live-channels-section {
   background-color: var(--c-general-color);
   height: 100%;
@@ -102,62 +105,7 @@ const bottomRows = streamerRows.slice(2);
   &__arrow-icon {
     margin-right: 1em;
   }
+  @include live-channels-responsive;
 }
-@media (max-width: 30em) {
-  .live-channels-section {
-    width: 100%;
-    padding: 0 0.5em;
-    &__title {
-      font-size: 1em;
-      text-align: center;
-    }
-    &__divider {
-      flex-direction: column;
-      gap: 0.5em;
-      margin: 2em 0;
-    }
-    &__divider-text {
-      font-size: 0.85em;
-      padding: 0;
-    }
-    &__arrow-icon {
-      margin: 0 auto;
-    }
-  }
-}
-@media (max-width: 43.9375em) {
-  .live-channels-section {
-    &__row{
-      width: 100%;
-      margin-left: 0.5em;
-    }
-  }
-}
-@media (max-width: 45.8125em) {
-  .live-channels-section {
-    width: 100%;
-  }
-}
-@media (max-width: 68.6875em) {
-  .live-channels-section {
-    min-width: 18.75em;
-  }
-}
-@media (max-width: 93.25em) {
-  .live-channels-section {
-    width: 100%;
-    
-    &__title {
-      display: flex;
-      align-items: center;
-      gap: 0.3em;
-      justify-content: center;
-    }
-  }
-}
-@media (min-width: 119.5em){
-  .live-channels-section {
-    margin-left: 25em;
-  }
-}
+
 </style>
