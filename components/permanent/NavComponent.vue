@@ -127,7 +127,7 @@ import texts from '@/assets/data/texts.json';
     right: -0.4em;
     border-radius: 562.5em;
     background-color: red;
-    color: white;
+    color: var(--c-general-color);
     font-size: 0.7em;
     padding: 0.2em 0.45em;
     font-size: 0.75em;
@@ -147,7 +147,7 @@ import texts from '@/assets/data/texts.json';
     font-size: var(--fs-small-texts);
     font-weight: var(--fw-big-texts);
     margin: auto;
-    color: black;
+    color:  var(--c-general-color);
   }
   &__profile {
     @include nav-icon-buttons;

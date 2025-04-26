@@ -129,7 +129,7 @@ const totalFollowers = api.total;
     font-size: 0.8125em;
     font-weight: var(--fw-big-texts);
     background-color: red;
-    color: var(--c-white);
+    color: var(--c-general-color);
     padding: 0.3em;
     border-radius: 0.3em;
     margin-left: 0.8em;
@@ -168,7 +168,6 @@ const totalFollowers = api.total;
     border-radius: 0.4em;
     cursor: pointer;
     height: 2em;
-
     &:hover {
       opacity: 0.85;
     }
@@ -176,7 +175,8 @@ const totalFollowers = api.total;
   &__follow-button {
     background-color: var(--c-blue-button-and-words);
     font-size: var(--fs-small-texts);
-    font-weight: var(--fw-small-texts);
+    font-weight: var(--fw-big-texts);
+    color: var(--c-general-color);
     padding-top: 1.2em;
     padding-bottom: 1.2em;
     padding-right: 0.7em;
@@ -185,7 +185,7 @@ const totalFollowers = api.total;
   &__subscribe-button {
     background-color: #2f2f35;
     font-size: var(--fs-small-texts);
-    font-weight: var(--fw-small-texts);
+    font-weight: var(--fw-big-texts);
     padding-top: 1.2em;
     padding-bottom: 1.2em;
     padding-right: 0.7em;
