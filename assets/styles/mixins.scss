@@ -53,7 +53,6 @@
 
 @mixin categories-row-responsive{
   @media (max-width: 95.625em) {
-
     &__title {
       display: flex;
       align-items: center;
@@ -65,48 +64,39 @@
 }
 
 @mixin categories-buttons-responsive{
-
   @media (max-width: 30em) {
     .category-button-container {
       flex-direction: column;
       align-items: center;
       gap: 0.8em;
     }
-
     .category-button {
       width: 100%;
       max-width: 16em;
-
       &__text {
         font-size: 1.1em;
       }
     }
   }
-
   @media (max-width: 68.6875em) {
     .category-button {
       width: 14.25em;
       
     }
   }
-
   @media (max-width: 95.625em) {
     .category-button-container {
       justify-content: center;
     }
   }
 }
-
 @mixin category-card-responsive{
-
   @media (max-width: 36em) {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   @media (max-width: 95.625em) {
-
     justify-content: center
   }
 }
@@ -126,11 +116,9 @@
 
 @mixin live-component-responsive{
   @media (max-width: 29.375em){
-   
     &__details{
       gap: 0.5em;
     }
-
     &__header {
       flex-direction: column;
       align-items: flex-start;
@@ -141,18 +129,15 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-
     }
   }
 
   @media (max-width: 123.8124em){
     width: 54em;
     margin-left: 8em;
-    
     &__video {
       width: 100%;
       background-color: var(--c-general-color);
-
       &-image {
         width: 100%;
         height: 100%;
@@ -164,11 +149,9 @@
   @media (max-width: 101.75em){
     margin-left: 0.5em;
     width: 100%;
-    
     &__video {
       width: 100%;
       background-color: var(--c-general-color);
-
       &-image {
         width: 100%;
         height: 100%;
@@ -176,37 +159,26 @@
       }
     }
   }
-
-
   @media (max-width: 53.4375em){
     margin-left: 0.5em;
-
   }
-  
   @media (min-width: 123.8125em){
     width: 54em;
     margin-left: 25em;
   }
-
 }
-
 @mixin left-layout-row-responsive{
-
   @media (max-width: 45.8125em) {
-    .left-layout-row {
-      display: flex;
-      flex-direction: column;
-    }
+    display: flex;
+    flex-direction: column;
   }
-
   @media (max-width: 68.75em) {
-    .left-layout-row__image {
+    &__image {
       width: 3em;
       height: 3em;
     }
-
-    .left-layout-row__info,
-    .left-layout-row__status {
+    &__info,
+    &__status {
       display: none;
     }
   }
@@ -214,10 +186,8 @@
 
 @mixin nav-component-responsive{
   @media (max-width: 43.9375em) {
-
     overflow-x: auto;
     max-width: 100%;
-
     &__search-input {
       width: 20em;
     }
@@ -226,22 +196,69 @@
 
 @mixin recomm-channel-component-responsive{
   @media (max-width: 45.8125em) {
-    .sidebar {
-      flex-direction: row;
-      overflow-x: auto;
-      max-width: 100%;
-      gap: 1em;
-      margin-top: 1em;
-      margin-bottom: 1em;
-  
+    flex-direction: row;
+    overflow-x: auto;
+    max-width: 100%;
+    gap: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  @media (max-width: 68.75em) {
+    &__header{
+      display: none;
     }
   }
-  
-  @media (max-width: 68.75em) {
-    .sidebar {
-      &__header{
-        display: none;
-      }
+}
+
+@mixin live-channels-responsive{
+  @media (max-width: 30em) {
+    width: 100%;
+    padding: 0 0.5em;
+    &__title {
+      font-size: 1em;
+      text-align: center;
+    }
+    &__divider {
+      flex-direction: column;
+      gap: 0.5em;
+      margin: 2em 0;
+    }
+    &__divider-text {
+      font-size: 0.85em;
+      padding: 0;
+    }
+    &__arrow-icon {
+      margin: 0 auto;
+    }
+  }
+  @media (max-width: 43.9375em) {
+    &__row{
+      width: 100%;
+      margin-left: 0.5em;
+    }
+  }
+  @media (max-width: 45.8125em) {
+    width: 100%;
+  }
+  @media (max-width: 68.6875em) {
+    min-width: 18.75em;
+  }
+  @media (max-width: 93.25em) {
+    width: 100%;
+    &__title {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+      justify-content: center;
+    }
+  }
+}
+
+@mixin live-page-responsive{
+  @media (max-width: 45.8125em){
+    &__chat{
+      display: flex;
+      justify-content: center
     }
   }
 }
