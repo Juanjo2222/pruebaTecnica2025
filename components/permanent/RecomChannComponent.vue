@@ -42,6 +42,6 @@ import texts from '@/assets/data/texts.json';
     padding-left: 0.3em;
     margin-left: 2.1em;
   }
+  @include recomm-channel-component-responsive;
 }
-@include recomm-channel-component-responsive;
 </style>

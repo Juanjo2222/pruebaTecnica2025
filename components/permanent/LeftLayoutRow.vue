@@ -92,6 +92,6 @@ const streamers = streamersRaw.map(streamer => {
     background-color: red;
     border-radius: 50%;
   }
+  @include left-layout-row-responsive;
 }
-@include left-layout-row-responsive;
 </style>
