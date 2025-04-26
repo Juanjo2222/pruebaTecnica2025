@@ -23,18 +23,12 @@ definePageMeta({
 
 <style scoped lang="scss">
 
+@import '@/assets/styles/mixins.scss';
+
   .live-chat-section{
     &__chat{
       display: flex;
     }
-  }
-
-  @media (max-width: 45.8125em){
-    .live-chat-section{
-      &__chat{
-        display: flex;
-        justify-content: center
-      }
-    }
+    @include live-page-responsive;
   }
 </style>
