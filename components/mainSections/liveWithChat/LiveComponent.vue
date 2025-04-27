@@ -141,6 +141,7 @@ const totalFollowers = api.total;
     flex-direction: column;
     margin-left: 0.5em;
     margin-right: 1em;
+    width: 100%;
   }
   &__header {
     display: flex;
@@ -248,7 +249,7 @@ const totalFollowers = api.total;
   &__category {
     color: #1788de;
     font-size: var(--fs-big-texts);
-    padding: 0.4em 0;
+    margin-bottom: 0.4em;
   }
   &__tags-container {
     display: flex;
