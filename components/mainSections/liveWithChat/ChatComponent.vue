@@ -3,9 +3,8 @@ import IconCollapseLogo from '@/components/icons/CollapseIcon.vue';
 import CommunityIcon from '@/components/icons/CommunityIcon.vue';
 import ArrowIcon from '@/components/icons/ArrowIcon.vue';
 import GiftIcon from '@/components/icons/GiftIcon.vue';
-import EmojiIcon from '@/components/icons/EmojiIcon.vue';
-import BitsIcon from '@/components/icons/BitsIcon.vue';
-import ConfigIcon from '@/components/icons/ConfigIcon.vue';
+import ChatBottomComponent from '@/components/mainSections/liveWithChat/chatComponents/ChatBottomComponent.vue';
+import ChatMessagesComponent from '@/components/mainSections/liveWithChat/chatComponents/ChatMessagesComponent.vue';
 import texts from '@/assets/data/texts.json';
 import { ApiTwitch } from '@/api/twitchApi';
 import type { Streamer } from '@/types/streamer';
@@ -22,25 +21,6 @@ const user_id = (api.data[0] as Streamer).user_id;
 
 await api.requestApi(`https://api.twitch.tv/helix/users?id=${user_id}&fields=profile_image_url`);
 const profile_image_url = (api.data[0] as Streamer).profile_image_url || '';
-
-const chatMessages = [
-  { user: 'GamerGirl42', message: '¡Qué buena partida!' },
-  { user: 'NoobMaster69', message: 'JAJAJA te la rifaste' },
-  { user: 'ChillVibes', message: 'Saludos desde México 🙌' },
-  { user: 'ProPlayer', message: '¿Qué setup usas?' },
-  { user: 'StreamerFan', message: '¡Te sigo desde 2020!' },
-  { user: 'MemeLord', message: '¿Alguien dijo memes?' },
-  { user: 'ShadowNinja', message: '¿Harás stream mañana?' },
-  { user: 'TechGeek', message: 'El overlay está brutal 🔥' },
-  { user: 'LunaLovegood', message: 'Me encanta' },
-  { user: 'SpeedRunner', message: 'Nuevo PB en caminoooo' },
-  { user: 'Juan', message: '¿Como estas?' },
-  { user: 'TechNech', message: 'Me mola el layout' },
-  { user: 'Sorse', message: 'GRAN MEME' },
-  { user: 'Responsive', message: 'Soy complicado' },
-];
-
-
 </script>
 
 <template>
@@ -66,28 +46,8 @@ const chatMessages = [
       <ArrowIcon class="chat__arrow-icon" />
     </section>
     <div class="chat__divider-two"/>
-    <section class="chat__content">
-      <span class="chat__content-title">{{ texts.welcomeChatText }}</span>
-      <div class="chat__message">
-        <div v-for="(chat, index) in chatMessages" :key="index" class="chat__message-content">
-          <span class="chat__message-user">{{ chat.user }}:</span>
-          <span class="chat__message-text">{{ chat.message }}</span>
-        </div>
-      </div>
-      <div class="chat__content-message">
-        <input class="chat__content-message--input" type="text" placeholder="Send a message"><EmojiIcon/>
-      </div>
-      <div class="chat__bottom">
-        <div class="chat__bottom-left">
-          <span class="chat__bottom-bits"><BitsIcon />0</span>
-          <span class="chat__bottom-points"><img :src="profile_image_url" class="chat__bottom--image" alt="Channel profile image"/>0</span>
-        </div>
-        <div class="chat__bottom-right">
-          <ConfigIcon />
-          <button class="chat__bottom-send" aria-label="Send a message">{{ texts.chatButtonText }}</button>
-        </div>
-      </div>
-    </section>
+    <ChatMessagesComponent/>
+    <ChatBottomComponent :profile_image_url="profile_image_url" />
   </section>
 </template>
 
@@ -155,96 +115,6 @@ const chatMessages = [
   &__divider-two{
     border-top: 0.0625em solid var(--c-border-color);
     margin: 1em 1em 0 1em;
-  }
-  &__content{
-    display:flex;
-    flex-direction: column;
-    padding: 1em;
-    &-title{
-      font-size: var(--fs-small-texts);
-      color: #9a9aa5;
-    }
-    &-message {
-      margin-top: auto;
-      background-color: var(--c-nav-background-color);
-      display:flex;
-      align-items: center;
-      margin-top: 1em;
-      border: 0.0625em solid #545457;
-      border-radius: 0.375em;
-      padding: 0.1em;
-      &--input {
-        width: 100%;
-        padding: 0.6em;
-        color: var(--c-white);
-        border: none;
-        background-color: var(--c-nav-background-color);
-      }
-    }
-  }
-  &__message {
-    display: flex;
-    gap: 0.5em;
-    flex-direction: column;
-    overflow-y: auto;
-    max-height: 90vh;
-    margin-top: 1em;
-    &-content {
-      display: flex;
-      gap: 0.3em;
-      background-color: var(--c-nav-background-color);
-      width: 19em;
-      padding: 0.5em;
-      border-radius: 0.5em;
-      align-items: flex-end;
-      
-    }
-    &-user {
-      font-weight: bold;
-      color: #9ecbff;
-      font-size: 0.9em;
-      font-weight: 700;
-    }
-    &-text {
-      color: var(--c-white);
-      font-size: 0.9em;
-    }
-  }
-  &__bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 0.8em;
-    overflow-x: auto;
-    max-width: 100%;
-    &-left {
-      display: flex;
-      gap: 0.5em;
-      color: #9b9ba4;
-    }
-    &-right {
-      display: flex;
-      gap: 0.5em;
-    }
-    &-bits,
-    &-points {
-      display: flex;
-      align-items: center;
-    }
-    &-send {
-      background-color: var(--c-blue-button-and-words);
-      border: none;
-      padding: 0.4em;
-      color: var(--c-white);
-      border-radius: 0.3125em;
-  
-    }
-    &--image{
-      width: 1.5em;
-      height: 1.5em;
-      border-radius: 50%;
-      margin-right: 0.3em;
-    }
   }
   @include chat-component-responsive;
 }
