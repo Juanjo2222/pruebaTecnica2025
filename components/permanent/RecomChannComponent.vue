@@ -17,6 +17,9 @@ import texts from '@/assets/data/texts.json';
 </template>
 
 <style scoped lang="scss">
+
+@import '@/assets/styles/mixins.scss';
+
 .sidebar {
   background-color: var(--c-general-color);
   padding: 1em;
@@ -24,44 +27,21 @@ import texts from '@/assets/data/texts.json';
   display: flex;
   flex-direction: column;
   padding-left: 1.5em;
-  
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.625em;
   }
-
   &__title {
     font-size: var(--fs-small-texts);
   }
-
   &__collapse-button {
     border: 0;
     background-color: var(--c-general-color);
     padding-left: 0.3em;
     margin-left: 2.1em;
   }
-
-}
-
-@media (max-width: 45.8125em) {
-  .sidebar {
-    flex-direction: row;
-    overflow-x: auto;
-    max-width: 100%;
-    gap: 1em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-
-  }
-}
-
-@media (max-width: 68.75em) {
-  .sidebar {
-    &__header{
-      display: none;
-    }
-  }
+  @include recomm-channel-component-responsive;
 }
 </style>

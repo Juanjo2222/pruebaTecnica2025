@@ -21,6 +21,12 @@ definePageMeta({
 <style scoped lang="scss">
   .main{
     background-color: var(--c-general-color);
-
+    &__live-channels {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
   }
 </style>

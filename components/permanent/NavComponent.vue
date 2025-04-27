@@ -18,7 +18,6 @@ import texts from '@/assets/data/texts.json';
         <IconOptions />
       </button>
     </section>
-
     <section class="top-bar__search">
       <input
         class="top-bar__search-input"
@@ -29,7 +28,6 @@ import texts from '@/assets/data/texts.json';
         <IconSearch />
       </button>
     </section>
-
     <section class="top-bar__right">
       <div class="top-bar__notification-wrapper">
         <button class="top-bar__notification" aria-label="Notifications">
@@ -47,6 +45,7 @@ import texts from '@/assets/data/texts.json';
 </template>
 
 <style scoped lang="scss">
+
 @import '@/assets/styles/mixins.scss';
 
 .top-bar {
@@ -127,7 +126,7 @@ import texts from '@/assets/data/texts.json';
     right: -0.4em;
     border-radius: 562.5em;
     background-color: red;
-    color: white;
+    color: var(--c-general-color);
     font-size: 0.7em;
     padding: 0.2em 0.45em;
     font-size: 0.75em;
@@ -147,25 +146,13 @@ import texts from '@/assets/data/texts.json';
     font-size: var(--fs-small-texts);
     font-weight: var(--fw-big-texts);
     margin: auto;
-    color: black;
+    color:  var(--c-general-color);
   }
-
   &__profile {
     @include nav-icon-buttons;
     padding: 0.3125em;
     margin: auto;
   }
-
-  @media (max-width: 43.9375em) {
-
-    overflow-x: auto;
-    max-width: 100%;
-
-    &__search-input {
-      width: 20em;
-    }
-  }
-
+  @include nav-component-responsive;
 }
-
 </style>

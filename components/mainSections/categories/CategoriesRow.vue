@@ -25,17 +25,17 @@ const categories = api.data.map((category: any, index: number) => ({
       </span> 
       {{ texts.titlesWhite }}
     </h2>
-
     <CategoryCard :categories="categories" />
-
   </section>
 </template>
 
 <style scoped lang="scss">
+
+@import '@/assets/styles/mixins.scss';
+
 .category-section {
   background-color: var(--c-general-color);
   padding-right: 1em;
-
   &__title {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--c-white);
@@ -43,22 +43,9 @@ const categories = api.data.map((category: any, index: number) => ({
     padding-bottom: 0.6em;
     padding-top: 1.2em;
   }
-
   &__blue-text {
     color: #1889df;
   }
-
-  @media (max-width: 95.625em) {
-
-    &__title {
-      display: flex;
-      align-items: center;
-      gap: 0.3em;
-      justify-content: center;
-      margin-bottom: 1em;
-    }
-  }
-
+  @include categories-row-responsive;
 }
-
 </style>

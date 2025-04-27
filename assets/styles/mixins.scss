@@ -50,3 +50,238 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@mixin categories-row-responsive{
+  @media (max-width: 95.625em) {
+    &__title {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+      justify-content: center;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+@mixin categories-buttons-responsive{
+  @media (max-width: 30em) {
+    .category-button-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8em;
+    }
+    .category-button {
+      width: 100%;
+      max-width: 16em;
+      &__text {
+        font-size: 1.1em;
+      }
+    }
+  }
+  @media (max-width: 68.6875em) {
+    .category-button {
+      width: 14.25em;
+      
+    }
+  }
+  @media (max-width: 95.625em) {
+    .category-button-container {
+      justify-content: center;
+    }
+  }
+}
+@mixin category-card-responsive{
+  @media (max-width: 36em) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (max-width: 95.625em) {
+    justify-content: center
+  }
+}
+
+@mixin streamer-card-responsive{
+  @media (max-width: 95.625em) {
+    justify-content: center;
+  }
+  
+  @media (max-width: 24.4375em){
+    justify-content: flex-start;
+    &__card{
+      width: 100%;
+      &-image {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@mixin chat-component-responsive{
+  @media (max-width: 45.8125em){
+    margin-top: 0.5em;
+    width: 100%;
+  }
+  @media (min-width: 45.875em) and (max-width: 52.5625em) {
+    width: 13em;
+  }
+}
+
+@mixin live-component-responsive{
+
+  @media (min-width: 23.4375rem){
+    &__header {
+      background-color: red;
+    }
+  }
+
+  @media (max-width: 123.8124em){
+    width: 54em;
+    &__video {
+      width: 100%;
+      background-color: var(--c-general-color);
+      &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  @media (max-width: 101.75em){
+    margin-left: 0.5em;
+    width: 100%;
+    &__video {
+      width: 100%;
+      background-color: var(--c-general-color);
+      &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  @media (max-width: 53.4375em){
+    margin-left: 0.5em;
+  }
+  @media (min-width: 123.8125em){
+    width: 54em;
+  }
+}
+
+@mixin live-header-component-responsive{
+  @media (max-width: 29.375em){
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+  }
+}
+
+@mixin live-summary-component-responsive{
+  @media (max-width: 29.375em){
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+  }
+}
+
+@mixin left-layout-row-responsive{
+  @media (max-width: 45.8125em) {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: 68.75em) {
+    &__image {
+      width: 3em;
+      height: 3em;
+    }
+    &__info,
+    &__status {
+      display: none;
+    }
+  }
+}
+
+@mixin nav-component-responsive{
+  @media (max-width: 43.9375em) {
+    overflow-x: auto;
+    max-width: 100%;
+    &__search-input {
+      width: 20em;
+    }
+  }
+}
+
+@mixin recomm-channel-component-responsive{
+  @media (max-width: 45.8125em) {
+    flex-direction: row;
+    overflow-x: auto;
+    max-width: 100%;
+    gap: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  @media (max-width: 68.75em) {
+    &__header{
+      display: none;
+    }
+  }
+}
+
+@mixin live-channels-responsive{
+
+  @media (max-width: 30em) {
+    width: 100%;
+    padding: 0 0.5em;
+    &__title {
+      font-size: 1em;
+      text-align: center;
+    }
+    &__divider {
+      flex-direction: column;
+      gap: 0.5em;
+      margin: 2em 0;
+      &::before,
+      &::after {
+        content: '';
+        flex: 1;
+        border-top: 0.0625em solid var(--c-border-color);
+      }
+    }
+    &__divider-text {
+      font-size: 0.85em;
+      padding: 0;
+    }
+    &__arrow-icon {
+      margin: 0 auto;
+    }
+  }
+  @media (max-width: 43.9375em) {
+    &__row{
+      width: 100%;
+      margin-left: 0.5em;
+    }
+  }
+  @media (max-width: 45.8125em) {
+    width: 100%;
+  }
+  @media (max-width: 68.6875em) {
+    min-width: 18.75em;
+  }
+  @media (max-width: 93.25em) {
+    width: 100%;
+    &__title {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+      justify-content: center;
+    }
+  }
+}
+
+@mixin live-page-responsive{
+  @media (max-width: 45.8125em){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

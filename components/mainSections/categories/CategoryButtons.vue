@@ -39,7 +39,6 @@ const buttons = [
   padding-top: 1em;
   padding-bottom: 1.5em;
 }
-
 .category-button {
   @include category-buttons;
   background-color: var(--c-blue-button-and-words);
@@ -48,48 +47,14 @@ const buttons = [
   justify-content: space-between;
   align-items: center;
   padding: 0.8em 1.2em;
-
   &__text {
     color: black;
     font-weight: bold;
     font-size: 1.3em;
   }
-
   &__icon {
     margin-left: auto;
   }
 }
-
-/* XS - Móviles (0 - 480px) */
-@media (max-width: 30em) {
-  .category-button-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8em;
-  }
-
-  .category-button {
-    width: 100%;
-    max-width: 16em;
-
-    &__text {
-      font-size: 1.1em;
-    }
-  }
-}
-
-
-/* MD - Laptops (769px - 1024px) */
-@media (max-width: 68.6875em) {
-  .category-button {
-    width: 14.25em;
-    
-  }
-}
-
-@media (max-width: 95.625em) {
-  .category-button-container {
-    justify-content: center;
-  }
-}
+@include categories-buttons-responsive;
 </style>
