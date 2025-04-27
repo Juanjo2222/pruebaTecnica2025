@@ -110,7 +110,10 @@
 @mixin chat-component-responsive{
   @media (max-width: 45.8125em){
     margin-top: 0.5em;
-    width: 90%;
+    width: 100%;
+  }
+  @media (min-width: 45.875em) and (max-width: 52.5625em) {
+    width: 13em;
   }
 }
 
@@ -134,7 +137,6 @@
 
   @media (max-width: 123.8124em){
     width: 54em;
-    margin-left: 8em;
     &__video {
       width: 100%;
       background-color: var(--c-general-color);
@@ -164,7 +166,6 @@
   }
   @media (min-width: 123.8125em){
     width: 54em;
-    margin-left: 25em;
   }
 }
 @mixin left-layout-row-responsive{
@@ -256,9 +257,8 @@
 
 @mixin live-page-responsive{
   @media (max-width: 45.8125em){
-    &__chat{
-      display: flex;
-      justify-content: center
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
