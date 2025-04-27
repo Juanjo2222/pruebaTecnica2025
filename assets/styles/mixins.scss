@@ -105,6 +105,16 @@
   @media (max-width: 95.625em) {
     justify-content: center;
   }
+  
+  @media (max-width: 24.4375em){
+    justify-content: flex-start;
+    &__card{
+      width: 100%;
+      &-image {
+        width: 100%;
+      }
+    }
+  }
 }
 
 @mixin chat-component-responsive{
@@ -118,20 +128,10 @@
 }
 
 @mixin live-component-responsive{
-  @media (max-width: 29.375em){
-    &__details{
-      gap: 0.5em;
-    }
+
+  @media (min-width: 23.4375rem){
     &__header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5em;
-    }
-    &__summary {
-      width:100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      background-color: red;
     }
   }
 
@@ -147,7 +147,6 @@
       }
     }
   }
-
   @media (max-width: 101.75em){
     margin-left: 0.5em;
     width: 100%;
@@ -168,6 +167,23 @@
     width: 54em;
   }
 }
+
+@mixin live-header-component-responsive{
+  @media (max-width: 29.375em){
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+  }
+}
+
+@mixin live-summary-component-responsive{
+  @media (max-width: 29.375em){
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+  }
+}
+
 @mixin left-layout-row-responsive{
   @media (max-width: 45.8125em) {
     display: flex;
@@ -212,6 +228,7 @@
 }
 
 @mixin live-channels-responsive{
+
   @media (max-width: 30em) {
     width: 100%;
     padding: 0 0.5em;
@@ -223,6 +240,12 @@
       flex-direction: column;
       gap: 0.5em;
       margin: 2em 0;
+      &::before,
+      &::after {
+        content: '';
+        flex: 1;
+        border-top: 0.0625em solid var(--c-border-color);
+      }
     }
     &__divider-text {
       font-size: 0.85em;
