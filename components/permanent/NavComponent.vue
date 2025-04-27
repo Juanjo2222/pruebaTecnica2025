@@ -18,7 +18,6 @@ import texts from '@/assets/data/texts.json';
         <IconOptions />
       </button>
     </section>
-
     <section class="top-bar__search">
       <input
         class="top-bar__search-input"
@@ -29,7 +28,6 @@ import texts from '@/assets/data/texts.json';
         <IconSearch />
       </button>
     </section>
-
     <section class="top-bar__right">
       <div class="top-bar__notification-wrapper">
         <button class="top-bar__notification" aria-label="Notifications">
@@ -47,6 +45,7 @@ import texts from '@/assets/data/texts.json';
 </template>
 
 <style scoped lang="scss">
+
 @import '@/assets/styles/mixins.scss';
 
 .top-bar {
