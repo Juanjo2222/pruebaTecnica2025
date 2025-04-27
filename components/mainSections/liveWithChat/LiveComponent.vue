@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import IconOptions from '@/components/icons/OptionsIcon.vue';
 import AboutInfoComponent from '@/components/mainSections/liveWithChat/AboutInfoComponent.vue';
+import LiveSummaryComponent from '@/components/mainSections/liveWithChat/liveComponents/LiveSummaryComponent.vue';
+import LiveHeaderComponent from '@/components/mainSections/liveWithChat/liveComponents/LiveHeaderComponent.vue';
 import FollowIcon from '@/components/icons/FollowIcon';
 import SuscribeIcon from '@/components/icons/SuscribeIcon';
 import DownArrowIcon from '@/components/icons/DownArrowIcon';
@@ -48,31 +50,8 @@ const totalFollowers = api.total;
         <span class="live__live-label">{{ texts.live }}</span>
       </div>
       <section class="live__details">
-        <section class="live__header">
-          <span class="live__streamer-name">{{ user_name }}</span>
-          <section class="live__actions">
-            <button class="live__follow-button" aria-label="Button to follow this streamer">
-              <FollowIcon class="live__icon" />
-              <span class="live__button-text">{{ texts.followButtonText }}</span>
-            </button>
-            <button class="live__subscribe-button" aria-label="Button to suscribe to this streamer channel">
-              <SuscribeIcon class="live__icon" />
-              {{ texts.subscribeButtonText }}
-              <DownArrowIcon class="live__icon" />
-            </button>
-          </section>
-        </section>
-        <section class="live__summary">
-          <span class="live__title">{{ title }}</span>
-          <div class="live__right-info">
-            <span class="live__viewers"><RedViewersIcon />{{ viewer_count.toLocaleString() }}</span>
-            <span class="live__duration">3:25:00</span>
-            <section class="live__options">
-              <button class="live__options-button" aria-label="Button for share this live"><ShareIcon /></button>
-              <button class="live__options-button" aria-label="Button for report this live"><IconOptions /></button>
-            </section>
-          </div>
-        </section>
+        <LiveHeaderComponent :user_name="user_name" />
+        <LiveSummaryComponent :title="title" :viewer_count="viewer_count" />
         <section class="live__extra">
           <span class="live__category">{{ game_name }}</span>
           <div class="live__tags-container">
@@ -93,7 +72,9 @@ const totalFollowers = api.total;
 </template>
 
 <style scoped lang="scss">
+
 @import '@/assets/styles/mixins.scss';
+
 .live {
   display: flex;
   flex-direction: column;
@@ -142,104 +123,6 @@ const totalFollowers = api.total;
     margin-left: 0.5em;
     margin-right: 1em;
     width: 100%;
-  }
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.5em;
-  }
-  &__streamer-name {
-    color: var(--c-white);
-    font-weight: bold;
-    font-size: 1em;
-  }
-  &__actions {
-    display: flex;
-    gap: 1em;
-  }
-  &__follow-button,
-  &__subscribe-button {
-    display: flex;
-    align-items: center;
-    padding: 0.5em;
-    font-size: 0.9em;
-    color: var(--c-white);
-    border: none;
-    border-radius: 0.4em;
-    cursor: pointer;
-    height: 2em;
-    &:hover {
-      opacity: 0.85;
-    }
-  }
-  &__follow-button {
-    background-color: var(--c-blue-button-and-words);
-    font-size: var(--fs-small-texts);
-    font-weight: var(--fw-big-texts);
-    color: var(--c-general-color);
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
-    padding-right: 0.7em;
-    border-radius: 0.25em;
-  }
-  &__subscribe-button {
-    background-color: #2f2f35;
-    font-size: var(--fs-small-texts);
-    font-weight: var(--fw-big-texts);
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
-    padding-right: 0.7em;
-    border-radius: 0.25em;
-  }
-  &__icon {
-    padding-right: 0.2em;
-    padding-left: 0.3em;
-  }
-  &__button-text{
-    padding-bottom: 0.2em;
-  }
-  &__summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.5em;
-    color: var(--c-white);
-  }
-  &__title {
-    font-size: var(--fs-big-texts);
-    font-weight: 600;
-  }
-  &__right-info {
-    display: flex;
-    gap: 0.5em;
-    align-items: center;
-  }
-  &__viewers {
-    color: #ff8280;
-    display: flex;
-    align-items: center;
-    font-size: var(--fs-small-texts);
-  }
-  &__duration {
-    font-size: var(--fs-small-texts);
-    color: var(--c-white);
-  }
-  &__options {
-    display: flex;
-    gap: 0.3em;
-  }
-  &__options-button {
-    background-color: var(--c-general-color);
-    border: none;
-    color: var(--c-white);
-    border-radius: 0.3125em;
-    padding: 0.2em;
-    cursor: pointer;
-
-    &:hover {
-      @include gray-buttons-hover;
-    }
   }
   &__extra {
     display: flex;
