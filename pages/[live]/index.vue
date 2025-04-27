@@ -11,14 +11,14 @@ definePageMeta({
 </script>
 
 <template>
-  <section class="live-chat-section">
     <NuxtLayout :name="$route.meta.defaultLayout">
-      <LiveComponent :user_login="route.params.live"/>
-      <div class="live-chat-section__chat">
-        <ChatComponent :user_login="route.params.live"/>
-      </div>
+      <section class="live-chat-section">
+        <LiveComponent :user_login="route.params.live"/>
+        <div class="live-chat-section__chat">
+          <ChatComponent :user_login="route.params.live"/>
+        </div>
+      </section>
     </NuxtLayout>
-  </section>
 </template>
 
 <style scoped lang="scss">
@@ -26,9 +26,10 @@ definePageMeta({
 @import '@/assets/styles/mixins.scss';
 
   .live-chat-section{
-    &__chat{
-      display: flex;
-    }
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
     @include live-page-responsive;
   }
 </style>
