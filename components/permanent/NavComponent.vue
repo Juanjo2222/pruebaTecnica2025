@@ -146,7 +146,7 @@ import texts from '@/assets/data/texts.json';
     font-size: var(--fs-small-texts);
     font-weight: var(--fw-big-texts);
     margin: auto;
-    color:  var(--c-general-color);
+    color: var(--c-general-color);
   }
   &__profile {
     @include nav-icon-buttons;
