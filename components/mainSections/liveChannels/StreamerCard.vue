@@ -15,27 +15,26 @@ const props = defineProps<{
       :key="channel.id"
       class="streamer-card__card"
     >
-      <NuxtLink :to="`/${channel.user_login}`">
+      <NuxtLink :to="`/${channel.user_login}`" class="streamer-card__link">
         <img :src="channel.thumbnail_url" class="streamer-card__card-image" alt="Thumbnail image"/>
-      </NuxtLink>
-      <div class="streamer-card__card-content">
-        <img :src="channel.profile_image_url" class="streamer-card__card-content-profile" alt="Channel profile image"/>
-        <div class="streamer-card__card-info">
-          <span class="streamer-card__card-info-title">{{ channel.title }}</span>
-          <span class="streamer-card__card-info-name">{{ channel.user_name }}</span>
-          <span class="streamer-card__card-info-category">{{ channel.game_name }}</span>
-
-          <div class="streamer-card__card-info-tags-container">
-            <div
-              v-for="(tag, index) in channel.tags"
-              :key="index"
-              class="streamer-card__card-info-tags"
-            >
-              {{ tag }}
+        <div class="streamer-card__card-content">
+          <img :src="channel.profile_image_url" class="streamer-card__card-content-profile" alt="Channel profile image"/>
+          <div class="streamer-card__card-info">
+            <span class="streamer-card__card-info-title">{{ channel.title }}</span>
+            <span class="streamer-card__card-info-name">{{ channel.user_name }}</span>
+            <span class="streamer-card__card-info-category">{{ channel.game_name }}</span>
+            <div class="streamer-card__card-info-tags-container">
+              <div
+                v-for="(tag, index) in channel.tags"
+                :key="index"
+                class="streamer-card__card-info-tags"
+              >
+                {{ tag }}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </NuxtLink>
     </div>
   </section>
 </template>
@@ -51,6 +50,14 @@ const props = defineProps<{
   gap: 2.3125em;
   flex-wrap: wrap;
   margin-bottom: 4em;
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    &:hover{
+      opacity: 0.5;
+    }
+  }
   &__card {
     display: flex;
     flex-direction: column;
