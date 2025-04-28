@@ -24,8 +24,8 @@ const chatMessages = [
 <template>
   <section class="messages-container">
     <span class="messages-container__title">{{ texts.welcomeChatText }}</span>
-    <div class="messages-container__messages">
-      <div v-for="(chat, index) in chatMessages" :key="index" class="messages-container__list">
+    <div class="messages-container__messages-list">
+      <div v-for="(chat, index) in chatMessages" :key="index" class="messages-container__messages">
         <span class="messages-container__user">{{ chat.user }}:</span>
         <span class="messages-container__text">{{ chat.message }}</span>
       </div>
@@ -46,7 +46,7 @@ const chatMessages = [
     font-size: var(--fs-small-texts);
     color: #9a9aa5;
   }
-  &__messages {
+  &__messages-list {
     display: flex;
     gap: 0.5em;
     flex-direction: column;
@@ -55,7 +55,7 @@ const chatMessages = [
     margin-top: 1em;
   }
 
-  &__list {
+  &__messages {
     display: flex;
     gap: 0.3em;
     background-color: var(--c-nav-background-color);
