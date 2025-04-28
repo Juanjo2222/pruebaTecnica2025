@@ -59,7 +59,7 @@ const props = defineProps<{
     background-color: var(--c-blue-button-and-words);
     border: none;
     padding: 0.4em;
-    color: var(--c-white);
+    color: var(--c-general-color);
     border-radius: 0.3125em;
   }
 }
