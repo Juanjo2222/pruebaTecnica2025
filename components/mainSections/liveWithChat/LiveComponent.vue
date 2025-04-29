@@ -42,14 +42,8 @@ const totalFollowers = api.total;
   <section class="live">
     <title>{{ texts.pageTitle }} - {{ user_name }}</title>
     <section class="live__video">
-      <!--<img :src="thumbnail" class="live__video-image" alt="Thumbnail image"/>-->
-      <iframe
-				class="live__video-image"
-				:src="`https://player.twitch.tv/?channel=${props.user_login}&parent=localhost`"
-				frameborder="0"
-				allowfullscreen="true"
-				scrolling="yes">
-			</iframe>
+      <img :src="thumbnail" class="live__video-image" alt="Thumbnail image"/>
+
     </section>
     <section class="live__main-info">
       <div class="live__profile-container">
