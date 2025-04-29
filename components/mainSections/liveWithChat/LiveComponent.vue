@@ -42,7 +42,14 @@ const totalFollowers = api.total;
   <section class="live">
     <title>{{ texts.pageTitle }} - {{ user_name }}</title>
     <section class="live__video">
-      <img :src="thumbnail" class="live__video-image" alt="Thumbnail image"/>
+      <!--<img :src="thumbnail" class="live__video-image" alt="Thumbnail image"/>-->
+      <iframe
+				class="live__video-image"
+				:src="`https://player.twitch.tv/?channel=${props.user_login}&parent=localhost`"
+				frameborder="0"
+				allowfullscreen="true"
+				scrolling="yes">
+			</iframe>
     </section>
     <section class="live__main-info">
       <div class="live__profile-container">
@@ -80,11 +87,17 @@ const totalFollowers = api.total;
   flex-direction: column;
   background-color: var(--c-general-color);
   &__video {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: relative;
+    top: 0;
     width: 100%;
     background-color: var(--c-general-color);
     &-image {
-      width: 54em;
+      width: 100%;
       height: 100%;
+      position: absolute;
       object-fit: cover;
     }
   }
