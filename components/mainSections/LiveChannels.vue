@@ -94,13 +94,13 @@ const bottomRows = streamerRows.slice(2);
       flex: 1;
       border-top: 0.0625em solid var(--c-border-color);
     }
-  }
-  &__divider-text {
-    padding-left: 1.8em;
-    padding-right: 0.5em;
-    font-size: var(--fs-small-texts);
-    font-weight: 600;
-    cursor: pointer;
+    &-text {
+      padding-left: 1.8em;
+      padding-right: 0.5em;
+      font-size: var(--fs-small-texts);
+      font-weight: 600;
+      cursor: pointer;
+    }
   }
   &__arrow-icon {
     margin-right: 1em;
