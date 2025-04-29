@@ -42,10 +42,7 @@ const buttons = [
 .category-button {
   @include category-buttons;
   background-color: var(--c-blue-button-and-words);
-  width: 14em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   padding: 0.8em 1.2em;
   &__text {
     color: black;
