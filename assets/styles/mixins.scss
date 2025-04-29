@@ -63,6 +63,7 @@
   }
   @media (min-width: 109.625em){
     &__title {
+      font-size: 1.5em;
       display: flex;
       align-items: center;
       gap: 0.3em;
@@ -113,6 +114,17 @@
   @media (min-width: 95.625em) {
     justify-content: center
   }
+  @media (min-width: 109.625em) {
+    &__card{
+      &-content {
+        &-name,
+        &-viewers,
+        &-subCategory {
+          font-size: 1em;
+        }
+      }
+    }
+  }
 }
 
 @mixin streamer-card-responsive{
@@ -123,12 +135,22 @@
   @media (min-width: 109.625em){
     justify-content: center;
     &__card{
-      width: 45em;
-      height: 25em;
+      width: 43.5em;
+      height: 29em;
       &-image {
         width: 45em;
         height: 21em;
         padding-right: 0;
+      }
+      &-info {
+        &-title,
+        &-name,
+        &-category {
+          font-size: 1.1em;
+        }
+        &-tags{
+          font-size: 0.9em;
+        }
       }
     }
   }
@@ -227,6 +249,17 @@
       display: none;
     }
   }
+  @media (min-width: 109.625em) {
+    display: flex;
+    justify-content: flex-start;
+    width: 17em;
+    &__name {
+      font-size: 1em;
+    }
+    &__info{
+      width: 100%;
+    }
+  }
 }
 
 @mixin nav-component-responsive{
@@ -253,6 +286,9 @@
       display: none;
     }
   }
+  @media (min-width: 109.625em) {
+    width: 20em;
+  }
 }
 
 @mixin live-channels-responsive{
@@ -274,10 +310,10 @@
         flex: 1;
         border-top: 0.0625em solid var(--c-border-color);
       }
-    }
-    &__divider-text {
-      font-size: 0.85em;
-      padding: 0;
+      &-text {
+        font-size: 0.85em;
+        padding: 0;
+      }
     }
     &__arrow-icon {
       margin: 0 auto;
@@ -292,9 +328,7 @@
   @media (max-width: 45.8125em) {
     width: 100%;
   }
-  @media (max-width: 68.6875em) {
-    min-width: 18.75em;
-  }
+
   @media (max-width: 93.25em) {
     width: 100%;
     &__title {
@@ -307,11 +341,14 @@
   @media (min-width: 109.625em) {
     width: 100%;
       &__title {
-        font-size: 1em;
+        font-size: 1.5em;
         text-align: center;
       }
       &__divider {
         margin-top: 10em;
+        &-text{
+          font-size: 1em;
+        }
       }
     }
 }
