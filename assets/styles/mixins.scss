@@ -101,6 +101,7 @@
   }
   @media (min-width: 109.625em){
     .category-button-container {
+      margin-top: 3em;
       justify-content: center;
     }
   }
@@ -345,7 +346,7 @@
         text-align: center;
       }
       &__divider {
-        margin-top: 10em;
+        margin-top: 7em;
         &-text{
           font-size: 1em;
         }
