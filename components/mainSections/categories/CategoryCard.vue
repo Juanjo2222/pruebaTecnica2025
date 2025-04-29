@@ -74,14 +74,7 @@ const subCategories = ['IRL', 'Gaming', 'Music', 'Art', 'Cooking', 'Tech'];
         color: #9999a3;
       }
       &-subCategory {
-        display: inline-block;
-        font-size: 0.75em;
-        font-weight: var(--fw-big-text);
-        background-color: #29292e;
-        padding: 0.3em 0.6em;
-        border-radius: 1em;
-        color: #adadb8;
-        width: fit-content;
+        @include tags;
       }
     }
   }

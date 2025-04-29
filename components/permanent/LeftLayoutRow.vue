@@ -63,8 +63,8 @@ const streamers = streamersRaw.map(streamer => {
     object-fit: cover;
   }
   &__info {
-    display: grid;
-    grid-template-rows: repeat(2, auto);
+    display: flex;
+    flex-direction: column;
     gap: 0.2em;
     font-size: 0.9em;
     width: 8.75em;
