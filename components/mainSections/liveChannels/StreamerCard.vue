@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import IconTwitchLogo from '@/components/icons/TwitchLogoIcon.vue';
 import type { Streamer } from '@/types/streamer'; 
 
-const props = defineProps<{
+defineProps<{
   channels: Streamer[];
 }>();
 
