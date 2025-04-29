@@ -42,10 +42,9 @@ const totalFollowers = api.total;
   <section class="live">
     <title>{{ texts.pageTitle }} - {{ user_name }}</title>
     <section class="live__video">
-      <!--<img :src="thumbnail" class="live__video-image" alt="Thumbnail image"/>-->
       <iframe
 				class="live__video-image"
-				:src="`https://player.twitch.tv/?channel=${props.user_login}&parent=https://prueba-tecnica2025-final-juanjo.vercel.app/`"
+				:src="`https://player.twitch.tv/?channel=${props.user_login}&parent=prueba-tecnica2025-final-juanjo.vercel.app`"
 				frameborder="0"
 				allowfullscreen="true"
 				scrolling="yes">
