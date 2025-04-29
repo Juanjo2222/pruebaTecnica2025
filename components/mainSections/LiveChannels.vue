@@ -87,7 +87,7 @@ const bottomRows = streamerRows.slice(2);
     align-items: center;
     color: var(--c-blue-button-and-words);
     margin-bottom: 1em;
-    margin-top: 5em;
+    margin-top: 6em;
     &::before,
     &::after {
       content: '';
