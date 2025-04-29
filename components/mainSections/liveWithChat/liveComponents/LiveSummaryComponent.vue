@@ -3,7 +3,7 @@ import ShareIcon from '@/components/icons/ShareIcon.vue';
 import IconOptions from '@/components/icons/OptionsIcon.vue';
 import RedViewersIcon from '@/components/icons/RedViewersIcon.vue';
 
-const props = defineProps<{
+defineProps<{
   title: string;
   viewer_count: number;
 }>();

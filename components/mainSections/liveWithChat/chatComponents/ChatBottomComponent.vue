@@ -3,7 +3,7 @@ import BitsIcon from '@/components/icons/BitsIcon.vue';
 import ConfigIcon from '@/components/icons/ConfigIcon.vue';
 import texts from '@/assets/data/texts.json';
 
-const props = defineProps<{
+defineProps<{
   profile_image_url: string;
 }>();
 </script>

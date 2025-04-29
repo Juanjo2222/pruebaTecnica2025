@@ -4,7 +4,7 @@ import SuscribeIcon from '@/components/icons/SuscribeIcon.vue';
 import DownArrowIcon from '@/components/icons/DownArrowIcon.vue';
 import texts from '@/assets/data/texts.json';
 
-const props = defineProps<{
+defineProps<{
   user_name: string;
 }>();
 </script>

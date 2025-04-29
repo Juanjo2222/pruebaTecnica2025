@@ -11,9 +11,6 @@ import ShareIcon from '@/components/icons/ShareIcon';
 import { ApiTwitch } from '@/api/twitchApi';
 import texts from '@/assets/data/texts.json';
 import type { Streamer } from '@/types/streamer';
-import { useViewersFormat } from '@/composables/useViewersFormat';
-
-const { formatViewers } = useViewersFormat();
 
 const props = defineProps<{ user_login: string }>();
 
@@ -26,9 +23,7 @@ const user_name = (api.data[0] as Streamer).user_name;
 const title = (api.data[0] as Streamer).title;
 const tags = (api.data[0] as Streamer).tags;
 const game_name = (api.data[0] as Streamer).game_name;
-const thumbnail_url = (api.data[0] as Streamer).thumbnail_url;
 const viewer_count = (api.data[0] as Streamer).viewer_count;
-const thumbnail = thumbnail_url.replace('{width}x{height}', '1280x683');
 
 await api.requestApi(`https://api.twitch.tv/helix/users?id=${user_id}`);
 const description = (api.data[0] as Streamer).description;
@@ -47,7 +42,8 @@ const totalFollowers = api.total;
 				:src="`https://player.twitch.tv/?channel=${props.user_login}&parent=prueba-tecnica2025-final-juanjo.vercel.app`"
 				frameborder="0"
 				allowfullscreen="true"
-				scrolling="yes">
+				scrolling="yes"
+        >
 			</iframe>
     </section>
     <section class="live__main-info">
