@@ -44,6 +44,7 @@ const subCategories = ['IRL', 'Gaming', 'Music', 'Art', 'Cooking', 'Tech'];
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1em;
   &__card {
     background-color: var(--c-general-color);
