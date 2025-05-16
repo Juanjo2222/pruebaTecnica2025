@@ -41,6 +41,7 @@ class ApiTwitch {
                 'Authorization': `Bearer ${this.token}`,
             },
         };
+        
 
         try {
             const response = await fetch(url, twitchOptions);
